@@ -8,15 +8,19 @@ public class Database {
 
     private Instances instances;
     private String path;
+    private String type;
 
     public Database(String path) throws IOException {
         this.path = path;
         if (path.endsWith(".arff")) {
             instances = new DatabaseArffLoader().loadDatabase(path);
+            setType("arff");
         } else if (path.endsWith(".csv")) {
             instances = new DatabaseCSVLoader().loadDatabase(path);
+            setType("csv");
         } else if (path.endsWith(".data") || path.endsWith(".names")) {
             instances = new DatabaseC45Loader().loadDatabase(path);
+            setType("c45");
         }
         instances.setClassIndex(instances.numAttributes() - 1);
     }
@@ -52,12 +56,12 @@ public class Database {
     public Attribute getAttribute (int index) {
         return instances.attribute(index);
     }
-    
-    public String attributeType (int index) {
-        String type = "";
-        return instances.attribute(index).typeToString(index);
-            
-        
-       // return type;
+
+    public String getType() {
+        return type;
+    }
+
+    private void setType(String type) {
+        this.type = type;
     }
 }

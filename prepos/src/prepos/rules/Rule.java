@@ -13,14 +13,17 @@ import java.util.ArrayList;
  */
 public abstract class Rule {
 
+    // Attributes
     private ArrayList<AttributeValue> premises;
     private ArrayList<AttributeValue> consequents;
 
+    // Constructor
     public Rule() {
         this.premises = new ArrayList<>();
         this.consequents = new ArrayList<>();
     }
 
+    // Getter & setter
     public ArrayList<AttributeValue> getPremises() {
         return premises;
     }
@@ -37,80 +40,54 @@ public abstract class Rule {
         this.consequents = consequents;
     }
 
-    /* Adiciona uma premisa a lista */
+    // Methods
+    // Add a new premise
     public void addPremise(AttributeValue premise) {
         this.premises.add(premise);
     }
 
-    /* Adiciona uma premisa como primeiro elemento da lista */
+    // Add a new premise as first element
     public void addPremiseFirst(AttributeValue premise) {
         this.premises.add(0, premise);
     }
 
-    /* Remove uma premissa pelo índice */
+    // Remove a premise by index
     public void removePremise(int index) {
         this.premises.remove(index);
     }
 
-    /* Pega uma premisa dado o índice */
+    // Get a premise by index
     public AttributeValue getIndexPremise(int index) {
         return this.premises.get(index);
     }
 
-    /* Quantidade de premissas da regra */
+    // Number of premises
     public int getNumPremises() {
         return this.premises.size();
     }
 
-    /* Adiciona uma premisa a lista */
+    // Add a new consequent
     public void addConsequent(AttributeValue consequent) {
         this.consequents.add(consequent);
     }
 
-    /* Adiciona uma premisa como primeiro elemento da lista */
+    // Add a new consequent as first element
     public void addConsequentFirst(AttributeValue consequent) {
         this.premises.add(0, consequent);
     }
 
-    /* Remove uma premissa pelo índice */
+    //Remove a consequent by index
     public void removeConsequent(int index) {
         this.consequents.remove(index);
     }
 
-    /* Pega uma premisa dado o índice */
+    // Get a consequent by index
     public AttributeValue getIndexConsequent(int index) {
         return this.consequents.get(index);
     }
 
-    /* Quantidade de premissas da regra */
+    // Number of premises
     public int getNumConsequents() {
         return this.consequents.size();
-    }
-
-    public boolean containsPremises(ArrayList<AttributeValue> others) {
-        if (this.premises.size() < others.size()) {
-            return false;
-        }
-
-        boolean[] contains = new boolean[others.size()];
-        for (int i = 0; i < contains.length; i++) {
-            contains[i] = false;
-        }
-
-        for (int i = 0; i < others.size(); i++) {
-            for (AttributeValue premise : this.premises) {
-                if (others.get(i).toString().equals(premise.toString())) {
-                    contains[i] = true;
-                }
-            }
-        }
-
-        for (int i = 0; i < contains.length; i++) {
-            if (!contains[i]) {
-                return false;
-            }
-        }
-
-        return true;
     }
 }

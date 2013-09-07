@@ -12,7 +12,6 @@ import prepos.gui.GUIChooser;
  * -----------+-------------------+-------------------+------------------------
  * 09/03/2013 | Cristian Simioni  | -                 | - 
  */
-
 public class Prepos {
 
     public static void main(String[] args) {

@@ -12,10 +12,12 @@ import prepos.association.AssociationAprioriBorgelt;
 import prepos.association.AssociationAprioriWeka;
 import prepos.association.parser.ParserAssociationAprioriBorgelt;
 import prepos.association.parser.ParserAssociationAprioriWeka;
+import prepos.classification.Classification;
+import prepos.classification.ClassificationC45;
+import prepos.classification.ClassificationJ48;
 import prepos.core.FileSaver;
 import prepos.core.Shared;
 import prepos.core.SystemInfo;
-import weka.classifiers.trees.J48;
 
 public class Miner extends javax.swing.JPanel {
 
@@ -215,9 +217,13 @@ public class Miner extends javax.swing.JPanel {
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
             } else if (tAlgorithms.getSelectionPath().toString().contains("J48")) {
-                J48 j48 = new J48();
-                j48.buildClassifier(Shared.getInstance().getDatabase().getInstances());
-                tOutput.setText(j48.toString());
+                Classification classification = new ClassificationJ48();
+                tOutput.setText(classification.getClassification(Shared.getInstance().getDatabase(), ""));
+                bSave.setEnabled(true);
+                bSaveRules.setEnabled(true);
+            } else if (tAlgorithms.getSelectionPath().toString().contains("C4.5")) {
+                Classification classification = new ClassificationC45();
+                tOutput.setText(classification.getClassification(Shared.getInstance().getDatabase(), "-f"));
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
             }

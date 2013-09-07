@@ -46,7 +46,7 @@ public class ExceptionRuleSearcher {
             ArrayList<AssociationRule> rulesSearch = (ArrayList<AssociationRule>) hash.get(rule.getConsequents().get(0).getAttribute());
             ExceptionRule exceptionRule = new ExceptionRule(rule);
             for (AssociationRule search : rulesSearch) {
-                if (!rule.getConsequents().get(0).toString().equals(search.getConsequents().get(0).toString()) && search.containsPremises(rule.getPremises())) {
+                if (!rule.getConsequents().get(0).toString().equals(search.getConsequents().get(0).toString()) && search.isExceptionRule(rule.getPremises())) {
                     exceptionRule.addExceptionRule(search);
                 }
             }

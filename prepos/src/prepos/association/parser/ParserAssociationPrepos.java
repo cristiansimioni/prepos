@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import prepos.rules.AssociationRule;
 import prepos.rules.AttributeValue;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 09/03/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 09/03/2013 | Cristian Simioni  | -                 | - 
+ */
 public class ParserAssociationPrepos {
 
     private String text;
@@ -17,12 +26,12 @@ public class ParserAssociationPrepos {
     public void buildAssociationRules() {
         String[] lines = this.text.split("\n");
         for (String line : lines) {
-                AssociationRule newRule = new AssociationRule();
-                getPremises(newRule, line);
-                getConsequents(newRule, line);
-                getConfidence(newRule, line);
-                getSupport(newRule, line);
-                rules.add(newRule);
+            AssociationRule newRule = new AssociationRule();
+            getPremises(newRule, line);
+            getConsequents(newRule, line);
+            getConfidence(newRule, line);
+            getSupport(newRule, line);
+            rules.add(newRule);
         }
     }
 
@@ -67,7 +76,7 @@ public class ParserAssociationPrepos {
 
         rule.setConfidence(confidence);
     }
-    
+
     private void getSupport(AssociationRule rule, String line) {
         float support = 0.0f;
         String strSupport;

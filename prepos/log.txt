@@ -1,2 +1,96 @@
 Set 05, 2013 11:01:51 PM prepos.core.SystemInfo initialize
 WARNING: Configuration file had a problem.
+Set 05, 2013 11:27:48 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 05, 2013 11:59:25 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 12:20:23 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 12:29:58 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 12:50:19 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 1:23:19 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Sep 06, 2013 1:23:48 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: F:\prepos\temp\c45output.txt (O sistema não pode encontrar o arquivo especificado)
+Set 06, 2013 1:24:59 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 1:28:45 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 1:30:20 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Sep 06, 2013 1:33:15 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Set 06, 2013 1:33:32 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Sep 06, 2013 1:33:51 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Set 06, 2013 1:35:09 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 1:40:17 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 1:42:26 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Sep 06, 2013 1:42:44 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Sep 06, 2013 1:42:45 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Sep 06, 2013 1:42:45 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Sep 06, 2013 1:42:45 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Sep 06, 2013 1:42:46 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Sep 06, 2013 1:42:46 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Set 06, 2013 1:43:57 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 2:20:54 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 2:34:26 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Sep 06, 2013 2:34:44 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Sep 06, 2013 2:35:37 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Sep 06, 2013 2:35:39 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Set 06, 2013 2:42:40 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 2:43:39 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 2:44:39 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 2:48:17 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 2:49:40 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 2:49:53 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 2:53:06 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 2:54:32 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 2:55:13 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Sep 06, 2013 2:55:32 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: F:\prepos\temp\c45output.txt (O sistema não pode encontrar o arquivo especificado)
+Set 06, 2013 2:56:23 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Sep 06, 2013 2:56:50 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: F:\prepos\temp\c45output.txt (O sistema não pode encontrar o arquivo especificado)
+Set 06, 2013 2:57:13 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Sep 06, 2013 2:57:46 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: F:\prepos\temp\put.txt (O sistema não pode encontrar o arquivo especificado)
+Set 06, 2013 2:58:04 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 2:59:08 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 06, 2013 3:01:37 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Sep 06, 2013 3:01:53 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Set 06, 2013 3:55:31 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
