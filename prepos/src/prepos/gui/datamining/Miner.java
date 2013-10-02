@@ -6,7 +6,10 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javax.swing.JFileChooser;
 import javax.swing.JTree;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreePath;
 import prepos.association.Association;
 import prepos.association.AssociationAprioriBorgelt;
 import prepos.association.AssociationAprioriWeka;
@@ -23,6 +26,14 @@ public class Miner extends javax.swing.JPanel {
 
     private JTree tAlgorithms;
     private ResourceBundle messages;
+    private int selectedAlgorithm;
+    private int lastExecutedAlgorithm;
+    private String parameters;
+
+    public enum algorithms {
+
+        APRIORIBORGELT, APRIORIWEKA, J48, C45;
+    }
 
     public Miner() {
         try {
@@ -37,7 +48,17 @@ public class Miner extends javax.swing.JPanel {
         initResources();
     }
 
+    public void setParameters(String parameters) {
+        this.parameters = parameters;
+    }
+
+    public String getParameters() {
+        return parameters;
+    }
+
     private void initResources() {
+        bStart.setEnabled(false);
+        bParameters.setEnabled(false);
         bSave.setEnabled(false);
         bSaveRules.setEnabled(false);
     }
@@ -63,6 +84,44 @@ public class Miner extends javax.swing.JPanel {
         root.add(classification);
 
         tAlgorithms = new JTree(root);
+
+        // Change event
+        tAlgorithms.addTreeSelectionListener(
+                new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                TreePath treePath = tAlgorithms.getSelectionPath();
+                if (treePath.getPathCount() == 3) {
+                    // Set default parameters
+                    // Apriori (Borgelt)
+                    if (treePath.toString().contains("Apriori (Borgelt)")) {
+                        selectedAlgorithm = algorithms.APRIORIBORGELT.ordinal();
+                        parameters = "-tr -s1 -m2 -n3";
+                        bStart.setEnabled(true);
+                        bParameters.setEnabled(true);
+                    } // Apriori (Weka)
+                    else if (treePath.toString().contains("Apriori (Weka)")) {
+                        selectedAlgorithm = algorithms.APRIORIWEKA.ordinal();
+                        parameters = "-N 2000 -T 0 -C 0.1 -D 0.05 -U 1.0 -M 0.01 -S -1.0 -c -1";
+                        bStart.setEnabled(true);
+                        bParameters.setEnabled(true);
+                    } else if (treePath.toString().contains("J48")) {
+                        selectedAlgorithm = algorithms.J48.ordinal();
+                        parameters = "";
+                        bStart.setEnabled(true);
+                        bParameters.setEnabled(true);
+                    } else if (treePath.toString().contains("C45")) {
+                        selectedAlgorithm = algorithms.C45.ordinal();
+                        parameters = "-f";
+                        bStart.setEnabled(true);
+                        bParameters.setEnabled(true);
+                    }
+                    tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString() + " | " + parameters);
+                }
+            }
+        });
+
+
         pAlgorithms.setViewportView(tAlgorithms);
         repaint();
     }
@@ -74,14 +133,16 @@ public class Miner extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
         chSave = new javax.swing.JFileChooser();
-        pParameters = new javax.swing.JPanel();
         pOutput = new javax.swing.JPanel();
         bSave = new javax.swing.JButton();
         bSaveRules = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tOutput = new javax.swing.JTextArea();
-        bStart = new javax.swing.JButton();
         pAlgorithms = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        bStart = new javax.swing.JButton();
+        bParameters = new javax.swing.JButton();
+        tSelectedAlgorithm = new javax.swing.JTextField();
 
         jScrollPane2.setViewportView(jEditorPane1);
 
@@ -91,22 +152,6 @@ public class Miner extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(800, 500));
         setName(""); // NOI18N
         setPreferredSize(new java.awt.Dimension(800, 500));
-
-        pParameters.setBorder(javax.swing.BorderFactory.createTitledBorder("Parameters"));
-        pParameters.setMaximumSize(new java.awt.Dimension(192, 296));
-        pParameters.setMinimumSize(new java.awt.Dimension(192, 296));
-        pParameters.setPreferredSize(new java.awt.Dimension(192, 296));
-
-        javax.swing.GroupLayout pParametersLayout = new javax.swing.GroupLayout(pParameters);
-        pParameters.setLayout(pParametersLayout);
-        pParametersLayout.setHorizontalGroup(
-            pParametersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        pParametersLayout.setVerticalGroup(
-            pParametersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
 
         pOutput.setBorder(javax.swing.BorderFactory.createTitledBorder("Algorithm Output"));
         pOutput.setMaximumSize(new java.awt.Dimension(582, 478));
@@ -133,6 +178,7 @@ public class Miner extends javax.swing.JPanel {
             }
         });
 
+        tOutput.setEditable(false);
         tOutput.setColumns(20);
         tOutput.setRows(5);
         jScrollPane1.setViewportView(tOutput);
@@ -141,23 +187,30 @@ public class Miner extends javax.swing.JPanel {
         pOutput.setLayout(pOutputLayout);
         pOutputLayout.setHorizontalGroup(
             pOutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pOutputLayout.createSequentialGroup()
-                .addGap(0, 294, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+            .addGroup(pOutputLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bSaveRules, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bSave, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jScrollPane1)
         );
         pOutputLayout.setVerticalGroup(
             pOutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pOutputLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pOutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bSave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bSaveRules, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bSaveRules, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bSave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        pAlgorithms.setBorder(javax.swing.BorderFactory.createTitledBorder("Algorithms"));
+        pAlgorithms.setMaximumSize(new java.awt.Dimension(192, 147));
+        pAlgorithms.setMinimumSize(new java.awt.Dimension(192, 147));
+        pAlgorithms.setPreferredSize(new java.awt.Dimension(192, 147));
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Selected Algorithm"));
 
         bStart.setText("Start");
         bStart.setMaximumSize(new java.awt.Dimension(192, 23));
@@ -169,10 +222,35 @@ public class Miner extends javax.swing.JPanel {
             }
         });
 
-        pAlgorithms.setBorder(javax.swing.BorderFactory.createTitledBorder("Algorithms"));
-        pAlgorithms.setMaximumSize(new java.awt.Dimension(192, 147));
-        pAlgorithms.setMinimumSize(new java.awt.Dimension(192, 147));
-        pAlgorithms.setPreferredSize(new java.awt.Dimension(192, 147));
+        bParameters.setText("Parameters");
+        bParameters.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bParametersActionPerformed(evt);
+            }
+        });
+
+        tSelectedAlgorithm.setEditable(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(tSelectedAlgorithm)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bParameters, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bStart, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bParameters)
+                    .addComponent(tSelectedAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -181,51 +259,53 @@ public class Miner extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pParameters, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pAlgorithms, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pOutput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pAlgorithms, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pOutput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pOutput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(pAlgorithms, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pParameters, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pAlgorithms, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
+                    .addComponent(pOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void bStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStartActionPerformed
         try {
-            if (tAlgorithms.getSelectionPath().toString().contains("Apriori (Weka)")) {
+            if (selectedAlgorithm == algorithms.APRIORIWEKA.ordinal()) {
                 Association association = new AssociationAprioriWeka();
-                tOutput.setText(association.getAssociations(Shared.getInstance().getDatabase(), "-N 2000 -T 0 -C 0.1 -D 0.05 -U 1.0 -M 0.01 -S -1.0 -c -1"));
+                tOutput.setText(association.getAssociations(Shared.getInstance().getDatabase(), this.parameters));
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
-            } else if (tAlgorithms.getSelectionPath().toString().contains("Apriori (Borgelt)")) {
+                lastExecutedAlgorithm = selectedAlgorithm;
+            } else if (selectedAlgorithm == algorithms.APRIORIBORGELT.ordinal()) {
                 Association association = new AssociationAprioriBorgelt();
-                tOutput.setText(association.getAssociations(Shared.getInstance().getDatabase(), "-tr -s1 -m2 -n3"));
+                tOutput.setText(association.getAssociations(Shared.getInstance().getDatabase(), this.parameters));
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
-            } else if (tAlgorithms.getSelectionPath().toString().contains("J48")) {
+                lastExecutedAlgorithm = selectedAlgorithm;
+                System.out.println(parameters);
+            } else if (selectedAlgorithm == algorithms.J48.ordinal()) {
                 Classification classification = new ClassificationJ48();
-                tOutput.setText(classification.getClassification(Shared.getInstance().getDatabase(), ""));
+                tOutput.setText(classification.getClassification(Shared.getInstance().getDatabase(), this.parameters));
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
-            } else if (tAlgorithms.getSelectionPath().toString().contains("C4.5")) {
+                lastExecutedAlgorithm = selectedAlgorithm;
+            } else if (selectedAlgorithm == algorithms.C45.ordinal()) {
                 Classification classification = new ClassificationC45();
-                tOutput.setText(classification.getClassification(Shared.getInstance().getDatabase(), "-f"));
+                tOutput.setText(classification.getClassification(Shared.getInstance().getDatabase(), this.parameters));
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
+                lastExecutedAlgorithm = selectedAlgorithm;
             }
         } catch (Exception ex) {
             Shared.getInstance().changeStatus("Error: " + ex.getLocalizedMessage());
@@ -268,17 +348,31 @@ public class Miner extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event_bSaveRulesActionPerformed
+
+    private void bParametersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bParametersActionPerformed
+        if (selectedAlgorithm == algorithms.APRIORIWEKA.ordinal()) {
+            ParametersAprioriWeka pAprioriWeka = new ParametersAprioriWeka(this);
+            pAprioriWeka.setVisible(true);
+        } else if (selectedAlgorithm == algorithms.APRIORIBORGELT.ordinal()) {
+            ParametersAprioriBorgelt pBorgelt = new ParametersAprioriBorgelt(this);
+            pBorgelt.setVisible(true);
+        } else if (selectedAlgorithm == algorithms.J48.ordinal()) {
+        } else if (selectedAlgorithm == algorithms.C45.ordinal()) {
+        }
+    }//GEN-LAST:event_bParametersActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bParameters;
     private javax.swing.JButton bSave;
     private javax.swing.JButton bSaveRules;
     private javax.swing.JButton bStart;
     private javax.swing.JFileChooser chSave;
     private javax.swing.JEditorPane jEditorPane1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane pAlgorithms;
     private javax.swing.JPanel pOutput;
-    private javax.swing.JPanel pParameters;
     private javax.swing.JTextArea tOutput;
+    private javax.swing.JTextField tSelectedAlgorithm;
     // End of variables declaration//GEN-END:variables
 }

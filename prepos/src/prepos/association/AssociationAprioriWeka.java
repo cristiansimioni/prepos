@@ -19,7 +19,7 @@ public class AssociationAprioriWeka implements Association {
         Apriori apriori = new Apriori();
 
         // Set parameters
-        //apriori.setOptions(parameters.split(" "));
+        apriori.setOptions(parameters.split(" "));
 
         // Build associations 
         apriori.buildAssociations(database.getInstances());

@@ -15,7 +15,7 @@ public class SystemInfo {
     // Tool info 
     private static String name = "PREPOS - Data Mining Environment";
     private static String version = "1.0";
-    private static String buildDate = "03.09.2013";
+    private static String buildDate = "02.10.2013";
     private static String year = "2013";
     // Authors info
     private static String author = "Cristian Simoni";

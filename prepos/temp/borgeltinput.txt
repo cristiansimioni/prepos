@@ -1,151 +1,214 @@
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_23 Course_3 Summer_or_regular_semester_1 Class_size_19 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_15 Course_3 Summer_or_regular_semester_1 Class_size_17 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_23 Course_3 Summer_or_regular_semester_2 Class_size_49 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_5 Course_2 Summer_or_regular_semester_2 Class_size_33 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_7 Course_11 Summer_or_regular_semester_2 Class_size_55 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_23 Course_3 Summer_or_regular_semester_1 Class_size_20 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_9 Course_5 Summer_or_regular_semester_2 Class_size_19 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_10 Course_3 Summer_or_regular_semester_2 Class_size_27 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_22 Course_3 Summer_or_regular_semester_1 Class_size_58 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_15 Course_3 Summer_or_regular_semester_1 Class_size_20 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_10 Course_22 Summer_or_regular_semester_2 Class_size_9 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_13 Course_1 Summer_or_regular_semester_2 Class_size_30 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_18 Course_21 Summer_or_regular_semester_2 Class_size_29 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_6 Course_17 Summer_or_regular_semester_2 Class_size_39 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_6 Course_17 Summer_or_regular_semester_2 Class_size_42 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_6 Course_17 Summer_or_regular_semester_2 Class_size_43 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_7 Course_11 Summer_or_regular_semester_2 Class_size_10 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_22 Course_3 Summer_or_regular_semester_2 Class_size_46 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_13 Course_3 Summer_or_regular_semester_1 Class_size_10 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_7 Course_25 Summer_or_regular_semester_2 Class_size_42 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_25 Course_7 Summer_or_regular_semester_2 Class_size_27 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_25 Course_7 Summer_or_regular_semester_2 Class_size_23 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_2 Course_9 Summer_or_regular_semester_2 Class_size_31 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_1 Course_15 Summer_or_regular_semester_1 Class_size_22 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_15 Course_13 Summer_or_regular_semester_2 Class_size_37 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_7 Course_11 Summer_or_regular_semester_2 Class_size_13 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_8 Course_3 Summer_or_regular_semester_2 Class_size_24 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_14 Course_15 Summer_or_regular_semester_2 Class_size_38 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_21 Course_2 Summer_or_regular_semester_2 Class_size_42 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_22 Course_3 Summer_or_regular_semester_2 Class_size_28 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_11 Course_1 Summer_or_regular_semester_2 Class_size_51 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_18 Course_5 Summer_or_regular_semester_2 Class_size_19 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_13 Course_1 Summer_or_regular_semester_2 Class_size_31 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_13 Course_3 Summer_or_regular_semester_1 Class_size_13 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_5 Course_2 Summer_or_regular_semester_2 Class_size_37 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_16 Course_8 Summer_or_regular_semester_2 Class_size_36 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_4 Course_16 Summer_or_regular_semester_2 Class_size_21 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_5 Course_2 Summer_or_regular_semester_2 Class_size_48 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_14 Course_15 Summer_or_regular_semester_2 Class_size_38 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_23 Course_3 Summer_or_regular_semester_1 Class_size_19 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_15 Course_3 Summer_or_regular_semester_1 Class_size_17 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_23 Course_3 Summer_or_regular_semester_2 Class_size_49 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_5 Course_2 Summer_or_regular_semester_2 Class_size_33 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_7 Course_11 Summer_or_regular_semester_2 Class_size_55 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_23 Course_3 Summer_or_regular_semester_1 Class_size_20 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_9 Course_5 Summer_or_regular_semester_2 Class_size_19 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_10 Course_3 Summer_or_regular_semester_2 Class_size_27 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_22 Course_3 Summer_or_regular_semester_2 Class_size_58 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_15 Course_3 Summer_or_regular_semester_1 Class_size_20 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_10 Course_22 Summer_or_regular_semester_2 Class_size_9 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_13 Course_1 Summer_or_regular_semester_2 Class_size_30 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_18 Course_21 Summer_or_regular_semester_2 Class_size_29 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_6 Course_17 Summer_or_regular_semester_2 Class_size_39 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_6 Course_17 Summer_or_regular_semester_2 Class_size_42 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_6 Course_17 Summer_or_regular_semester_2 Class_size_43 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_7 Course_11 Summer_or_regular_semester_2 Class_size_10 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_22 Course_3 Summer_or_regular_semester_2 Class_size_46 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_13 Course_3 Summer_or_regular_semester_1 Class_size_10 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_7 Course_25 Summer_or_regular_semester_2 Class_size_42 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_25 Course_7 Summer_or_regular_semester_2 Class_size_27 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_25 Course_7 Summer_or_regular_semester_2 Class_size_23 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_2 Course_9 Summer_or_regular_semester_2 Class_size_31 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_1 Course_15 Summer_or_regular_semester_1 Class_size_22 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_15 Course_13 Summer_or_regular_semester_2 Class_size_37 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_7 Course_11 Summer_or_regular_semester_2 Class_size_13 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_8 Course_3 Summer_or_regular_semester_2 Class_size_24 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_14 Course_15 Summer_or_regular_semester_2 Class_size_38 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_21 Course_2 Summer_or_regular_semester_2 Class_size_42 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_22 Course_3 Summer_or_regular_semester_2 Class_size_28 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_11 Course_1 Summer_or_regular_semester_2 Class_size_51 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_18 Course_5 Summer_or_regular_semester_2 Class_size_19 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_13 Course_1 Summer_or_regular_semester_2 Class_size_31 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_13 Course_3 Summer_or_regular_semester_1 Class_size_13 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_5 Course_2 Summer_or_regular_semester_2 Class_size_37 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_16 Course_8 Summer_or_regular_semester_2 Class_size_36 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_4 Course_16 Summer_or_regular_semester_2 Class_size_21 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_5 Course_2 Summer_or_regular_semester_2 Class_size_48 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_14 Course_15 Summer_or_regular_semester_2 Class_size_38 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_23 Course_3 Summer_or_regular_semester_1 Class_size_25 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_13 Course_3 Summer_or_regular_semester_1 Class_size_17 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_16 Course_19 Summer_or_regular_semester_2 Class_size_11 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_9 Course_2 Summer_or_regular_semester_2 Class_size_39 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_13 Course_3 Summer_or_regular_semester_1 Class_size_11 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_18 Course_21 Summer_or_regular_semester_2 Class_size_19 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_22 Course_3 Summer_or_regular_semester_2 Class_size_45 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_7 Course_11 Summer_or_regular_semester_1 Class_size_20 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_23 Course_3 Summer_or_regular_semester_1 Class_size_20 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_23 Course_3 Summer_or_regular_semester_1 Class_size_20 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_23 Course_3 Summer_or_regular_semester_2 Class_size_38 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_14 Course_22 Summer_or_regular_semester_2 Class_size_17 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_17 Course_17 Summer_or_regular_semester_2 Class_size_19 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_9 Course_5 Summer_or_regular_semester_2 Class_size_24 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_18 Course_25 Summer_or_regular_semester_2 Class_size_25 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_17 Course_17 Summer_or_regular_semester_2 Class_size_31 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_1 Course_15 Summer_or_regular_semester_2 Class_size_31 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_1 Course_8 Summer_or_regular_semester_2 Class_size_18 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_11 Course_16 Summer_or_regular_semester_2 Class_size_22 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_22 Course_13 Summer_or_regular_semester_2 Class_size_27 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_9 Course_2 Summer_or_regular_semester_2 Class_size_14 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_13 Course_1 Summer_or_regular_semester_2 Class_size_20 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_6 Course_17 Summer_or_regular_semester_2 Class_size_35 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_23 Course_3 Summer_or_regular_semester_1 Class_size_20 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_23 Course_3 Summer_or_regular_semester_1 Class_size_20 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_6 Course_17 Summer_or_regular_semester_2 Class_size_37 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_22 Course_3 Summer_or_regular_semester_2 Class_size_15 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_20 Course_2 Summer_or_regular_semester_2 Class_size_25 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_23 Course_3 Summer_or_regular_semester_2 Class_size_10 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_20 Course_2 Summer_or_regular_semester_2 Class_size_14 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_23 Course_3 Summer_or_regular_semester_2 Class_size_38 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_13 Course_1 Summer_or_regular_semester_2 Class_size_29 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_10 Course_3 Summer_or_regular_semester_2 Class_size_19 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_7 Course_11 Summer_or_regular_semester_2 Class_size_30 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_14 Course_15 Summer_or_regular_semester_2 Class_size_32 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_8 Course_3 Summer_or_regular_semester_2 Class_size_27 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_12 Course_7 Summer_or_regular_semester_2 Class_size_34 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_8 Course_7 Summer_or_regular_semester_2 Class_size_23 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_15 Course_1 Summer_or_regular_semester_2 Class_size_66 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_23 Course_3 Summer_or_regular_semester_2 Class_size_12 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_2 Course_9 Summer_or_regular_semester_2 Class_size_29 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_15 Course_1 Summer_or_regular_semester_2 Class_size_19 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_20 Course_2 Summer_or_regular_semester_2 Class_size_3 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_13 Course_14 Summer_or_regular_semester_2 Class_size_17 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_9 Course_6 Summer_or_regular_semester_2 Class_size_7 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_10 Course_3 Summer_or_regular_semester_2 Class_size_21 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_14 Course_15 Summer_or_regular_semester_2 Class_size_36 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_13 Course_1 Summer_or_regular_semester_2 Class_size_54 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_8 Course_3 Summer_or_regular_semester_2 Class_size_29 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_20 Course_2 Summer_or_regular_semester_2 Class_size_45 Class_attribute_3
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_22 Course_1 Summer_or_regular_semester_2 Class_size_11 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_18 Course_12 Summer_or_regular_semester_2 Class_size_16 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_20 Course_15 Summer_or_regular_semester_2 Class_size_18 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_17 Course_18 Summer_or_regular_semester_2 Class_size_44 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_14 Course_23 Summer_or_regular_semester_2 Class_size_17 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_24 Course_26 Summer_or_regular_semester_2 Class_size_21 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_9 Course_24 Summer_or_regular_semester_2 Class_size_20 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_12 Course_8 Summer_or_regular_semester_2 Class_size_24 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_9 Course_6 Summer_or_regular_semester_2 Class_size_5 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_22 Course_1 Summer_or_regular_semester_2 Class_size_42 Class_attribute_2
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_7 Course_11 Summer_or_regular_semester_2 Class_size_30 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_10 Course_3 Summer_or_regular_semester_2 Class_size_19 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_23 Course_3 Summer_or_regular_semester_2 Class_size_11 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_17 Course_18 Summer_or_regular_semester_2 Class_size_29 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_16 Course_20 Summer_or_regular_semester_2 Class_size_15 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_3 Course_2 Summer_or_regular_semester_2 Class_size_37 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_19 Course_4 Summer_or_regular_semester_2 Class_size_10 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_23 Course_3 Summer_or_regular_semester_2 Class_size_24 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_3 Course_2 Summer_or_regular_semester_2 Class_size_26 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_10 Course_3 Summer_or_regular_semester_2 Class_size_12 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_1 Course_instructor_18 Course_7 Summer_or_regular_semester_2 Class_size_48 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_22 Course_1 Summer_or_regular_semester_2 Class_size_51 Class_attribute_1
-Whether_of_not_the_TA_is_a_native_English_speaker_2 Course_instructor_2 Course_10 Summer_or_regular_semester_2 Class_size_27 Class_attribute_1
+RI_1.51793 Na_12.79 Mg_3.5 Al_1.12 Si_73.03 K_0.64 Ca_8.77 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51643 Na_12.16 Mg_3.52 Al_1.35 Si_72.89 K_0.57 Ca_8.53 Ba_0 Fe_0 Type_'vehicwindfloat'
+RI_1.51793 Na_13.21 Mg_3.48 Al_1.41 Si_72.64 K_0.59 Ca_8.43 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51299 Na_14.4 Mg_1.74 Al_1.54 Si_74.55 K_0 Ca_7.59 Ba_0 Fe_0 Type_tableware
+RI_1.53393 Na_12.3 Mg_0 Al_1 Si_70.16 K_0.12 Ca_16.19 Ba_0 Fe_0.24 Type_'buildwindnon-float'
+RI_1.51655 Na_12.75 Mg_2.85 Al_1.44 Si_73.27 K_0.57 Ca_8.79 Ba_0.11 Fe_0.22 Type_'buildwindnon-float'
+RI_1.51779 Na_13.64 Mg_3.65 Al_0.65 Si_73 K_0.06 Ca_8.93 Ba_0 Fe_0 Type_'vehicwindfloat'
+RI_1.51837 Na_13.14 Mg_2.84 Al_1.28 Si_72.85 K_0.55 Ca_9.07 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51545 Na_14.14 Mg_0 Al_2.68 Si_73.39 K_0.08 Ca_9.07 Ba_0.61 Fe_0.05 Type_headlamps
+RI_1.51789 Na_13.19 Mg_3.9 Al_1.3 Si_72.33 K_0.55 Ca_8.44 Ba_0 Fe_0.28 Type_'buildwindnon-float'
+RI_1.51625 Na_13.36 Mg_3.58 Al_1.49 Si_72.72 K_0.45 Ca_8.21 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51743 Na_12.2 Mg_3.25 Al_1.16 Si_73.55 K_0.62 Ca_8.9 Ba_0 Fe_0.24 Type_'buildwindnon-float'
+RI_1.52223 Na_13.21 Mg_3.77 Al_0.79 Si_71.99 K_0.13 Ca_10.02 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.52121 Na_14.03 Mg_3.76 Al_0.58 Si_71.79 K_0.11 Ca_9.65 Ba_0 Fe_0 Type_'vehicwindfloat'
+RI_1.51665 Na_13.14 Mg_3.45 Al_1.76 Si_72.48 K_0.6 Ca_8.38 Ba_0 Fe_0.17 Type_'vehicwindfloat'
+RI_1.51707 Na_13.48 Mg_3.48 Al_1.71 Si_72.52 K_0.62 Ca_7.99 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51719 Na_14.75 Mg_0 Al_2 Si_73.02 K_0 Ca_8.53 Ba_1.59 Fe_0.08 Type_headlamps
+RI_1.51629 Na_12.71 Mg_3.33 Al_1.49 Si_73.28 K_0.67 Ca_8.24 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51994 Na_13.27 Mg_0 Al_1.76 Si_73.03 K_0.47 Ca_11.32 Ba_0 Fe_0 Type_containers
+RI_1.51811 Na_12.96 Mg_2.96 Al_1.43 Si_72.92 K_0.6 Ca_8.79 Ba_0.14 Fe_0 Type_'buildwindnon-float'
+RI_1.52152 Na_13.05 Mg_3.65 Al_0.87 Si_72.22 K_0.19 Ca_9.85 Ba_0 Fe_0.17 Type_'buildwindfloat'
+RI_1.52475 Na_11.45 Mg_0 Al_1.88 Si_72.19 K_0.81 Ca_13.24 Ba_0 Fe_0.34 Type_'buildwindnon-float'
+RI_1.51841 Na_12.93 Mg_3.74 Al_1.11 Si_72.28 K_0.64 Ca_8.96 Ba_0 Fe_0.22 Type_'buildwindnon-float'
+RI_1.51754 Na_13.39 Mg_3.66 Al_1.19 Si_72.79 K_0.57 Ca_8.27 Ba_0 Fe_0.11 Type_'buildwindfloat'
+RI_1.52058 Na_12.85 Mg_1.61 Al_2.17 Si_72.18 K_0.76 Ca_9.7 Ba_0.24 Fe_0.51 Type_containers
+RI_1.51569 Na_13.24 Mg_3.49 Al_1.47 Si_73.25 K_0.38 Ca_8.03 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.5159 Na_12.82 Mg_3.52 Al_1.9 Si_72.86 K_0.69 Ca_7.97 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51683 Na_14.56 Mg_0 Al_1.98 Si_73.29 K_0 Ca_8.52 Ba_1.57 Fe_0.07 Type_headlamps
+RI_1.51687 Na_13.23 Mg_3.54 Al_1.48 Si_72.84 K_0.56 Ca_8.1 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.5161 Na_13.33 Mg_3.53 Al_1.34 Si_72.67 K_0.56 Ca_8.33 Ba_0 Fe_0 Type_'vehicwindfloat'
+RI_1.51674 Na_12.87 Mg_3.56 Al_1.64 Si_73.14 K_0.65 Ca_7.99 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51832 Na_13.33 Mg_3.34 Al_1.54 Si_72.14 K_0.56 Ca_8.99 Ba_0 Fe_0 Type_'vehicwindfloat'
+RI_1.51115 Na_17.38 Mg_0 Al_0.34 Si_75.41 K_0 Ca_6.65 Ba_0 Fe_0 Type_tableware
+RI_1.51645 Na_13.44 Mg_3.61 Al_1.54 Si_72.39 K_0.66 Ca_8.03 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51755 Na_13 Mg_3.6 Al_1.36 Si_72.99 K_0.57 Ca_8.4 Ba_0 Fe_0.11 Type_'buildwindfloat'
+RI_1.51571 Na_12.72 Mg_3.46 Al_1.56 Si_73.2 K_0.67 Ca_8.09 Ba_0 Fe_0.24 Type_'buildwindfloat'
+RI_1.51596 Na_12.79 Mg_3.61 Al_1.62 Si_72.97 K_0.64 Ca_8.07 Ba_0 Fe_0.26 Type_'buildwindfloat'
+RI_1.5173 Na_12.35 Mg_2.72 Al_1.63 Si_72.87 K_0.7 Ca_9.23 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51662 Na_12.85 Mg_3.51 Al_1.44 Si_73.01 K_0.68 Ca_8.23 Ba_0.06 Fe_0.25 Type_'buildwindnon-float'
+RI_1.51409 Na_14.25 Mg_3.09 Al_2.08 Si_72.28 K_1.1 Ca_7.08 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51797 Na_12.74 Mg_3.48 Al_1.35 Si_72.96 K_0.64 Ca_8.68 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51806 Na_13 Mg_3.8 Al_1.08 Si_73.07 K_0.56 Ca_8.38 Ba_0 Fe_0.12 Type_'buildwindnon-float'
+RI_1.51627 Na_13 Mg_3.58 Al_1.54 Si_72.83 K_0.61 Ca_8.04 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.5159 Na_13.24 Mg_3.34 Al_1.47 Si_73.1 K_0.39 Ca_8.22 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51934 Na_13.64 Mg_3.54 Al_0.75 Si_72.65 K_0.16 Ca_8.89 Ba_0.15 Fe_0.24 Type_'vehicwindfloat'
+RI_1.51755 Na_12.71 Mg_3.42 Al_1.2 Si_73.2 K_0.59 Ca_8.64 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51514 Na_14.01 Mg_2.68 Al_3.5 Si_69.89 K_1.68 Ca_5.87 Ba_2.2 Fe_0 Type_containers
+RI_1.51766 Na_13.21 Mg_3.69 Al_1.29 Si_72.61 K_0.57 Ca_8.22 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51784 Na_13.08 Mg_3.49 Al_1.28 Si_72.86 K_0.6 Ca_8.49 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.52177 Na_13.2 Mg_3.68 Al_1.15 Si_72.75 K_0.54 Ca_8.52 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51753 Na_12.57 Mg_3.47 Al_1.38 Si_73.39 K_0.6 Ca_8.55 Ba_0 Fe_0.06 Type_'buildwindfloat'
+RI_1.51851 Na_13.2 Mg_3.63 Al_1.07 Si_72.83 K_0.57 Ca_8.41 Ba_0.09 Fe_0.17 Type_'buildwindnon-float'
+RI_1.51743 Na_13.3 Mg_3.6 Al_1.14 Si_73.09 K_0.58 Ca_8.17 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51593 Na_13.09 Mg_3.59 Al_1.52 Si_73.1 K_0.67 Ca_7.83 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.5164 Na_14.37 Mg_0 Al_2.74 Si_72.85 K_0 Ca_9.45 Ba_0.54 Fe_0 Type_headlamps
+RI_1.51735 Na_13.02 Mg_3.54 Al_1.69 Si_72.73 K_0.54 Ca_8.44 Ba_0 Fe_0.07 Type_'buildwindfloat'
+RI_1.52247 Na_14.86 Mg_2.2 Al_2.06 Si_70.26 K_0.76 Ca_9.76 Ba_0 Fe_0 Type_headlamps
+RI_1.52099 Na_13.69 Mg_3.59 Al_1.12 Si_71.96 K_0.09 Ca_9.4 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51769 Na_13.65 Mg_3.66 Al_1.11 Si_72.77 K_0.11 Ca_8.6 Ba_0 Fe_0 Type_'vehicwindfloat'
+RI_1.51846 Na_13.41 Mg_3.89 Al_1.33 Si_72.38 K_0.51 Ca_8.28 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51848 Na_13.64 Mg_3.87 Al_1.27 Si_71.96 K_0.54 Ca_8.32 Ba_0 Fe_0.32 Type_'buildwindnon-float'
+RI_1.51905 Na_13.6 Mg_3.62 Al_1.11 Si_72.64 K_0.14 Ca_8.76 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51567 Na_13.29 Mg_3.45 Al_1.21 Si_72.74 K_0.56 Ca_8.57 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.52213 Na_14.21 Mg_3.82 Al_0.47 Si_71.77 K_0.11 Ca_9.57 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.5232 Na_13.72 Mg_3.72 Al_0.51 Si_71.75 K_0.09 Ca_10.06 Ba_0 Fe_0.16 Type_'buildwindfloat'
+RI_1.51556 Na_13.87 Mg_0 Al_2.54 Si_73.23 K_0.14 Ca_9.41 Ba_0.81 Fe_0.01 Type_headlamps
+RI_1.51926 Na_13.2 Mg_3.33 Al_1.28 Si_72.36 K_0.6 Ca_9.14 Ba_0 Fe_0.11 Type_'buildwindfloat'
+RI_1.52211 Na_14.19 Mg_3.78 Al_0.91 Si_71.36 K_0.23 Ca_9.14 Ba_0 Fe_0.37 Type_'vehicwindfloat'
+RI_1.53125 Na_10.73 Mg_0 Al_2.1 Si_69.81 K_0.58 Ca_13.3 Ba_3.15 Fe_0.28 Type_'buildwindnon-float'
+RI_1.52152 Na_13.05 Mg_3.65 Al_0.87 Si_72.32 K_0.19 Ca_9.85 Ba_0 Fe_0.17 Type_'buildwindfloat'
+RI_1.51829 Na_14.46 Mg_2.24 Al_1.62 Si_72.38 K_0 Ca_9.26 Ba_0 Fe_0 Type_tableware
+RI_1.51892 Na_13.46 Mg_3.83 Al_1.26 Si_72.55 K_0.57 Ca_8.21 Ba_0 Fe_0.14 Type_'buildwindnon-float'
+RI_1.51888 Na_14.99 Mg_0.78 Al_1.74 Si_72.5 K_0 Ca_9.95 Ba_0 Fe_0 Type_tableware
+RI_1.51829 Na_13.24 Mg_3.9 Al_1.41 Si_72.33 K_0.55 Ca_8.31 Ba_0 Fe_0.1 Type_'buildwindnon-float'
+RI_1.523 Na_13.31 Mg_3.58 Al_0.82 Si_71.99 K_0.12 Ca_10.17 Ba_0 Fe_0.03 Type_'buildwindfloat'
+RI_1.51652 Na_13.56 Mg_3.57 Al_1.47 Si_72.45 K_0.64 Ca_7.96 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51768 Na_12.56 Mg_3.52 Al_1.43 Si_73.15 K_0.57 Ca_8.54 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51215 Na_12.99 Mg_3.47 Al_1.12 Si_72.98 K_0.62 Ca_8.35 Ba_0 Fe_0.31 Type_'buildwindfloat'
+RI_1.51646 Na_13.04 Mg_3.4 Al_1.26 Si_73.01 K_0.52 Ca_8.58 Ba_0 Fe_0 Type_'vehicwindfloat'
+RI_1.51721 Na_12.87 Mg_3.48 Al_1.33 Si_73.04 K_0.56 Ca_8.43 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51763 Na_12.8 Mg_3.66 Al_1.27 Si_73.01 K_0.6 Ca_8.56 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51742 Na_13.27 Mg_3.62 Al_1.24 Si_73.08 K_0.55 Ca_8.07 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.52127 Na_14.32 Mg_3.9 Al_0.83 Si_71.5 K_0 Ca_9.49 Ba_0 Fe_0 Type_'vehicwindfloat'
+RI_1.51779 Na_13.21 Mg_3.39 Al_1.33 Si_72.76 K_0.59 Ca_8.59 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.52171 Na_11.56 Mg_1.88 Al_1.56 Si_72.86 K_0.47 Ca_11.41 Ba_0 Fe_0 Type_containers
+RI_1.518 Na_13.71 Mg_3.93 Al_1.54 Si_71.81 K_0.54 Ca_8.21 Ba_0 Fe_0.15 Type_'buildwindnon-float'
+RI_1.52777 Na_12.64 Mg_0 Al_0.67 Si_72.02 K_0.06 Ca_14.4 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.5175 Na_12.82 Mg_3.55 Al_1.49 Si_72.75 K_0.54 Ca_8.52 Ba_0 Fe_0.19 Type_'buildwindfloat'
+RI_1.51764 Na_12.98 Mg_3.54 Al_1.21 Si_73 K_0.65 Ca_8.53 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.52177 Na_13.75 Mg_1.01 Al_1.36 Si_72.19 K_0.33 Ca_11.14 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51645 Na_14.94 Mg_0 Al_1.87 Si_73.11 K_0 Ca_8.67 Ba_1.38 Fe_0 Type_headlamps
+RI_1.51786 Na_12.73 Mg_3.43 Al_1.19 Si_72.95 K_0.62 Ca_8.76 Ba_0 Fe_0.3 Type_'buildwindfloat'
+RI_1.52152 Na_13.12 Mg_3.58 Al_0.9 Si_72.2 K_0.23 Ca_9.82 Ba_0 Fe_0.16 Type_'buildwindfloat'
+RI_1.51937 Na_13.79 Mg_2.41 Al_1.19 Si_72.76 K_0 Ca_9.77 Ba_0 Fe_0 Type_tableware
+RI_1.51514 Na_14.85 Mg_0 Al_2.42 Si_73.72 K_0 Ca_8.39 Ba_0.56 Fe_0 Type_headlamps
+RI_1.52172 Na_13.48 Mg_3.74 Al_0.9 Si_72.01 K_0.18 Ca_9.61 Ba_0 Fe_0.07 Type_'buildwindfloat'
+RI_1.51732 Na_14.95 Mg_0 Al_1.8 Si_72.99 K_0 Ca_8.61 Ba_1.55 Fe_0 Type_headlamps
+RI_1.5202 Na_13.98 Mg_1.35 Al_1.63 Si_71.76 K_0.39 Ca_10.56 Ba_0 Fe_0.18 Type_'buildwindnon-float'
+RI_1.51605 Na_12.9 Mg_3.44 Al_1.45 Si_73.06 K_0.44 Ca_8.27 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51847 Na_13.1 Mg_3.97 Al_1.19 Si_72.44 K_0.6 Ca_8.43 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51761 Na_13.89 Mg_3.6 Al_1.36 Si_72.73 K_0.48 Ca_7.83 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51673 Na_13.3 Mg_3.64 Al_1.53 Si_72.53 K_0.65 Ca_8.03 Ba_0 Fe_0.29 Type_'buildwindnon-float'
+RI_1.52365 Na_15.79 Mg_1.83 Al_1.31 Si_70.43 K_0.31 Ca_8.61 Ba_1.68 Fe_0 Type_headlamps
+RI_1.51685 Na_14.92 Mg_0 Al_1.99 Si_73.06 K_0 Ca_8.4 Ba_1.59 Fe_0 Type_headlamps
+RI_1.51658 Na_14.8 Mg_0 Al_1.99 Si_73.11 K_0 Ca_8.28 Ba_1.71 Fe_0 Type_headlamps
+RI_1.51316 Na_13.02 Mg_0 Al_3.04 Si_70.48 K_6.21 Ca_6.96 Ba_0 Fe_0 Type_containers
+RI_1.51709 Na_13 Mg_3.47 Al_1.79 Si_72.72 K_0.66 Ca_8.18 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51727 Na_14.7 Mg_0 Al_2.34 Si_73.28 K_0 Ca_8.95 Ba_0.66 Fe_0 Type_headlamps
+RI_1.51898 Na_13.58 Mg_3.35 Al_1.23 Si_72.08 K_0.59 Ca_8.91 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51969 Na_12.64 Mg_0 Al_1.65 Si_73.75 K_0.38 Ca_11.53 Ba_0 Fe_0 Type_containers
+RI_1.5182 Na_12.62 Mg_2.76 Al_0.83 Si_73.81 K_0.35 Ca_9.42 Ba_0 Fe_0.2 Type_'buildwindnon-float'
+RI_1.51617 Na_14.95 Mg_0 Al_2.27 Si_73.3 K_0 Ca_8.71 Ba_0.67 Fe_0 Type_headlamps
+RI_1.51911 Na_13.9 Mg_3.73 Al_1.18 Si_72.12 K_0.06 Ca_8.89 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51651 Na_14.38 Mg_0 Al_1.94 Si_73.61 K_0 Ca_8.48 Ba_1.57 Fe_0 Type_headlamps
+RI_1.51694 Na_12.86 Mg_3.58 Al_1.31 Si_72.61 K_0.61 Ca_8.79 Ba_0 Fe_0 Type_'vehicwindfloat'
+RI_1.52315 Na_13.44 Mg_3.34 Al_1.23 Si_72.38 K_0.6 Ca_8.83 Ba_0 Fe_0 Type_headlamps
+RI_1.52068 Na_13.55 Mg_2.09 Al_1.67 Si_72.18 K_0.53 Ca_9.57 Ba_0.27 Fe_0.17 Type_'buildwindnon-float'
+RI_1.51838 Na_14.32 Mg_3.26 Al_2.22 Si_71.25 K_1.46 Ca_5.79 Ba_1.63 Fe_0 Type_headlamps
+RI_1.51818 Na_13.72 Mg_0 Al_0.56 Si_74.45 K_0 Ca_10.99 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51769 Na_12.45 Mg_2.71 Al_1.29 Si_73.7 K_0.56 Ca_9.06 Ba_0 Fe_0.24 Type_'buildwindfloat'
+RI_1.5166 Na_12.99 Mg_3.18 Al_1.23 Si_72.97 K_0.58 Ca_8.81 Ba_0 Fe_0.24 Type_'buildwindnon-float'
+RI_1.51589 Na_12.88 Mg_3.43 Al_1.4 Si_73.28 K_0.69 Ca_8.05 Ba_0 Fe_0.24 Type_'buildwindfloat'
+RI_1.5241 Na_13.83 Mg_2.9 Al_1.17 Si_71.15 K_0.08 Ca_10.79 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.52725 Na_13.8 Mg_3.15 Al_0.66 Si_70.57 K_0.08 Ca_11.64 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.52119 Na_12.97 Mg_0.33 Al_1.51 Si_73.39 K_0.13 Ca_11.27 Ba_0 Fe_0.28 Type_containers
+RI_1.51748 Na_12.86 Mg_3.56 Al_1.27 Si_73.21 K_0.54 Ca_8.38 Ba_0 Fe_0.17 Type_'buildwindfloat'
+RI_1.51653 Na_11.95 Mg_0 Al_1.19 Si_75.18 K_2.7 Ca_8.93 Ba_0 Fe_0 Type_headlamps
+RI_1.51623 Na_14.14 Mg_0 Al_2.88 Si_72.61 K_0.08 Ca_9.18 Ba_1.06 Fe_0 Type_headlamps
+RI_1.52101 Na_13.64 Mg_4.49 Al_1.1 Si_71.78 K_0.06 Ca_8.75 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51763 Na_12.61 Mg_3.59 Al_1.31 Si_73.29 K_0.58 Ca_8.5 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51596 Na_13.02 Mg_3.56 Al_1.54 Si_73.11 K_0.72 Ca_7.9 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51674 Na_12.79 Mg_3.52 Al_1.54 Si_73.36 K_0.66 Ca_7.9 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.52065 Na_14.36 Mg_0 Al_2.02 Si_73.42 K_0 Ca_8.44 Ba_1.64 Fe_0 Type_headlamps
+RI_1.51768 Na_12.65 Mg_3.56 Al_1.3 Si_73.08 K_0.61 Ca_8.69 Ba_0 Fe_0.14 Type_'buildwindfloat'
+RI_1.52369 Na_13.44 Mg_0 Al_1.58 Si_72.22 K_0.32 Ca_12.24 Ba_0 Fe_0 Type_containers
+RI_1.51756 Na_13.15 Mg_3.61 Al_1.05 Si_73.24 K_0.57 Ca_8.24 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51754 Na_13.48 Mg_3.74 Al_1.17 Si_72.99 K_0.59 Ca_8.03 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51711 Na_12.89 Mg_3.62 Al_1.57 Si_72.96 K_0.61 Ca_8.11 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.5221 Na_13.73 Mg_3.84 Al_0.72 Si_71.76 K_0.17 Ca_9.74 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51594 Na_13.09 Mg_3.52 Al_1.55 Si_72.87 K_0.68 Ca_8.05 Ba_0 Fe_0.09 Type_'buildwindnon-float'
+RI_1.51784 Na_12.68 Mg_3.67 Al_1.16 Si_73.11 K_0.61 Ca_8.7 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51909 Na_13.89 Mg_3.53 Al_1.32 Si_71.81 K_0.51 Ca_8.78 Ba_0.11 Fe_0 Type_'buildwindfloat'
+RI_1.51977 Na_13.81 Mg_3.58 Al_1.32 Si_71.72 K_0.12 Ca_8.67 Ba_0.69 Fe_0 Type_'buildwindfloat'
+RI_1.51666 Na_12.86 Mg_0 Al_1.83 Si_73.88 K_0.97 Ca_10.17 Ba_0 Fe_0 Type_containers
+RI_1.51631 Na_13.34 Mg_3.57 Al_1.57 Si_72.87 K_0.61 Ca_7.89 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51872 Na_12.93 Mg_3.66 Al_1.56 Si_72.51 K_0.58 Ca_8.55 Ba_0 Fe_0.12 Type_'buildwindnon-float'
+RI_1.51708 Na_13.72 Mg_3.68 Al_1.81 Si_72.06 K_0.64 Ca_7.88 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.52081 Na_13.78 Mg_2.28 Al_1.43 Si_71.99 K_0.49 Ca_9.85 Ba_0 Fe_0.17 Type_'buildwindnon-float'
+RI_1.51574 Na_14.86 Mg_3.67 Al_1.74 Si_71.87 K_0.16 Ca_7.36 Ba_0 Fe_0.12 Type_'buildwindnon-float'
+RI_1.51813 Na_13.43 Mg_3.98 Al_1.18 Si_72.49 K_0.58 Ca_8.15 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51131 Na_13.69 Mg_3.2 Al_1.81 Si_72.81 K_1.76 Ca_5.43 Ba_1.19 Fe_0 Type_headlamps
+RI_1.52227 Na_14.17 Mg_3.81 Al_0.78 Si_71.35 K_0 Ca_9.69 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.52614 Na_13.7 Mg_0 Al_1.36 Si_71.24 K_0.19 Ca_13.44 Ba_0 Fe_0.1 Type_'buildwindnon-float'
+RI_1.51811 Na_13.33 Mg_3.85 Al_1.25 Si_72.78 K_0.52 Ca_8.12 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51655 Na_13.41 Mg_3.39 Al_1.28 Si_72.64 K_0.52 Ca_8.65 Ba_0 Fe_0 Type_'vehicwindfloat'
+RI_1.51751 Na_12.81 Mg_3.57 Al_1.35 Si_73.02 K_0.62 Ca_8.59 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51508 Na_15.15 Mg_0 Al_2.25 Si_73.5 K_0 Ca_8.34 Ba_0.63 Fe_0 Type_headlamps
+RI_1.51915 Na_12.73 Mg_1.85 Al_1.86 Si_72.69 K_0.6 Ca_10.09 Ba_0 Fe_0 Type_containers
+RI_1.51966 Na_14.77 Mg_3.75 Al_0.29 Si_72.02 K_0.03 Ca_9 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51844 Na_13.25 Mg_3.76 Al_1.32 Si_72.4 K_0.58 Ca_8.42 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.52664 Na_11.23 Mg_0 Al_0.77 Si_73.21 K_0 Ca_14.68 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.52172 Na_13.51 Mg_3.86 Al_0.88 Si_71.79 K_0.23 Ca_9.54 Ba_0 Fe_0.11 Type_'buildwindfloat'
+RI_1.51602 Na_14.85 Mg_0 Al_2.38 Si_73.28 K_0 Ca_8.76 Ba_0.64 Fe_0.09 Type_headlamps
+RI_1.51321 Na_13 Mg_0 Al_3.02 Si_70.7 K_6.21 Ca_6.93 Ba_0 Fe_0 Type_containers
+RI_1.52739 Na_11.02 Mg_0 Al_0.75 Si_73.08 K_0 Ca_14.96 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.52213 Na_14.21 Mg_3.82 Al_0.47 Si_71.77 K_0.11 Ca_9.57 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51747 Na_12.84 Mg_3.5 Al_1.14 Si_73.27 K_0.56 Ca_8.55 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51839 Na_12.85 Mg_3.67 Al_1.24 Si_72.57 K_0.62 Ca_8.68 Ba_0 Fe_0.35 Type_'buildwindnon-float'
+RI_1.51646 Na_13.41 Mg_3.55 Al_1.25 Si_72.81 K_0.68 Ca_8.1 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51609 Na_15.01 Mg_0 Al_2.51 Si_73.05 K_0.05 Ca_8.83 Ba_0.53 Fe_0 Type_headlamps
+RI_1.51667 Na_12.94 Mg_3.61 Al_1.26 Si_72.75 K_0.56 Ca_8.6 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51588 Na_13.12 Mg_3.41 Al_1.58 Si_73.26 K_0.07 Ca_8.39 Ba_0 Fe_0.19 Type_'buildwindnon-float'
+RI_1.52667 Na_13.99 Mg_3.7 Al_0.71 Si_71.57 K_0.02 Ca_9.82 Ba_0 Fe_0.1 Type_'buildwindfloat'
+RI_1.51831 Na_14.39 Mg_0 Al_1.82 Si_72.86 K_1.41 Ca_6.47 Ba_2.88 Fe_0 Type_headlamps
+RI_1.51918 Na_14.04 Mg_3.58 Al_1.37 Si_72.08 K_0.56 Ca_8.3 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51613 Na_13.88 Mg_1.78 Al_1.79 Si_73.1 K_0 Ca_8.67 Ba_0.76 Fe_0 Type_headlamps
+RI_1.52196 Na_14.36 Mg_3.85 Al_0.89 Si_71.36 K_0.15 Ca_9.15 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51824 Na_12.87 Mg_3.48 Al_1.29 Si_72.95 K_0.6 Ca_8.43 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.52151 Na_11.03 Mg_1.71 Al_1.56 Si_73.44 K_0.58 Ca_11.62 Ba_0 Fe_0 Type_containers
+RI_1.51969 Na_14.56 Mg_0 Al_0.56 Si_73.48 K_0 Ca_11.22 Ba_0 Fe_0 Type_tableware
+RI_1.51618 Na_13.01 Mg_3.5 Al_1.48 Si_72.89 K_0.6 Ca_8.12 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51645 Na_13.4 Mg_3.49 Al_1.52 Si_72.65 K_0.67 Ca_8.08 Ba_0 Fe_0.1 Type_'buildwindnon-float'
+RI_1.51796 Na_13.5 Mg_3.36 Al_1.63 Si_71.94 K_0.57 Ca_8.81 Ba_0 Fe_0.09 Type_'vehicwindfloat'
+RI_1.52222 Na_14.43 Mg_0 Al_1 Si_72.67 K_0.1 Ca_11.52 Ba_0 Fe_0.08 Type_'buildwindnon-float'
+RI_1.51783 Na_12.69 Mg_3.54 Al_1.34 Si_72.95 K_0.57 Ca_8.75 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51711 Na_14.23 Mg_0 Al_2.08 Si_73.36 K_0 Ca_8.62 Ba_1.67 Fe_0 Type_headlamps
+RI_1.51736 Na_12.78 Mg_3.62 Al_1.29 Si_72.79 K_0.59 Ca_8.7 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51808 Na_13.43 Mg_2.87 Al_1.19 Si_72.84 K_0.55 Ca_9.03 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.5167 Na_13.24 Mg_3.57 Al_1.38 Si_72.7 K_0.56 Ca_8.44 Ba_0 Fe_0.1 Type_'vehicwindfloat'
+RI_1.52043 Na_13.38 Mg_0 Al_1.4 Si_72.25 K_0.33 Ca_12.5 Ba_0 Fe_0 Type_containers
+RI_1.519 Na_13.49 Mg_3.48 Al_1.35 Si_71.95 K_0.55 Ca_9 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51778 Na_13.21 Mg_2.81 Al_1.29 Si_72.98 K_0.51 Ca_9.02 Ba_0 Fe_0.09 Type_'buildwindfloat'
+RI_1.51905 Na_14 Mg_2.39 Al_1.56 Si_72.37 K_0 Ca_9.57 Ba_0 Fe_0 Type_tableware
+RI_1.51531 Na_14.38 Mg_0 Al_2.66 Si_73.1 K_0.04 Ca_9.08 Ba_0.64 Fe_0 Type_headlamps
+RI_1.51916 Na_14.15 Mg_0 Al_2.09 Si_72.74 K_0 Ca_10.88 Ba_0 Fe_0 Type_tableware
+RI_1.51841 Na_13.02 Mg_3.62 Al_1.06 Si_72.34 K_0.64 Ca_9.13 Ba_0 Fe_0.15 Type_'buildwindnon-float'
+RI_1.5159 Na_13.02 Mg_3.58 Al_1.51 Si_73.12 K_0.69 Ca_7.96 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51593 Na_13.25 Mg_3.45 Al_1.43 Si_73.17 K_0.61 Ca_7.86 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.5164 Na_12.55 Mg_3.48 Al_1.87 Si_73.23 K_0.63 Ca_8.08 Ba_0 Fe_0.09 Type_'buildwindnon-float'
+RI_1.51663 Na_12.93 Mg_3.54 Al_1.62 Si_72.96 K_0.64 Ca_8.03 Ba_0 Fe_0.21 Type_'buildwindnon-float'
+RI_1.5169 Na_13.33 Mg_3.54 Al_1.61 Si_72.54 K_0.68 Ca_8.11 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51869 Na_13.19 Mg_3.37 Al_1.18 Si_72.72 K_0.57 Ca_8.83 Ba_0 Fe_0.16 Type_'buildwindfloat'
+RI_1.51776 Na_13.53 Mg_3.41 Al_1.52 Si_72.04 K_0.58 Ca_8.79 Ba_0 Fe_0 Type_'vehicwindfloat'
+RI_1.51775 Na_12.85 Mg_3.48 Al_1.23 Si_72.97 K_0.61 Ca_8.56 Ba_0.09 Fe_0.22 Type_'buildwindfloat'
+RI_1.5186 Na_13.36 Mg_3.43 Al_1.43 Si_72.26 K_0.51 Ca_8.6 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.5172 Na_13.38 Mg_3.5 Al_1.15 Si_72.85 K_0.5 Ca_8.43 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51623 Na_14.2 Mg_0 Al_2.79 Si_73.46 K_0.04 Ca_9.04 Ba_0.4 Fe_0.09 Type_headlamps
+RI_1.51618 Na_13.53 Mg_3.55 Al_1.54 Si_72.99 K_0.39 Ca_7.78 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.51761 Na_12.81 Mg_3.54 Al_1.23 Si_73.24 K_0.58 Ca_8.39 Ba_0 Fe_0 Type_'buildwindfloat'
+RI_1.5161 Na_13.42 Mg_3.4 Al_1.22 Si_72.69 K_0.59 Ca_8.32 Ba_0 Fe_0 Type_'vehicwindfloat'
+RI_1.51592 Na_12.86 Mg_3.52 Al_2.12 Si_72.66 K_0.69 Ca_7.97 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51613 Na_13.92 Mg_3.52 Al_1.25 Si_72.88 K_0.37 Ca_7.94 Ba_0 Fe_0.14 Type_'buildwindnon-float'
+RI_1.51689 Na_12.67 Mg_2.88 Al_1.71 Si_73.21 K_0.73 Ca_8.54 Ba_0 Fe_0 Type_'buildwindnon-float'
+RI_1.51852 Na_14.09 Mg_2.19 Al_1.66 Si_72.67 K_0 Ca_9.32 Ba_0 Fe_0 Type_tableware

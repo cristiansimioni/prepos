@@ -94,3 +94,127 @@ Sep 06, 2013 3:01:53 PM prepos.gui.datamining.Miner bStartActionPerformed
 SEVERE: null
 Set 06, 2013 3:55:31 PM prepos.core.SystemInfo initialize
 WARNING: Configuration file had a problem.
+Set 17, 2013 5:28:07 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 26, 2013 7:05:04 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 26, 2013 7:13:52 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 26, 2013 7:17:39 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 26, 2013 7:27:41 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 26, 2013 7:28:42 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 26, 2013 7:35:11 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 26, 2013 7:51:27 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Set 26, 2013 8:13:10 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Sep 26, 2013 8:13:37 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Set 26, 2013 9:25:04 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Sep 26, 2013 9:25:41 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 01, 2013 11:24:22 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 11:29:45 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 11:38:40 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 11:41:16 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 12:32:47 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 12:33:11 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 12:37:19 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 1:14:28 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 1:15:27 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 1:30:57 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 1:33:34 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 1:34:53 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 1:36:34 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 1:58:42 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 2:01:07 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 2:02:24 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 2:22:14 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 2:22:25 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 2:24:24 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 2:38:56 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 5:57:55 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:01:34 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Oct 01, 2013 6:02:55 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 01, 2013 6:04:37 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:06:21 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:07:09 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:15:47 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:18:24 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:20:41 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:21:25 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:22:48 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:23:15 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:41:54 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:45:06 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:46:50 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:51:41 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:52:26 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:56:19 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 6:57:08 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 7:50:07 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 7:52:41 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 11:30:43 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 11:33:13 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 11:34:13 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Oct 01, 2013 11:35:01 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 01, 2013 11:44:15 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 11:46:21 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 11:48:30 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 11:54:01 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 01, 2013 11:57:29 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.

@@ -92,7 +92,7 @@ public class SelectDatabase extends javax.swing.JPanel {
                     }
 
                     lName.setText(messages.getString("NAME") + ": " + attr.name());
-                    lMissing.setText(messages.getString("MISSING") + ": " + Shared.getInstance().getDatabase().getInstances().attributeStats(selected).missingCount);
+                    lMissing.setText(messages.getString("MISSING") + ": " + Shared.getInstance().getDatabase().getInstances().attributeStats(selected).missingCount + " (" + Math.round((((float)Shared.getInstance().getDatabase().getInstances().attributeStats(selected).missingCount/(float)Shared.getInstance().getDatabase().getInstances().numInstances())*100)) + "%)");
                     lDistinct.setText(messages.getString("DISTINCT") + ": " + Shared.getInstance().getDatabase().getInstances().numDistinctValues(selected));
                     lType.setText(messages.getString("TYPE") + ": " + Attribute.typeToString(Shared.getInstance().getDatabase().getInstances().attribute(selected).type()));
                 } else {
