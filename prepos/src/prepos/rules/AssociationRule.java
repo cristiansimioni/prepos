@@ -70,6 +70,29 @@ public class AssociationRule extends Rule {
         return true;
     }
 
+    public boolean existsOnPremise(ArrayList<String> attributs) {
+        for (String attribute : attributs) {
+            for (AttributeValue premise : this.getPremises()) {
+                if (premise.getAttribute().equals(attribute)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean existsOnConsequent(ArrayList<String> attributs) {
+
+        for (String attribute : attributs) {
+            for (AttributeValue consequent : this.getConsequents()) {
+                if (consequent.getAttribute().equals(attribute)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     // Override
     @Override
     public String toString() {

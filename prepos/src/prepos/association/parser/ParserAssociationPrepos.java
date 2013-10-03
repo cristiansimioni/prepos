@@ -23,6 +23,7 @@ public class ParserAssociationPrepos {
         this.rules = new ArrayList<>();
     }
 
+    // Build associations
     public void buildAssociationRules() {
         String[] lines = this.text.split("\n");
         for (String line : lines) {

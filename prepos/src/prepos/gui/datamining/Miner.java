@@ -110,11 +110,11 @@ public class Miner extends javax.swing.JPanel {
                         parameters = "";
                         bStart.setEnabled(true);
                         bParameters.setEnabled(true);
-                    } else if (treePath.toString().contains("C45")) {
+                    } else if (treePath.toString().contains("C4.5")) {
                         selectedAlgorithm = algorithms.C45.ordinal();
                         parameters = "-f";
                         bStart.setEnabled(true);
-                        bParameters.setEnabled(true);
+                        bParameters.setEnabled(false);
                     }
                     tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString() + " | " + parameters);
                 }
@@ -154,9 +154,9 @@ public class Miner extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(800, 500));
 
         pOutput.setBorder(javax.swing.BorderFactory.createTitledBorder("Algorithm Output"));
-        pOutput.setMaximumSize(new java.awt.Dimension(582, 478));
-        pOutput.setMinimumSize(new java.awt.Dimension(582, 478));
-        pOutput.setPreferredSize(new java.awt.Dimension(582, 478));
+        pOutput.setMaximumSize(new java.awt.Dimension(582, 426));
+        pOutput.setMinimumSize(new java.awt.Dimension(582, 426));
+        pOutput.setPreferredSize(new java.awt.Dimension(582, 426));
 
         bSave.setText("Save Result");
         bSave.setMaximumSize(new java.awt.Dimension(135, 23));
@@ -197,18 +197,17 @@ public class Miner extends javax.swing.JPanel {
         pOutputLayout.setVerticalGroup(
             pOutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pOutputLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pOutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bSaveRules, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bSave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bSave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bSaveRules, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pAlgorithms.setBorder(javax.swing.BorderFactory.createTitledBorder("Algorithms"));
-        pAlgorithms.setMaximumSize(new java.awt.Dimension(192, 147));
-        pAlgorithms.setMinimumSize(new java.awt.Dimension(192, 147));
-        pAlgorithms.setPreferredSize(new java.awt.Dimension(192, 147));
+        pAlgorithms.setMaximumSize(new java.awt.Dimension(192, 426));
+        pAlgorithms.setMinimumSize(new java.awt.Dimension(192, 426));
+        pAlgorithms.setPreferredSize(new java.awt.Dimension(192, 426));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Selected Algorithm"));
 
@@ -238,9 +237,9 @@ public class Miner extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(tSelectedAlgorithm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bParameters, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bParameters, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bStart, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(bStart, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,7 +260,7 @@ public class Miner extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(pAlgorithms, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pAlgorithms, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pOutput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -272,10 +271,10 @@ public class Miner extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pAlgorithms, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
-                    .addComponent(pOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pAlgorithms, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pOutput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

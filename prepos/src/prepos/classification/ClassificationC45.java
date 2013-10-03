@@ -2,8 +2,8 @@ package prepos.classification;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.util.Scanner;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import prepos.database.Database;
 import weka.core.converters.C45Saver;
 
@@ -11,11 +11,10 @@ public class ClassificationC45 implements Classification {
 
     @Override
     public String getClassification(Database database, String parameters) throws Exception {
-        String classification;
-
+        StringBuilder classification = new StringBuilder();
 
         String input = System.getProperty("user.dir") + "\\temp\\c45input.names";
-        
+
         // Save base on temporary file if database is not c45
         if (!database.getType().equals("c45")) {
             C45Saver saver = new C45Saver();
@@ -25,24 +24,27 @@ public class ClassificationC45 implements Classification {
             saver.writeBatch();
         }
 
-        // Create output file
-        String output = System.getProperty("user.dir") + "\\temp\\c45output.txt";
-
         // Ajust database path
         input = input.substring(0, input.lastIndexOf("."));
-        
-        // Build associations
+
+        // Build classifier
         Process p;
         String programPath = System.getProperty("user.dir") + "\\lib\\c45.exe";
-        String cmd = programPath + " " + parameters + " " + input + " > " + output;
+        String cmd = programPath + " " + parameters + " " + input;
         p = Runtime.getRuntime().exec(cmd);
+        
+        // Get the classication from stream
+        InputStream stdin = p.getInputStream();
+        BufferedReader br = new BufferedReader(new InputStreamReader(stdin));
+        String line = null;
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+            classification.append(line);
+            classification.append("\n");
+        }
+
         p.waitFor();
 
-        // Get the associations from file
-        Scanner sc = new Scanner(new File(output));
-        classification = new Scanner(new File(output)).useDelimiter("\\Z").next();
-        
-        return classification;
+        return classification.toString();
     }
-    
 }

@@ -218,3 +218,125 @@ Out 01, 2013 11:54:01 PM prepos.core.SystemInfo initialize
 WARNING: Configuration file had a problem.
 Out 01, 2013 11:57:29 PM prepos.core.SystemInfo initialize
 WARNING: Configuration file had a problem.
+Out 02, 2013 12:19:19 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 12:23:20 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 12:25:11 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 12:27:06 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 12:46:38 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 1:04:24 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 1:08:02 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 1:23:22 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 1:26:00 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 1:27:29 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Oct 02, 2013 1:27:46 AM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: C:\Users\Cristian\Documents\NetBeansProjects\prepos\temp\c45output.txt (O sistema não pode encontrar o arquivo especificado)
+Out 02, 2013 1:33:58 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Oct 02, 2013 1:34:11 AM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: C:\Users\Cristian\Documents\NetBeansProjects\prepos\temp\c45output.txt (O sistema não pode encontrar o arquivo especificado)
+Out 02, 2013 8:03:49 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Oct 02, 2013 8:04:09 AM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: C:\Users\Cristian\Documents\NetBeansProjects\prepos\temp\c45output.txt (O sistema não pode encontrar o arquivo especificado)
+Out 02, 2013 8:05:44 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 9:06:05 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 9:07:03 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 9:26:05 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 11:33:29 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 11:38:38 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 11:39:33 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 11:40:46 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 11:44:12 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 11:48:17 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 11:53:01 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 11:53:36 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 11:54:13 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 12:01:30 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 1:45:34 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 1:50:07 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 2:06:54 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 2:23:28 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 2:23:43 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 2:42:12 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 2:48:34 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 2:51:18 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 3:36:48 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 3:38:59 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 3:40:21 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 3:41:47 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 3:42:45 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 3:45:07 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 3:46:48 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 4:08:25 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 4:17:08 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 4:25:12 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 4:26:20 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 6:42:18 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 6:56:56 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 7:04:09 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 7:10:52 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 7:13:49 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 7:25:03 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 7:30:24 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 7:33:28 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 02, 2013 7:40:19 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Oct 02, 2013 7:40:40 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Oct 02, 2013 7:40:47 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Oct 02, 2013 7:41:13 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: null
+Out 03, 2013 12:39:25 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
