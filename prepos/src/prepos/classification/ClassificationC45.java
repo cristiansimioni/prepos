@@ -15,7 +15,7 @@ public class ClassificationC45 implements Classification {
 
         String input = System.getProperty("user.dir") + "\\temp\\c45input.names";
 
-        // Save base on temporary file if database is not c45
+        // Save base on temporary file if database is not C4.5
         if (!database.getType().equals("c45")) {
             C45Saver saver = new C45Saver();
 
@@ -32,13 +32,12 @@ public class ClassificationC45 implements Classification {
         String programPath = System.getProperty("user.dir") + "\\lib\\c45.exe";
         String cmd = programPath + " " + parameters + " " + input;
         p = Runtime.getRuntime().exec(cmd);
-        
+
         // Get the classication from stream
         InputStream stdin = p.getInputStream();
         BufferedReader br = new BufferedReader(new InputStreamReader(stdin));
-        String line = null;
+        String line;
         while ((line = br.readLine()) != null) {
-            System.out.println(line);
             classification.append(line);
             classification.append("\n");
         }

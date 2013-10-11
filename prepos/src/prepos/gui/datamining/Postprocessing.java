@@ -8,8 +8,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JTree;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreePath;
 import prepos.association.parser.ParserAssociationPrepos;
+import prepos.gui.GUIAssociationRuleViewer;
 import prepos.postprocessing.exceptionrules.ExceptionRuleSearcher;
 import prepos.postprocessing.filter.GUIRulesFilter;
 import prepos.postprocessing.filter.RulesFilter;
@@ -22,7 +26,13 @@ public class Postprocessing extends javax.swing.JPanel {
     private boolean isClassificationRules;
     private PostprocessingResult tResult;
     private PostprocessingStatistics tStatistics;
+    int selectedAlgorithm;
     private ArrayList<AssociationRule> associationRules;
+    
+    private enum algorithms {
+
+        ASSOCIATION_FILTER, ASSOCIATION_EXCEPTIONRULES, ASSOCIATION_MEASURES, CLASSIFIER_FILTER, CLASSIFIER_REDUNDANCY, CLASSIFIER_MEASURE;
+    }
 
     public PostprocessingResult gettResult() {
         return tResult;
@@ -62,6 +72,30 @@ public class Postprocessing extends javax.swing.JPanel {
         root.add(classification);
 
         tAlgorithms = new JTree(root);
+        
+        tAlgorithms.addTreeSelectionListener(
+                new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                TreePath treePath = tAlgorithms.getSelectionPath();
+                if (treePath.getPathCount() == 3) {
+                    // Filter Association
+                    if (treePath.toString().contains("Filter") &&  treePath.toString().contains("Association")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_FILTER.ordinal();
+                        bStart.setEnabled(true);
+                    } // Apriori (Weka)
+                    else if (treePath.toString().contains("Exception")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_EXCEPTIONRULES.ordinal();
+                        bStart.setEnabled(true);
+                    } else if (treePath.toString().contains("Measures")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_MEASURES.ordinal();
+                        bStart.setEnabled(true);
+                    }
+                    tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
+                }
+            }
+        });
+        
         pAlgorithms.setViewportView(tAlgorithms);
         
         repaint();
@@ -78,6 +112,7 @@ public class Postprocessing extends javax.swing.JPanel {
         this.tbResults.setTitleAt(1, "Statistics");
 
         bStart.setEnabled(false);
+        bRulesViewer.setEnabled(false);
 
         this.repaint();
     }
@@ -95,6 +130,7 @@ public class Postprocessing extends javax.swing.JPanel {
         tSelectedRules = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         bStart = new javax.swing.JButton();
+        tSelectedAlgorithm = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(800, 500));
 
@@ -112,6 +148,11 @@ public class Postprocessing extends javax.swing.JPanel {
         });
 
         bRulesViewer.setText("View Rules");
+        bRulesViewer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRulesViewerActionPerformed(evt);
+            }
+        });
 
         tSelectedRules.setEditable(false);
 
@@ -148,12 +189,15 @@ public class Postprocessing extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(tSelectedAlgorithm)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bStart, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bStart, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(bStart)
+                .addComponent(tSelectedAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -195,6 +239,7 @@ public class Postprocessing extends javax.swing.JPanel {
                 parser.buildAssociationRules();
                 associationRules = parser.getRules();
                 tSelectedRules.setText(pathFile);
+                bRulesViewer.setEnabled(true);
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(Postprocessing.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -215,6 +260,12 @@ public class Postprocessing extends javax.swing.JPanel {
             GUIFilter.setVisible(true);
         }
     }//GEN-LAST:event_bStartActionPerformed
+
+    private void bRulesViewerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRulesViewerActionPerformed
+        GUIAssociationRuleViewer viewer = new GUIAssociationRuleViewer(associationRules);
+        viewer.setVisible(true);
+    }//GEN-LAST:event_bRulesViewerActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bRulesViewer;
     private javax.swing.JButton bSelectRulesFile;
@@ -223,6 +274,7 @@ public class Postprocessing extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane pAlgorithms;
     private javax.swing.JPanel pSelectedRules;
+    private javax.swing.JTextField tSelectedAlgorithm;
     private javax.swing.JTextField tSelectedRules;
     private javax.swing.JTabbedPane tbResults;
     // End of variables declaration//GEN-END:variables

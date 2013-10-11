@@ -8,9 +8,11 @@ public class ParserAssociationAprioriWeka {
     
     private String text;
     private ArrayList<AssociationRule> rules;
+    private int numOfInstances;
     
-    public ParserAssociationAprioriWeka(String text) {
+    public ParserAssociationAprioriWeka(String text, int numOfInstances) {
         this.text = text;
+        this.numOfInstances = numOfInstances;
         this.rules = new ArrayList<>();
     }
     
@@ -23,6 +25,7 @@ public class ParserAssociationAprioriWeka {
                 getPremises(newRule, line);
                 getConsequents(newRule, line);
                 getConfidence(newRule, line);
+                getSupport(newRule, line);
                 rules.add(newRule);
             }
         }
@@ -72,6 +75,19 @@ public class ParserAssociationAprioriWeka {
         confidence = Float.parseFloat(strConfidence);
         
         rule.setConfidence(confidence * 100);
+    }
+    
+    private void getSupport(AssociationRule rule, String line) {
+        float support;
+        String strSupport [];
+        strSupport = line.split(" ==>");
+        strSupport = strSupport[0].split(" ");
+
+        support = Float.parseFloat(strSupport[strSupport.length -1])/(float)this.numOfInstances;
+        support *= 100;
+        support = Math.round(support);
+        
+        rule.setSupport(support);
     }
     
     public ArrayList<AssociationRule> getRules() {

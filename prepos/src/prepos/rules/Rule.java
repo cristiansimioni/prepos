@@ -90,4 +90,24 @@ public abstract class Rule {
     public int getNumConsequents() {
         return this.consequents.size();
     }
+    
+    // Premise to string
+    public String strPremise() {
+        String msg = "";
+        for(AttributeValue attribute : this.getPremises()) {
+            msg += attribute.toString() + " ";
+        }
+        msg = msg.trim();
+        return msg;
+    }
+    
+    // Consequent to string
+    public String strConsequent() {
+        String msg = "";
+        for(AttributeValue attribute : this.getConsequents()) {
+            msg += attribute.toString() + " ";
+        }
+        msg = msg.trim();
+        return msg;
+    }
 }

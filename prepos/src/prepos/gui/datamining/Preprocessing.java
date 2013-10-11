@@ -11,7 +11,10 @@ import javax.swing.JFileChooser;
 import prepos.core.Shared;
 import javax.swing.JTree;
 import javax.swing.SwingUtilities;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreePath;
 import prepos.core.FileSaver;
 import prepos.preprocessing.AprioriPreparator;
 
@@ -37,15 +40,38 @@ public class Preprocessing extends javax.swing.JPanel {
         // Root node
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("prepos");
 
+        // Data mining tasks
+        DefaultMutableTreeNode association = new DefaultMutableTreeNode("Association");
+        
         // Algorithms
-        DefaultMutableTreeNode prepareDatabaseApriori = new DefaultMutableTreeNode("Prepare Database to Apriori");
-        DefaultMutableTreeNode desnormalizingDatabase = new DefaultMutableTreeNode("Desnormalizing Database");
+        association.add(new DefaultMutableTreeNode("Prepare Database to Apriori"));
+        association.add(new DefaultMutableTreeNode("Desnormalizing Database"));
         
         // Add on tree
-        root.add(prepareDatabaseApriori);
-        root.add(desnormalizingDatabase);
-
+        root.add(association);
         tAlgorithms = new JTree(root);
+        
+        tAlgorithms.addTreeSelectionListener(
+                new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                TreePath treePath = tAlgorithms.getSelectionPath();
+                if (treePath.getPathCount() == 3) {
+                    // Set default parameters
+                    // Prepare Database to Apriori
+                    if (treePath.toString().contains("Prepare Database to Apriori")) {
+                        bStart.setEnabled(true);
+                        bParameters.setEnabled(false);
+                    } // Desnormalizing Database
+                    else if (treePath.toString().contains("Desnormalizing Database")) {
+                        bStart.setEnabled(true);
+                        bParameters.setEnabled(true);
+                    }
+                    tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
+                }
+            }
+        });
+        
         pAlgorithms.setViewportView(tAlgorithms);
         repaint();
     }
@@ -55,21 +81,27 @@ public class Preprocessing extends javax.swing.JPanel {
     private void initComponents() {
 
         chSaveResult = new javax.swing.JFileChooser();
-        jPanel1 = new javax.swing.JPanel();
+        pAlgorithmOutput = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tOutput = new javax.swing.JTextArea();
         bSaveResult = new javax.swing.JButton();
-        bStart = new javax.swing.JButton();
         pAlgorithms = new javax.swing.JScrollPane();
+        pSelectedAlgorithm = new javax.swing.JPanel();
+        bStart = new javax.swing.JButton();
+        tSelectedAlgorithm = new javax.swing.JTextField();
+        bParameters = new javax.swing.JButton();
 
         chSaveResult.setDialogType(javax.swing.JFileChooser.SAVE_DIALOG);
 
-        setMaximumSize(new java.awt.Dimension(800, 516));
-        setMinimumSize(new java.awt.Dimension(800, 516));
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
         setName(""); // NOI18N
-        setPreferredSize(new java.awt.Dimension(800, 516));
+        setPreferredSize(new java.awt.Dimension(800, 500));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Result"));
+        pAlgorithmOutput.setBorder(javax.swing.BorderFactory.createTitledBorder("Algorithm Output"));
+        pAlgorithmOutput.setMaximumSize(new java.awt.Dimension(582, 426));
+        pAlgorithmOutput.setMinimumSize(new java.awt.Dimension(582, 426));
+        pAlgorithmOutput.setPreferredSize(new java.awt.Dimension(582, 426));
 
         tOutput.setEditable(false);
         tOutput.setColumns(20);
@@ -83,22 +115,29 @@ public class Preprocessing extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(bSaveResult, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+        javax.swing.GroupLayout pAlgorithmOutputLayout = new javax.swing.GroupLayout(pAlgorithmOutput);
+        pAlgorithmOutput.setLayout(pAlgorithmOutputLayout);
+        pAlgorithmOutputLayout.setHorizontalGroup(
+            pAlgorithmOutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pAlgorithmOutputLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(bSaveResult, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
+        pAlgorithmOutputLayout.setVerticalGroup(
+            pAlgorithmOutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pAlgorithmOutputLayout.createSequentialGroup()
+                .addComponent(jScrollPane1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bSaveResult))
         );
+
+        pAlgorithms.setBorder(javax.swing.BorderFactory.createTitledBorder("Algorithms"));
+        pAlgorithms.setMaximumSize(new java.awt.Dimension(192, 426));
+        pAlgorithms.setMinimumSize(new java.awt.Dimension(192, 426));
+        pAlgorithms.setPreferredSize(new java.awt.Dimension(192, 426));
+
+        pSelectedAlgorithm.setBorder(javax.swing.BorderFactory.createTitledBorder("Selected Algorithm"));
 
         bStart.setText("Start");
         bStart.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +146,28 @@ public class Preprocessing extends javax.swing.JPanel {
             }
         });
 
-        pAlgorithms.setBorder(javax.swing.BorderFactory.createTitledBorder("Algorithms"));
+        tSelectedAlgorithm.setEditable(false);
+
+        bParameters.setText("Parameters");
+
+        javax.swing.GroupLayout pSelectedAlgorithmLayout = new javax.swing.GroupLayout(pSelectedAlgorithm);
+        pSelectedAlgorithm.setLayout(pSelectedAlgorithmLayout);
+        pSelectedAlgorithmLayout.setHorizontalGroup(
+            pSelectedAlgorithmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pSelectedAlgorithmLayout.createSequentialGroup()
+                .addComponent(tSelectedAlgorithm)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bParameters, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bStart, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        pSelectedAlgorithmLayout.setVerticalGroup(
+            pSelectedAlgorithmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pSelectedAlgorithmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(bStart)
+                .addComponent(tSelectedAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bParameters))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -115,23 +175,24 @@ public class Preprocessing extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pAlgorithms)
-                    .addComponent(bStart, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pSelectedAlgorithm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pAlgorithms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pAlgorithmOutput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(pSelectedAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(pAlgorithms)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bStart))))
+                    .addComponent(pAlgorithms, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pAlgorithmOutput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -158,12 +219,15 @@ public class Preprocessing extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_bSaveResultActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bParameters;
     private javax.swing.JButton bSaveResult;
     private javax.swing.JButton bStart;
     private javax.swing.JFileChooser chSaveResult;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel pAlgorithmOutput;
     private javax.swing.JScrollPane pAlgorithms;
+    private javax.swing.JPanel pSelectedAlgorithm;
     private javax.swing.JTextArea tOutput;
+    private javax.swing.JTextField tSelectedAlgorithm;
     // End of variables declaration//GEN-END:variables
 }

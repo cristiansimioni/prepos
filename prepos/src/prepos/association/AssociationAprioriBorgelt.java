@@ -35,7 +35,7 @@ public class AssociationAprioriBorgelt implements Association {
         // Build associations
         Process p;
         String programPath = System.getProperty("user.dir") + "\\lib\\apriori.exe";
-        p = Runtime.getRuntime().exec(programPath + " " + parameters + " " + input + " " + output);
+        p = Runtime.getRuntime().exec(programPath + " " + parameters + " \"" + input + "\" \"" + output + "\"");
         p.waitFor();
 
         // Get the associations from file

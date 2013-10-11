@@ -2,6 +2,7 @@ package prepos;
 
 import prepos.core.SystemInfo;
 import prepos.gui.GUIChooser;
+import prepos.gui.GUIDataMining;
 
 /*
  * Author: Cristian Simioni

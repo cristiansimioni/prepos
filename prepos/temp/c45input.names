@@ -1,5 +1,5 @@
-yes,no.
-outlook: sunny,overcast,rainy.
-temperature: hot,mild,cool.
-humidity: high,normal.
-windy: TRUE,FALSE.
+soft,hard,none.
+age: young,pre-presbyopic,presbyopic.
+spectacle-prescrip: myope,hypermetrope.
+astigmatism: no,yes.
+tear-prod-rate: reduced,normal.

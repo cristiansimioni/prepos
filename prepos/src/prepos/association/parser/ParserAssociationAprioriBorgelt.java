@@ -68,25 +68,25 @@ public class ParserAssociationAprioriBorgelt {
     }
 
     private void getConfidence(AssociationRule rule, String line) {
-        float support = 0.0f;
-        String strSupport;
-        strSupport = line.split("\\(")[1];
-        strSupport = strSupport.split(",")[1].replace(")", "").trim();
+        float confidence;
+        String strCondifence;
+        strCondifence = line.split("\\(")[1];
+        strCondifence = strCondifence.split(",")[1].replace(")", "").trim();
 
-        support = Float.parseFloat(strSupport);
+        confidence = Float.parseFloat(strCondifence);
 
-        rule.setConfidence(support);
+        rule.setConfidence(confidence);
     }
 
     private void getSupport(AssociationRule rule, String line) {
-        float confidence = 0.0f;
-        String strConfidence;
-        strConfidence = line.split("\\(")[1];
-        strConfidence = strConfidence.split(",")[0];
+        float support;
+        String strSupport;
+        strSupport = line.split("\\(")[1];
+        strSupport = strSupport.split(",")[0];
 
-        confidence = Float.parseFloat(strConfidence);
+        support = Float.parseFloat(strSupport);
 
-        rule.setSupport(confidence);
+        rule.setSupport(support);
     }
 
     public ArrayList<AssociationRule> getRules() {

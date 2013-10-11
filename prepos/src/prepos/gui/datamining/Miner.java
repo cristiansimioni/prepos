@@ -18,6 +18,7 @@ import prepos.association.parser.ParserAssociationAprioriWeka;
 import prepos.classification.Classification;
 import prepos.classification.ClassificationC45;
 import prepos.classification.ClassificationJ48;
+import prepos.classification.parser.ParserClassifierJ48;
 import prepos.core.FileSaver;
 import prepos.core.Shared;
 import prepos.core.SystemInfo;
@@ -30,7 +31,7 @@ public class Miner extends javax.swing.JPanel {
     private int lastExecutedAlgorithm;
     private String parameters;
 
-    public enum algorithms {
+    private enum algorithms {
 
         APRIORIBORGELT, APRIORIWEKA, J48, C45;
     }
@@ -96,13 +97,13 @@ public class Miner extends javax.swing.JPanel {
                     // Apriori (Borgelt)
                     if (treePath.toString().contains("Apriori (Borgelt)")) {
                         selectedAlgorithm = algorithms.APRIORIBORGELT.ordinal();
-                        parameters = "-tr -s1 -m2 -n3";
+                        parameters = "-tr -c80 -s10 -S100 -m2 -n3";
                         bStart.setEnabled(true);
                         bParameters.setEnabled(true);
                     } // Apriori (Weka)
                     else if (treePath.toString().contains("Apriori (Weka)")) {
                         selectedAlgorithm = algorithms.APRIORIWEKA.ordinal();
-                        parameters = "-N 2000 -T 0 -C 0.1 -D 0.05 -U 1.0 -M 0.01 -S -1.0 -c -1";
+                        parameters = "-N 5000 -T 0 -C 0.1 -D 0.05 -U 1.0 -M 0.01 -S -1.0 -c -1";
                         bStart.setEnabled(true);
                         bParameters.setEnabled(true);
                     } else if (treePath.toString().contains("J48")) {
@@ -197,7 +198,7 @@ public class Miner extends javax.swing.JPanel {
         pOutputLayout.setVerticalGroup(
             pOutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pOutputLayout.createSequentialGroup()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pOutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bSave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -292,7 +293,6 @@ public class Miner extends javax.swing.JPanel {
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
                 lastExecutedAlgorithm = selectedAlgorithm;
-                System.out.println(parameters);
             } else if (selectedAlgorithm == algorithms.J48.ordinal()) {
                 Classification classification = new ClassificationJ48();
                 tOutput.setText(classification.getClassification(Shared.getInstance().getDatabase(), this.parameters));
@@ -330,12 +330,16 @@ public class Miner extends javax.swing.JPanel {
         if (option == JFileChooser.APPROVE_OPTION) {
             FileSaver fileSaver = null;
             if (tAlgorithms.getSelectionPath().toString().contains("Apriori (Weka)")) {
-                ParserAssociationAprioriWeka parser = new ParserAssociationAprioriWeka(tOutput.getText());
+                ParserAssociationAprioriWeka parser = new ParserAssociationAprioriWeka(tOutput.getText(), Shared.getInstance().getDatabase().numInstances());
                 parser.buildAssociationRules();
                 fileSaver = new FileSaver(chSave.getSelectedFile().getName(), chSave.getSelectedFile().getPath(), parser.toString());
             } else if (tAlgorithms.getSelectionPath().toString().contains("Apriori (Borgelt)")) {
                 ParserAssociationAprioriBorgelt parser = new ParserAssociationAprioriBorgelt(tOutput.getText());
                 parser.buildAssociationRules();
+                fileSaver = new FileSaver(chSave.getSelectedFile().getName(), chSave.getSelectedFile().getPath(), parser.toString());
+            } else if (tAlgorithms.getSelectionPath().toString().contains("J48")) {
+                ParserClassifierJ48 parser = new ParserClassifierJ48(tOutput.getText());
+                parser.buidProductionRules();
                 fileSaver = new FileSaver(chSave.getSelectedFile().getName(), chSave.getSelectedFile().getPath(), parser.toString());
             }
 
@@ -356,6 +360,8 @@ public class Miner extends javax.swing.JPanel {
             ParametersAprioriBorgelt pBorgelt = new ParametersAprioriBorgelt(this);
             pBorgelt.setVisible(true);
         } else if (selectedAlgorithm == algorithms.J48.ordinal()) {
+            ParametersJ48 pJ48 = new ParametersJ48(Shared.getInstance().getDatabase());
+            pJ48.setVisible(true);
         } else if (selectedAlgorithm == algorithms.C45.ordinal()) {
         }
     }//GEN-LAST:event_bParametersActionPerformed

@@ -15,13 +15,13 @@ public class SystemInfo {
     // Tool info 
     private static String name = "PREPOS - Data Mining Environment";
     private static String version = "1.0";
-    private static String buildDate = "02.10.2013";
+    private static String buildDate = "04.10.2013";
     private static String year = "2013";
     // Authors info
     private static String author = "Cristian Simoni";
-    private static String authorEmail = "cristiansimionimilani@gmail.com";
+    private static String authorEmail = "cristian.milani@pucpr.br";
     private static String professor = "Deborah Ribeiro Carvalho";
-    private static String professorEmail = "drdrcarvalho@gmail.com";
+    private static String professorEmail = "ribeiro.carvalho@pucpr.br";
     // Configuration default
     private static String language = "en";
     private static String country = "US";

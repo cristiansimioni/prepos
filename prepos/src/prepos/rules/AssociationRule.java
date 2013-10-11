@@ -70,8 +70,9 @@ public class AssociationRule extends Rule {
         return true;
     }
 
-    public boolean existsOnPremise(ArrayList<String> attributs) {
-        for (String attribute : attributs) {
+    // Verify if exists one of items 
+    public boolean existsOnPremise(ArrayList<String> attributes) {
+        for (String attribute : attributes) {
             for (AttributeValue premise : this.getPremises()) {
                 if (premise.getAttribute().equals(attribute)) {
                     return true;
@@ -81,9 +82,9 @@ public class AssociationRule extends Rule {
         return false;
     }
 
-    public boolean existsOnConsequent(ArrayList<String> attributs) {
+    public boolean existsOnConsequent(ArrayList<String> attributes) {
 
-        for (String attribute : attributs) {
+        for (String attribute : attributes) {
             for (AttributeValue consequent : this.getConsequents()) {
                 if (consequent.getAttribute().equals(attribute)) {
                     return true;
