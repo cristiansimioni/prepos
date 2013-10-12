@@ -13,6 +13,15 @@ import java.util.logging.Level;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 09/03/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
+ */
 public class GUIChooser extends javax.swing.JFrame {
 
     private ResourceBundle messages;
@@ -113,7 +122,7 @@ public class GUIChooser extends javax.swing.JFrame {
         lbLogo.setToolTipText("");
 
         lbInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbInfo.setText("Author: Cristian Simioni  |  Version: 1.0  |  Build: 04/04/2013  |  © 2013");
+        lbInfo.setText("Author: Cristian Simioni  |  Version: 1.0  |  Build: 10.15.2013  |  © 2013");
 
         mProgram.setText("Program");
 

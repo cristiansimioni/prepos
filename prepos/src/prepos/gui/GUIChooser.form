@@ -116,6 +116,7 @@
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="mMenu"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -189,7 +190,7 @@
     <Component class="javax.swing.JLabel" name="lbInfo">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Author: Cristian Simioni  |  Version: 1.0  |  Build: 04/04/2013  |  &#xa9; 2013"/>
+        <Property name="text" type="java.lang.String" value="Author: Cristian Simioni  |  Version: 1.0  |  Build: 10.15.2013  |  &#xa9; 2013"/>
       </Properties>
     </Component>
   </SubComponents>

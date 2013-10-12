@@ -9,7 +9,7 @@ import prepos.database.Database;
  * Changes:
  * Date         Author              Function            Description
  * -----------+-------------------+-------------------+------------------------
- * 09/03/2013 | Cristian Simioni  | -                 | - 
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
  */
 public interface Association {
 

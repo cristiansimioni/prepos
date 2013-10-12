@@ -10,12 +10,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 09/03/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
+ */
 public class SystemInfo {
 
+    // Attributes
     // Tool info 
     private static String name = "PREPOS - Data Mining Environment";
     private static String version = "1.0";
-    private static String buildDate = "04.10.2013";
+    private static String buildDate = "15.10.2013";
     private static String year = "2013";
     // Authors info
     private static String author = "Cristian Simoni";
@@ -28,38 +38,7 @@ public class SystemInfo {
     // Log
     private static Logger log;
 
-    public static void initialize() {
-        // Create log file
-        log = Logger.getLogger("log");
-        FileHandler fh;
-        try {
-            fh = new FileHandler("log.txt", true);
-            fh.setFormatter(new SimpleFormatter());
-            log.addHandler(fh);
-        } catch (IOException | SecurityException ex) {
-            System.err.println(ex.getMessage());
-        }
-
-        // Verify if the configuration file exists
-        try {
-            Properties configuration = new Properties();
-            configuration.load(new FileInputStream("./config.properties"));
-
-            // Set language
-            language = configuration.getProperty("language");
-            country = configuration.getProperty("country");
-
-        } catch (Exception ex) {
-            System.err.println(ex.getMessage());
-            log.log(Level.WARNING, "Configuration file had a problem.");
-        }
-        Locale.setDefault(new Locale(language, country));
-
-        // Create temporary folder
-        File temp = new File(System.getProperty("user.dir") + "//temp");
-        temp.mkdir();
-    }
-
+    // Getter & setter
     public static String getName() {
         return name;
     }
@@ -102,5 +81,45 @@ public class SystemInfo {
 
     public static Logger getLog() {
         return log;
+    }
+
+    // Methods
+    // Initialize prepos
+    public static void initialize() {
+        // Create log file
+        log = Logger.getLogger("log");
+        FileHandler fh;
+        try {
+            fh = new FileHandler("log.txt", true);
+            fh.setFormatter(new SimpleFormatter());
+            log.addHandler(fh);
+        } catch (IOException | SecurityException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        // Verify if the configuration file exists
+        try {
+            Properties configuration = new Properties();
+            configuration.load(new FileInputStream("./config.properties"));
+
+            // Set language
+            language = configuration.getProperty("language");
+            country = configuration.getProperty("country");
+
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+            log.log(Level.WARNING, "Configuration file had a problem.");
+        }
+        Locale.setDefault(new Locale(language, country));
+
+        // Create temporary folder
+        File temp = new File(System.getProperty("user.dir") + "//temp");
+        temp.mkdir();
+
+        // Clean temporary folder
+        File[] files = temp.listFiles();
+        for (File f : files) {
+            f.delete();
+        }
     }
 }

@@ -2,7 +2,6 @@ package prepos;
 
 import prepos.core.SystemInfo;
 import prepos.gui.GUIChooser;
-import prepos.gui.GUIDataMining;
 
 /*
  * Author: Cristian Simioni
@@ -11,7 +10,7 @@ import prepos.gui.GUIDataMining;
  * Changes:
  * Date         Author              Function            Description
  * -----------+-------------------+-------------------+------------------------
- * 09/03/2013 | Cristian Simioni  | -                 | - 
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
  */
 public class Prepos {
 

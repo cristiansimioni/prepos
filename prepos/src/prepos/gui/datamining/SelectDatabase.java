@@ -118,7 +118,6 @@ public class SelectDatabase extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tAttributes = new javax.swing.JTable();
         bRemove = new javax.swing.JButton();
-        bSelectDatabase = new javax.swing.JToggleButton();
         pSelectedAttribute = new javax.swing.JPanel();
         lMissing = new javax.swing.JLabel();
         lType = new javax.swing.JLabel();
@@ -126,6 +125,8 @@ public class SelectDatabase extends javax.swing.JPanel {
         lName = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tSelectedAtrribute = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        bSelectDatabase = new javax.swing.JToggleButton();
         bSaveDatabase = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(800, 500));
@@ -133,6 +134,9 @@ public class SelectDatabase extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(800, 500));
 
         pCurrentRelation.setBorder(javax.swing.BorderFactory.createTitledBorder("Current Relation"));
+        pCurrentRelation.setMaximumSize(new java.awt.Dimension(374, 64));
+        pCurrentRelation.setMinimumSize(new java.awt.Dimension(374, 64));
+        pCurrentRelation.setPreferredSize(new java.awt.Dimension(374, 64));
 
         lRelation.setText("Relation: None");
         lRelation.setMaximumSize(new java.awt.Dimension(352, 14));
@@ -172,6 +176,9 @@ public class SelectDatabase extends javax.swing.JPanel {
         );
 
         pAttributes.setBorder(javax.swing.BorderFactory.createTitledBorder("Attributes"));
+        pAttributes.setMaximumSize(new java.awt.Dimension(374, 355));
+        pAttributes.setMinimumSize(new java.awt.Dimension(374, 355));
+        pAttributes.setPreferredSize(new java.awt.Dimension(374, 355));
 
         tAttributes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -222,22 +229,15 @@ public class SelectDatabase extends javax.swing.JPanel {
         pAttributesLayout.setVerticalGroup(
             pAttributesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pAttributesLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bRemove, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        bSelectDatabase.setText("Choose Database");
-        bSelectDatabase.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bSelectDatabaseActionPerformed(evt);
-            }
-        });
-
         pSelectedAttribute.setBorder(javax.swing.BorderFactory.createTitledBorder("Selected Attribute"));
-        pSelectedAttribute.setMaximumSize(new java.awt.Dimension(400, 465));
-        pSelectedAttribute.setMinimumSize(new java.awt.Dimension(400, 465));
-        pSelectedAttribute.setPreferredSize(new java.awt.Dimension(400, 465));
+        pSelectedAttribute.setMaximumSize(new java.awt.Dimension(401, 426));
+        pSelectedAttribute.setMinimumSize(new java.awt.Dimension(401, 426));
+        pSelectedAttribute.setPreferredSize(new java.awt.Dimension(401, 426));
 
         lMissing.setText("Missing: None");
         lMissing.setMaximumSize(new java.awt.Dimension(235, 14));
@@ -300,7 +300,7 @@ public class SelectDatabase extends javax.swing.JPanel {
                     .addComponent(lDistinct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lType, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pSelectedAttributeLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pSelectedAttributeLayout.createSequentialGroup()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -316,17 +316,51 @@ public class SelectDatabase extends javax.swing.JPanel {
                     .addComponent(lMissing, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lDistinct))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(2, Short.MAX_VALUE))
         );
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Database options"));
+        jPanel1.setMaximumSize(new java.awt.Dimension(780, 46));
+        jPanel1.setMinimumSize(new java.awt.Dimension(780, 46));
+        jPanel1.setPreferredSize(new java.awt.Dimension(780, 46));
+
+        bSelectDatabase.setText("Choose Database");
+        bSelectDatabase.setMaximumSize(new java.awt.Dimension(180, 23));
+        bSelectDatabase.setMinimumSize(new java.awt.Dimension(180, 23));
+        bSelectDatabase.setPreferredSize(new java.awt.Dimension(180, 23));
+        bSelectDatabase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSelectDatabaseActionPerformed(evt);
+            }
+        });
+
         bSaveDatabase.setText("Save Database");
-        bSaveDatabase.setPreferredSize(new java.awt.Dimension(117, 23));
+        bSaveDatabase.setMaximumSize(new java.awt.Dimension(180, 23));
+        bSaveDatabase.setMinimumSize(new java.awt.Dimension(180, 23));
+        bSaveDatabase.setPreferredSize(new java.awt.Dimension(180, 23));
         bSaveDatabase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bSaveDatabaseActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(bSelectDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bSaveDatabase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(394, 394, 394))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(bSelectDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bSaveDatabase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -335,30 +369,30 @@ public class SelectDatabase extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(bSelectDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pAttributes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pCurrentRelation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bSaveDatabase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(pAttributes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pCurrentRelation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pSelectedAttribute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pSelectedAttribute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bSelectDatabase)
-                    .addComponent(bSaveDatabase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(pCurrentRelation, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pCurrentRelation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pAttributes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pSelectedAttribute, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addComponent(pAttributes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(pSelectedAttribute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pAttributes.getAccessibleContext().setAccessibleDescription("");
@@ -382,9 +416,9 @@ public class SelectDatabase extends javax.swing.JPanel {
                 lAttributes.setText(messages.getString("ATTRIBUTES") + ": " + Shared.getInstance().getDatabase().numAttributes());
 
                 // Enable tabs
-                Shared.getInstance().getTbOptions().setEnabledAt(1, true);
-                Shared.getInstance().getTbOptions().setEnabledAt(2, true);
-                Shared.getInstance().getTbOptions().setEnabledAt(3, true);
+                Shared.getInstance().getOptions().setEnabledAt(1, true);
+                Shared.getInstance().getOptions().setEnabledAt(2, true);
+                Shared.getInstance().getOptions().setEnabledAt(3, true);
 
                 // Add Attributes on table
                 DefaultTableModel model = (DefaultTableModel) tAttributes.getModel();
@@ -481,6 +515,7 @@ public class SelectDatabase extends javax.swing.JPanel {
     private javax.swing.JButton bSaveDatabase;
     private javax.swing.JToggleButton bSelectDatabase;
     private javax.swing.JFileChooser chSelectDatabase;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lAttributes;

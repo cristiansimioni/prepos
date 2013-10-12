@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Changes:
  * Date         Author              Function            Description
  * -----------+-------------------+-------------------+------------------------
- * 09/03/2013 | Cristian Simioni  | -                 | - 
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
  */
 public abstract class Rule {
 
@@ -86,7 +86,7 @@ public abstract class Rule {
         return this.consequents.get(index);
     }
 
-    // Number of premises
+    // Number of consequents
     public int getNumConsequents() {
         return this.consequents.size();
     }

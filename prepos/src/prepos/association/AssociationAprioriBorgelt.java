@@ -13,7 +13,7 @@ import prepos.preprocessing.AprioriPreparator;
  * Changes:
  * Date         Author              Function            Description
  * -----------+-------------------+-------------------+------------------------
- * 09/03/2013 | Cristian Simioni  | -                 | - 
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
  */
 public class AssociationAprioriBorgelt implements Association {
 

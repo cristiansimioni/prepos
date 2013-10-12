@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Changes:
  * Date         Author              Function            Description
  * -----------+-------------------+-------------------+------------------------
- * 09/03/2013 | Cristian Simioni  | -                 | - 
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
  */
 public class AssociationRule extends Rule {
 
@@ -70,7 +70,7 @@ public class AssociationRule extends Rule {
         return true;
     }
 
-    // Verify if exists one of items 
+    // Verify if exists one of items on premise
     public boolean existsOnPremise(ArrayList<String> attributes) {
         for (String attribute : attributes) {
             for (AttributeValue premise : this.getPremises()) {
@@ -82,6 +82,7 @@ public class AssociationRule extends Rule {
         return false;
     }
 
+    // Verify if exists one of items on consequent
     public boolean existsOnConsequent(ArrayList<String> attributes) {
 
         for (String attribute : attributes) {

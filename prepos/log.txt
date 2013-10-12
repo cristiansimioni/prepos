@@ -546,3 +546,93 @@ Oct 10, 2013 10:44:24 PM prepos.gui.datamining.Miner bStartActionPerformed
 SEVERE: weka.classifiers.trees.j48.C45PruneableClassifierTree: Cannot handle numeric class!
 Oct 10, 2013 10:44:39 PM prepos.gui.datamining.Miner bStartActionPerformed
 SEVERE: weka.classifiers.trees.j48.C45PruneableClassifierTree: Cannot handle numeric class!
+Out 11, 2013 1:11:31 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 11, 2013 1:11:57 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 11, 2013 1:32:37 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 11, 2013 6:25:14 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Oct 11, 2013 6:26:48 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 11, 2013 6:32:14 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 11, 2013 10:52:00 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 11, 2013 11:46:56 PM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 12:00:24 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 12:02:08 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 12:02:19 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 12:02:57 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 12:03:57 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 12:07:43 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 12:10:25 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 12:14:54 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 12:15:37 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 12:16:13 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 1:06:29 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 1:11:25 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 1:25:20 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 1:39:16 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 10:50:42 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 10:53:21 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 10:54:16 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 10:55:07 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 10:55:25 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 10:55:37 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 10:55:53 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 10:57:11 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:00:21 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:03:02 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:03:32 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:04:24 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:04:59 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:08:09 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:10:02 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Oct 12, 2013 11:11:57 AM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.classifiers.trees.j48.C45PruneableClassifierTree: Cannot handle numeric class!
+Out 12, 2013 11:16:17 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:18:04 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:21:38 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:31:30 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:35:18 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:35:39 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.
+Out 12, 2013 11:35:56 AM prepos.core.SystemInfo initialize
+WARNING: Configuration file had a problem.

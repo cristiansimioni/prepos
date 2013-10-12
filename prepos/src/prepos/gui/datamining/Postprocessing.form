@@ -29,12 +29,14 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="pSelectedRules" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="pAlgorithms" min="-2" pref="192" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="pAlgorithms" alignment="0" pref="192" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="tbResults" pref="582" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -46,11 +48,13 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pSelectedRules" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="tbResults" pref="374" max="32767" attributes="0"/>
-                  <Component id="pAlgorithms" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="pAlgorithms" pref="345" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="tbResults" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -151,18 +155,16 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <Component id="tSelectedAlgorithm" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="bStart" min="-2" pref="145" max="-2" attributes="0"/>
-              </Group>
+              <Component id="bStart" max="32767" attributes="0"/>
+              <Component id="tSelectedAlgorithm" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                  <Component id="bStart" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tSelectedAlgorithm" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Component id="tSelectedAlgorithm" min="-2" pref="23" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="bStart" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

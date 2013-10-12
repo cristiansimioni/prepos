@@ -2,10 +2,10 @@ package prepos.postprocessing.filter;
 
 import java.util.ArrayList;
 import prepos.rules.AssociationRule;
-import prepos.rules.AttributeValue;
-
 
 public class RulesFilter {
+
+    // Attributes
     private ArrayList<AssociationRule> rules;
     private ArrayList<String> selectedPremises;
     private ArrayList<String> selectedConsequents;
@@ -16,55 +16,14 @@ public class RulesFilter {
     private boolean and;
     private boolean or;
 
+    // Constructor
     public RulesFilter(ArrayList<AssociationRule> rules) {
         this.rules = rules;
         this.selectedConsequents = new ArrayList<>();
         this.selectedPremises = new ArrayList<>();
     }
-    
-    public void addSelectedPremise (String premise) {
-        if (!selectedPremises.contains(premise)) {
-            selectedPremises.add(premise);
-        }
-    }
-    
-    public void removeSelectedPremise(String premise) {
-        selectedPremises.remove(premise);
-    }
-    
-    public void addSelectedConsequent (String consequent) {
-        if (!selectedConsequents.contains(consequent)) {
-            selectedConsequents.add(consequent);
-        }
-    }
-    
-    public void removeSelectedConsequent(String consequent) {
-        selectedConsequents.remove(consequent);
-    }
-    
-    public ArrayList<AssociationRule> filter () {
-        ArrayList<AssociationRule> filteredRules = new ArrayList<>();
-        
-        for (AssociationRule rule : this.rules) {
-            // Verify the parameters: confidence and support
-            if (rule.getConfidence() >= minConfidence && rule.getConfidence() <= maxConfidence && rule.getSupport() >= minSupport && rule.getSupport() <= maxSupport) {
-                if (or) {
-                    // Verify if rule contains the selected premise OR selected consequent
-                    if (rule.existsOnPremise(selectedPremises) || rule.existsOnConsequent(selectedConsequents)) {
-                        filteredRules.add(rule);
-                    }
-                } else if (and) {
-                    // Verify if rule contains the selected premise OR selected consequent 
-                    if (rule.existsOnPremise(selectedPremises) && rule.existsOnConsequent(selectedConsequents)) {
-                        filteredRules.add(rule);
-                    }
-                }
-            }
-        }
-        
-        return filteredRules;
-    }
 
+    // Getter & setter
     public ArrayList<AssociationRule> getRules() {
         return rules;
     }
@@ -135,5 +94,48 @@ public class RulesFilter {
 
     public void setOr(boolean or) {
         this.or = or;
+    }
+
+    public void addSelectedPremise(String premise) {
+        if (!selectedPremises.contains(premise)) {
+            selectedPremises.add(premise);
+        }
+    }
+
+    public void removeSelectedPremise(String premise) {
+        selectedPremises.remove(premise);
+    }
+
+    public void addSelectedConsequent(String consequent) {
+        if (!selectedConsequents.contains(consequent)) {
+            selectedConsequents.add(consequent);
+        }
+    }
+
+    public void removeSelectedConsequent(String consequent) {
+        selectedConsequents.remove(consequent);
+    }
+
+    public ArrayList<AssociationRule> filter() {
+        ArrayList<AssociationRule> filteredRules = new ArrayList<>();
+
+        for (AssociationRule rule : this.rules) {
+            // Verify the parameters: confidence and support
+            if (rule.getConfidence() >= minConfidence && rule.getConfidence() <= maxConfidence && rule.getSupport() >= minSupport && rule.getSupport() <= maxSupport) {
+                if (or) {
+                    // Verify if rule contains the selected premise OR selected consequent
+                    if (rule.existsOnPremise(selectedPremises) || rule.existsOnConsequent(selectedConsequents)) {
+                        filteredRules.add(rule);
+                    }
+                } else if (and) {
+                    // Verify if rule contains the selected premise OR selected consequent 
+                    if (rule.existsOnPremise(selectedPremises) && rule.existsOnConsequent(selectedConsequents)) {
+                        filteredRules.add(rule);
+                    }
+                }
+            }
+        }
+
+        return filteredRules;
     }
 }

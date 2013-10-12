@@ -53,9 +53,9 @@ public class GUIDataMining extends javax.swing.JFrame {
         setTitle(messages.getString("DATA_MINING"));
 
         // Share itens
-        Shared.getInstance().setTbOptions(tbOptions);
-        Shared.getInstance().setlStatus(lStatusMessage);
-        Shared.getInstance().setJbProgressStatus(pbProgressStatus);
+        Shared.getInstance().setOptions(tbOptions);
+        Shared.getInstance().setStatus(lStatusMessage);
+        Shared.getInstance().setProgressBar(pbProgressStatus);
 
         // Insert panels on Tabbed Pan
         // Select Database
@@ -100,6 +100,10 @@ public class GUIDataMining extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
+        tbOptions.setMaximumSize(new java.awt.Dimension(516, 800));
+        tbOptions.setMinimumSize(new java.awt.Dimension(516, 800));
+        tbOptions.setPreferredSize(new java.awt.Dimension(516, 800));
+
         pStatus.setBorder(javax.swing.BorderFactory.createTitledBorder("Status"));
 
         lStatusMessage.setName(""); // NOI18N
@@ -109,14 +113,14 @@ public class GUIDataMining extends javax.swing.JFrame {
         pStatusLayout.setHorizontalGroup(
             pStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pStatusLayout.createSequentialGroup()
-                .addComponent(lStatusMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pbProgressStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE))
+                .addComponent(lStatusMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pbProgressStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pStatusLayout.setVerticalGroup(
             pStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lStatusMessage, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-            .addComponent(pbProgressStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pbProgressStatus, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -124,7 +128,7 @@ public class GUIDataMining extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(tbOptions, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(tbOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -4,12 +4,15 @@ import prepos.database.Database;
 
 public class AprioriPreparator {
 
+    // Attributes
     private Database database;
 
+    // Constructor
     public AprioriPreparator(Database database) {
         this.database = database;
     }
 
+    // Getter & setter
     public Database getDatabase() {
         return database;
     }
@@ -18,6 +21,8 @@ public class AprioriPreparator {
         this.database = database;
     }
 
+    // Methods
+    // Prepare database to Apriori algorithm
     public String prepareDatabase() {
         StringBuilder msg = new StringBuilder();
         String line;

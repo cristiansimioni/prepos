@@ -5,18 +5,30 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 09/03/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
+ */
 public class FileSaver {
 
+    // Attributes
     private String name;
     private String path;
     private String text;
 
+    // Constructor
     public FileSaver(String name, String path, String text) {
         this.name = name;
         this.path = path;
         this.text = text;
     }
 
+    // Getter & Setter
     public String getName() {
         return name;
     }
@@ -41,6 +53,8 @@ public class FileSaver {
         this.text = text;
     }
 
+    // Methods
+    // Save text on file
     public void save() throws IOException {
         FileWriter fw;
         fw = new FileWriter(new File(path));
@@ -51,7 +65,6 @@ public class FileSaver {
                 bw.newLine();
             }
         }
-        
         fw.close();
     }
 }

@@ -1,35 +1,33 @@
 package prepos.core;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import javax.swing.JTabbedPane;
 import prepos.database.Database;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 09/03/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
+ */
 public class Shared {
 
+    // Attributes
     private static Shared instance;
     private Database database;
-    private JLabel lStatus;
-    private JTabbedPane tbOptions;
-    private JProgressBar jbProgressStatus;
+    private JLabel status;
+    private JTabbedPane options;
+    private JProgressBar progressBar;
 
+    // Constructor
     private Shared() {
     }
 
-    // Change status text
-    public void changeStatus(String status) {
-        lStatus.setText(status);
-    }
-
-    public static Shared getInstance() {
-        if (instance == null) {
-            instance = new Shared();
-        }
-        return instance;
-    }
-
+    // Getter & setter
     public Database getDatabase() {
         return database;
     }
@@ -38,25 +36,37 @@ public class Shared {
         this.database = database;
     }
 
-    public JTabbedPane getTbOptions() {
-        return tbOptions;
+    public JTabbedPane getOptions() {
+        return options;
     }
 
-    public void setlStatus(JLabel lStatus) {
-        this.lStatus = lStatus;
+    public void setStatus(JLabel status) {
+        this.status = status;
     }
 
-    public void setTbOptions(JTabbedPane tbOptions) {
-        this.tbOptions = tbOptions;
+    public void setOptions(JTabbedPane options) {
+        this.options = options;
     }
 
-    public JProgressBar getJbProgressStatus() {
-        return jbProgressStatus;
+    public JProgressBar getProgressBar() {
+        return progressBar;
     }
 
-    public void setJbProgressStatus(JProgressBar jbProgressStatus) {
-        this.jbProgressStatus = jbProgressStatus;
+    public void setProgressBar(JProgressBar progressBar) {
+        this.progressBar = progressBar;
     }
 
+    // Methods
+    // Get a instance for Shared items
+    public static Shared getInstance() {
+        if (instance == null) {
+            instance = new Shared();
+        }
+        return instance;
+    }
+
+    // Change status text
+    public void changeStatus(String status) {
+        this.status.setText(status);
+    }
 }
-

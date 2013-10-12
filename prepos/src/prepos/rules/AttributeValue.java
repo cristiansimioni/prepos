@@ -7,7 +7,7 @@ package prepos.rules;
  * Changes:
  * Date         Author              Function            Description
  * -----------+-------------------+-------------------+------------------------
- * 09/03/2013 | Cristian Simioni  | -                 | - 
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
  */
 public class AttributeValue {
 
@@ -52,5 +52,15 @@ public class AttributeValue {
     @Override
     public String toString() {
         return attribute + operator + value;
+    }
+    
+    @Override
+    public boolean equals(Object other) {
+        if (other instanceof AttributeValue) {
+            if (this.toString().equals(((AttributeValue)other).toString())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
