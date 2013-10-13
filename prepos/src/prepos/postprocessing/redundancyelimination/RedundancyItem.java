@@ -2,6 +2,15 @@ package prepos.postprocessing.redundancyelimination;
 
 import prepos.rules.AttributeValue;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 10/15/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
+ */
 public class RedundancyItem {
 
     // Attributes

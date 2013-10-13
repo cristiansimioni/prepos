@@ -2,6 +2,15 @@ package prepos.preprocessing;
 
 import prepos.database.Database;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 10/15/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
+ */
 public class AprioriPreparator {
 
     // Attributes

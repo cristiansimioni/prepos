@@ -15,6 +15,7 @@ import java.util.Scanner;
  */
 public class Util {
 
+    // Methods
     // Clean temporary folder
     public static void cleanTemporaryFolder() {
         File[] files = new File(System.getProperty("user.dir") + "//temp").listFiles();

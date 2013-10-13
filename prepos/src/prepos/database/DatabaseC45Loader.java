@@ -5,6 +5,15 @@ import java.io.IOException;
 import weka.core.Instances;
 import weka.core.converters.C45Loader;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 10/15/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
+ */
 public class DatabaseC45Loader implements DatabaseLoader {
 
     @Override
