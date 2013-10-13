@@ -1,77 +1,110 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package prepos.gui.datamining;
 
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import prepos.core.Shared;
 import javax.swing.JTree;
-import javax.swing.SwingUtilities;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 import prepos.core.FileSaver;
+import prepos.core.SystemInfo;
+import prepos.gui.parameters.ParametersDatabaseDenormalizer;
 import prepos.preprocessing.AprioriPreparator;
+import prepos.preprocessing.DatabaseDenormalizer;
 
-/**
- *
- * @author Cristian
+/*
+ * Author: Cristian Simioni
+ * Last update: 10/15/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
  */
 public class Preprocessing extends javax.swing.JPanel {
 
+    // Attributes
     private JTree tAlgorithms;
+    private ResourceBundle messages;
+    private int selectedAlgorithm;
+    private String parameters;
 
+    // Algorithms
+    private enum algorithms {
+
+        ASSOCIATION_APRIORI_PREPARATOR, ASSOCIATION_DATABASE_DENORMALIZER;
+    }
+
+    // Constructor
     public Preprocessing() {
+        try {
+            messages = ResourceBundle.getBundle("prepos.core.languages.language", Locale.getDefault());
+        } catch (Exception e) {
+            messages = ResourceBundle.getBundle("prepos.core.languages.language", new Locale("en", "US"));
+            SystemInfo.getLog().log(Level.WARNING, e.getLocalizedMessage());
+        }      
         initComponents();
         initResources();
         createTree();
+        initLabels();
     }
-    
+
+    // Methods
+    // Initialize labels
+    private void initLabels() {
+    }
+
+    // Initialize resources
     private void initResources() {
         bSaveResult.setEnabled(false);
     }
 
+    // Create a tree
     private void createTree() {
         // Root node
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("prepos");
 
         // Data mining tasks
         DefaultMutableTreeNode association = new DefaultMutableTreeNode("Association");
-        
+
         // Algorithms
-        association.add(new DefaultMutableTreeNode("Prepare Database to Apriori"));
-        association.add(new DefaultMutableTreeNode("Desnormalizing Database"));
-        
-        // Add on tree
+        association.add(new DefaultMutableTreeNode("Apriori Preparator"));
+        association.add(new DefaultMutableTreeNode("Denormalize Database"));
+
+        // Add on the tree
         root.add(association);
         tAlgorithms = new JTree(root);
-        
+
+        // Value changed event
         tAlgorithms.addTreeSelectionListener(
                 new TreeSelectionListener() {
             @Override
             public void valueChanged(TreeSelectionEvent e) {
                 TreePath treePath = tAlgorithms.getSelectionPath();
                 if (treePath.getPathCount() == 3) {
-                    // Set default parameters
-                    // Prepare Database to Apriori
-                    if (treePath.toString().contains("Prepare Database to Apriori")) {
+                    // Apriori Preparator
+                    if (treePath.toString().contains("Apriori Preparator")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_PREPARATOR.ordinal();
                         bStart.setEnabled(true);
                         bParameters.setEnabled(false);
-                    } // Desnormalizing Database
-                    else if (treePath.toString().contains("Desnormalizing Database")) {
+                    } // Denormalize Database
+                    else if (treePath.toString().contains("Denormalize Database")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_DATABASE_DENORMALIZER.ordinal();
                         bStart.setEnabled(true);
                         bParameters.setEnabled(true);
+                        parameters = "-d0 -i0";
                     }
                     tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
                 }
             }
         });
-        
+
         pAlgorithms.setViewportView(tAlgorithms);
         repaint();
     }
@@ -149,6 +182,11 @@ public class Preprocessing extends javax.swing.JPanel {
         tSelectedAlgorithm.setEditable(false);
 
         bParameters.setText("Parameters");
+        bParameters.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bParametersActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pSelectedAlgorithmLayout = new javax.swing.GroupLayout(pSelectedAlgorithm);
         pSelectedAlgorithm.setLayout(pSelectedAlgorithmLayout);
@@ -197,12 +235,15 @@ public class Preprocessing extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStartActionPerformed
-        if (tAlgorithms.getSelectionPath().toString().contains("Prepare Database to Apriori")) {
+        if (selectedAlgorithm == algorithms.ASSOCIATION_APRIORI_PREPARATOR.ordinal()) {
             AprioriPreparator apriori = new AprioriPreparator(Shared.getInstance().getDatabase());
             tOutput.setText(apriori.prepareDatabase());
             bSaveResult.setEnabled(true);
-            
             Shared.getInstance().changeStatus("Database prepared.");
+        } else if (selectedAlgorithm == algorithms.ASSOCIATION_DATABASE_DENORMALIZER.ordinal()) {
+            DatabaseDenormalizer denormalizer = new DatabaseDenormalizer(Shared.getInstance().getDatabase(), parameters);
+            tOutput.setText(denormalizer.denormalize());
+            bSaveResult.setEnabled(true);
         }
 
     }//GEN-LAST:event_bStartActionPerformed
@@ -214,10 +255,20 @@ public class Preprocessing extends javax.swing.JPanel {
             try {
                 fileSaver.save();
             } catch (IOException ex) {
-                Logger.getLogger(Miner.class.getName()).log(Level.SEVERE, null, ex);
+                Shared.getInstance().changeStatus(messages.getString("ERROR") + ": " + ex.getLocalizedMessage());
+                SystemInfo.getLog().log(Level.SEVERE, ex.getLocalizedMessage());
             }
         }
     }//GEN-LAST:event_bSaveResultActionPerformed
+
+    private void bParametersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bParametersActionPerformed
+        if (selectedAlgorithm == algorithms.ASSOCIATION_DATABASE_DENORMALIZER.ordinal()) {
+            ParametersDatabaseDenormalizer databaseDenormalizer = new ParametersDatabaseDenormalizer(Shared.getInstance().getDatabase(), parameters);
+            databaseDenormalizer.setVisible(true);
+            parameters = databaseDenormalizer.getParameters();
+        }
+    }//GEN-LAST:event_bParametersActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bParameters;
     private javax.swing.JButton bSaveResult;

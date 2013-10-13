@@ -7,12 +7,22 @@ import java.io.InputStreamReader;
 import prepos.database.Database;
 import weka.core.converters.C45Saver;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 10/15/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
+ */
 public class ClassificationC45 implements Classification {
 
     @Override
     public String getClassification(Database database, String parameters) throws Exception {
         StringBuilder classification = new StringBuilder();
 
+        // Set the input file
         String input = System.getProperty("user.dir") + "\\temp\\c45input.names";
 
         // Save base on temporary file if database is not C4.5

@@ -2,18 +2,32 @@ package prepos.classification.parser;
 
 import prepos.rules.AttributeValue;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 10/15/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
+ */
 public class TreeCondition {
 
+    // Attributes
     private String condition;
 
+    // Constructor
     public TreeCondition(String condition) {
         this.condition = condition;
     }
 
+    // Getter & setter
     public String getCondition() {
         return condition;
     }
 
+    // Methods
+    // Get level
     public int getLevel() {
         int level = 0;
         for (int i = 0; condition.charAt(i) == ' ' || condition.charAt(i) == '|'; i++) {
@@ -24,6 +38,7 @@ public class TreeCondition {
         return level;
     }
 
+    // Verify if is a leaf condition
     public boolean isLeaf() {
         if (condition.contains(":") && !condition.contains("[S")) {
             return true;
@@ -39,7 +54,6 @@ public class TreeCondition {
             return false;
         }
     }
-
     public int getSubTree() {
         int index = condition.indexOf("[");
         String sub = condition.substring(index);
@@ -112,7 +126,7 @@ public class TreeCondition {
         AttributeValue atrributeValue = new AttributeValue();
         String item = condition.split(":")[1].trim();
 
-        atrributeValue.setAttribute("classe");
+        atrributeValue.setAttribute("class");
         atrributeValue.setOperator("=");
         atrributeValue.setValue(item.split(" ")[0]);
 

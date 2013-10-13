@@ -12,7 +12,7 @@ import java.util.logging.SimpleFormatter;
 
 /*
  * Author: Cristian Simioni
- * Last update: 09/03/2013
+ * Last update: 10/15/2013
  * 
  * Changes:
  * Date         Author              Function            Description
@@ -117,9 +117,6 @@ public class SystemInfo {
         temp.mkdir();
 
         // Clean temporary folder
-        File[] files = temp.listFiles();
-        for (File f : files) {
-            f.delete();
-        }
+        Util.cleanTemporaryFolder();
     }
 }

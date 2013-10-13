@@ -1,96 +1,100 @@
 package prepos.classification.parser;
 
-import prepos.association.parser.*;
 import java.util.ArrayList;
-import prepos.rules.AssociationRule;
 import prepos.rules.AttributeValue;
 import prepos.rules.ProductionRule;
 
 /*
  * Author: Cristian Simioni
- * Last update: 09/03/2013
+ * Last update: 10/15/2013
  * 
  * Changes:
  * Date         Author              Function            Description
  * -----------+-------------------+-------------------+------------------------
- * 09/03/2013 | Cristian Simioni  | -                 | - 
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
  */
 public class ParserClassifierPrepos {
 
+    // Attributes
     private String text;
     private ArrayList<ProductionRule> rules;
 
+    // Constructor
     public ParserClassifierPrepos(String text) {
         this.text = text;
         this.rules = new ArrayList<>();
     }
 
+    // Methods
     // Build production rules
     public void buildProductionRules() {
         String[] lines = this.text.split("\n");
         for (String line : lines) {
             ProductionRule newRule = new ProductionRule();
-            getPremises(newRule, line);
-            getConsequents(newRule, line);
-            getHit(newRule, line);
-            getMiss(newRule, line);
+            newRule.setPremises(getPremises(line));
+            newRule.setConsequents(getConsequents(line));
+            newRule.setHit(getHit(line));
+            newRule.setMiss(getMiss(line));
             rules.add(newRule);
         }
     }
 
-    private void getPremises(ProductionRule rule, String line) {
+    // Get all premises from rule
+    private ArrayList<AttributeValue> getPremises(String line) {
         String strPremises;
         strPremises = line.split("->")[0].trim();
 
         String[] premises = strPremises.split(" ");
+        ArrayList<AttributeValue> allPremises = new ArrayList<>();
 
         for (String premise : premises) {
             AttributeValue attributeValue = new AttributeValue();
             attributeValue.setOperator(operator(premise));
             attributeValue.setAttribute(premise.split(attributeValue.getOperator(), 2)[0]);
             attributeValue.setValue(premise.split(attributeValue.getOperator(), 2)[1]);
-            rule.addPremise(attributeValue);
+            allPremises.add(attributeValue);
         }
+        
+        return allPremises;
     }
 
-    private void getConsequents(ProductionRule rule, String line) {
+    // Get all consequents from rule
+    private ArrayList<AttributeValue> getConsequents(String line) {
         String strConsequents;
         strConsequents = line.split("->")[1].trim();
         strConsequents = strConsequents.split("miss:")[0].trim();
 
         String[] consequents = strConsequents.split(" ");
+        ArrayList<AttributeValue> allConsequents = new ArrayList<>();
 
         for (String consequent : consequents) {
             AttributeValue attributeValue = new AttributeValue();
             attributeValue.setAttribute(consequent.split("=", 2)[0]);
             attributeValue.setOperator("=");
             attributeValue.setValue(consequent.split("=", 2)[1]);
-            rule.addConsequent(attributeValue);
+            allConsequents.add(attributeValue);
         }
+        
+        return allConsequents;
     }
 
-    private void getHit(ProductionRule rule, String line) {
-        float hit = 0.0f;
+    // Get the hit of rule
+    private float getHit(String line) {
         String strHit;
         strHit = line.split("hit:")[1];
         strHit = strHit.split("\n")[0];
-
-        hit = Float.parseFloat(strHit);
-
-        rule.setHit(hit);
+        return Float.parseFloat(strHit);
     }
 
-    private void getMiss(ProductionRule rule, String line) {
-        float miss = 0.0f;
+    // Get the miss of rule
+    private float getMiss(String line) {
         String strMiss;
         strMiss = line.split("miss:")[1];
         strMiss = strMiss.split(" ")[0];
-
-        miss = Float.parseFloat(strMiss);
-
-        rule.setMiss(miss);
+        return Float.parseFloat(strMiss);
     }
 
+    // Get the operator from attribute-value
     private String operator(String item) {
         if (item.contains(">=")) {
             return ">=";
@@ -111,10 +115,12 @@ public class ParserClassifierPrepos {
         }
     }
 
+    // Get all rules
     public ArrayList<ProductionRule> getRules() {
         return rules;
     }
 
+    // Override
     @Override
     public String toString() {
         StringBuilder msg = new StringBuilder();

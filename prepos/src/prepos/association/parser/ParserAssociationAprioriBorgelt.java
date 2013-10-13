@@ -11,88 +11,95 @@ import prepos.rules.AttributeValue;
  * Changes:
  * Date         Author              Function            Description
  * -----------+-------------------+-------------------+------------------------
- * 09/03/2013 | Cristian Simioni  | -                 | - 
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
  */
 public class ParserAssociationAprioriBorgelt {
 
+    // Attributes
     private String text;
     private ArrayList<AssociationRule> rules;
 
+    // Constructor
     public ParserAssociationAprioriBorgelt(String text) {
         this.text = text;
         this.rules = new ArrayList<>();
     }
 
+    // Methods
     // Build associations
     public void buildAssociationRules() {
         String[] lines = this.text.split("\n");
         for (String line : lines) {
             AssociationRule newRule = new AssociationRule();
-            getPremises(newRule, line);
-            getConsequents(newRule, line);
-            getConfidence(newRule, line);
-            getSupport(newRule, line);
+            newRule.setPremises(getPremises(line));
+            newRule.setConsequents(getConsequents(line));
+            newRule.setSupport(getSupport(line));
+            newRule.setConfidence(getConfidence(line));
             rules.add(newRule);
         }
     }
 
-    private void getPremises(AssociationRule rule, String line) {
+    // Get all premises from rule
+    private ArrayList<AttributeValue> getPremises(String line) {
         String strPremises;
         strPremises = line.split("<-")[1].trim();
         strPremises = strPremises.split("\\(")[0].trim();
 
         String[] premises = strPremises.split(" ");
+        ArrayList<AttributeValue> allPremises = new ArrayList<>();
 
         for (String premise : premises) {
             AttributeValue attributeValue = new AttributeValue();
             attributeValue.setAttribute(premise.substring(0, premise.lastIndexOf("_")));
             attributeValue.setOperator("=");
             attributeValue.setValue(premise.substring(premise.lastIndexOf("_") + 1));
-            rule.addPremise(attributeValue);
+            allPremises.add(attributeValue);
         }
+
+        return allPremises;
     }
 
-    private void getConsequents(AssociationRule rule, String line) {
+    // Get all consequents from rule
+    private ArrayList<AttributeValue> getConsequents(String line) {
         String strConsequents;
         strConsequents = line.split("<-")[0].trim();
 
         String[] consequents = strConsequents.split(" ");
+        ArrayList<AttributeValue> allConsequents = new ArrayList<>();
 
         for (String consequent : consequents) {
             AttributeValue attributeValue = new AttributeValue();
             attributeValue.setAttribute(consequent.substring(0, consequent.lastIndexOf("_")));
             attributeValue.setOperator("=");
             attributeValue.setValue(consequent.substring(consequent.lastIndexOf("_") + 1));
-            rule.addConsequent(attributeValue);
+            allConsequents.add(attributeValue);
         }
+
+        return allConsequents;
     }
 
-    private void getConfidence(AssociationRule rule, String line) {
-        float confidence;
+    // Get the confidence of rule
+    private float getConfidence(String line) {
         String strCondifence;
         strCondifence = line.split("\\(")[1];
         strCondifence = strCondifence.split(",")[1].replace(")", "").trim();
-
-        confidence = Float.parseFloat(strCondifence);
-
-        rule.setConfidence(confidence);
+        return Float.parseFloat(strCondifence);
     }
 
-    private void getSupport(AssociationRule rule, String line) {
-        float support;
+    // Get the support of rule
+    private float getSupport(String line) {
         String strSupport;
         strSupport = line.split("\\(")[1];
         strSupport = strSupport.split(",")[0];
-
-        support = Float.parseFloat(strSupport);
-
-        rule.setSupport(support);
+        return Float.parseFloat(strSupport);
     }
 
+    // Get all rules
     public ArrayList<AssociationRule> getRules() {
         return rules;
     }
 
+    // Override
     @Override
     public String toString() {
         StringBuilder msg = new StringBuilder();

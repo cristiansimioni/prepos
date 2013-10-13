@@ -1,5 +1,8 @@
 package prepos.gui.datamining;
 
+import prepos.gui.parameters.ParametersJ48;
+import prepos.gui.parameters.ParametersAprioriWeka;
+import prepos.gui.parameters.ParametersAprioriBorgelt;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -25,17 +28,21 @@ import prepos.core.SystemInfo;
 
 public class Miner extends javax.swing.JPanel {
 
+    // Attributes
     private JTree tAlgorithms;
     private ResourceBundle messages;
     private int selectedAlgorithm;
     private int lastExecutedAlgorithm;
     private String parameters;
 
+    // Algorithms
     private enum algorithms {
 
-        APRIORIBORGELT, APRIORIWEKA, J48, C45;
+        ASSOCIATION_APRIORI_BORGELT, ASSOCIATION_APRIORI_WEKA,
+        CLASSIFIER_J48, CLASSIFIER_C45;
     }
 
+    // Constructor
     public Miner() {
         try {
             messages = ResourceBundle.getBundle("prepos.core.languages.language", Locale.getDefault());
@@ -45,10 +52,12 @@ public class Miner extends javax.swing.JPanel {
         }
 
         initComponents();
-        createTree();
         initResources();
+        createTree();
+        initLabels();
     }
 
+    // Getter & setter
     public void setParameters(String parameters) {
         this.parameters = parameters;
     }
@@ -57,6 +66,12 @@ public class Miner extends javax.swing.JPanel {
         return parameters;
     }
 
+    // Methods
+    // Initialize labels
+    private void initLabels() {
+    }
+
+    // Initialize resources
     private void initResources() {
         bStart.setEnabled(false);
         bParameters.setEnabled(false);
@@ -64,29 +79,30 @@ public class Miner extends javax.swing.JPanel {
         bSaveRules.setEnabled(false);
     }
 
+    // Create a tree
     private void createTree() {
         // Root node
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("prepos");
 
-        // Tarefas de mineração de dados
+        // Data Mining tasks
         DefaultMutableTreeNode association = new DefaultMutableTreeNode("Association");
         DefaultMutableTreeNode classification = new DefaultMutableTreeNode("Classification");
 
-        // Algoritmos de associação
+        // Association
         association.add(new DefaultMutableTreeNode("Apriori (Weka)"));
         association.add(new DefaultMutableTreeNode("Apriori (Borgelt)"));
 
-        // Algoritmos de classicação
+        // Classification
         classification.add(new DefaultMutableTreeNode("C4.5"));
         classification.add(new DefaultMutableTreeNode("J48"));
 
-        // Adiciona as tarefas na árvore
+        // Add the tasks on the tree
         root.add(association);
         root.add(classification);
 
         tAlgorithms = new JTree(root);
 
-        // Change event
+        // Value changed event
         tAlgorithms.addTreeSelectionListener(
                 new TreeSelectionListener() {
             @Override
@@ -96,23 +112,25 @@ public class Miner extends javax.swing.JPanel {
                     // Set default parameters
                     // Apriori (Borgelt)
                     if (treePath.toString().contains("Apriori (Borgelt)")) {
-                        selectedAlgorithm = algorithms.APRIORIBORGELT.ordinal();
+                        selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_BORGELT.ordinal();
                         parameters = "-tr -c80 -s10 -S100 -m2 -n3";
                         bStart.setEnabled(true);
                         bParameters.setEnabled(true);
                     } // Apriori (Weka)
                     else if (treePath.toString().contains("Apriori (Weka)")) {
-                        selectedAlgorithm = algorithms.APRIORIWEKA.ordinal();
+                        selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_WEKA.ordinal();
                         parameters = "-N 5000 -T 0 -C 0.1 -D 0.05 -U 1.0 -M 0.01 -S -1.0 -c -1";
                         bStart.setEnabled(true);
                         bParameters.setEnabled(true);
-                    } else if (treePath.toString().contains("J48")) {
-                        selectedAlgorithm = algorithms.J48.ordinal();
+                    } // J48 
+                    else if (treePath.toString().contains("J48")) {
+                        selectedAlgorithm = algorithms.CLASSIFIER_J48.ordinal();
                         parameters = "";
                         bStart.setEnabled(true);
                         bParameters.setEnabled(true);
-                    } else if (treePath.toString().contains("C4.5")) {
-                        selectedAlgorithm = algorithms.C45.ordinal();
+                    } // C45 
+                    else if (treePath.toString().contains("C4.5")) {
+                        selectedAlgorithm = algorithms.CLASSIFIER_C45.ordinal();
                         parameters = "-f";
                         bStart.setEnabled(true);
                         bParameters.setEnabled(false);
@@ -281,25 +299,25 @@ public class Miner extends javax.swing.JPanel {
 
     private void bStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStartActionPerformed
         try {
-            if (selectedAlgorithm == algorithms.APRIORIWEKA.ordinal()) {
+            if (selectedAlgorithm == algorithms.ASSOCIATION_APRIORI_WEKA.ordinal()) {
                 Association association = new AssociationAprioriWeka();
                 tOutput.setText(association.getAssociations(Shared.getInstance().getDatabase(), this.parameters));
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
                 lastExecutedAlgorithm = selectedAlgorithm;
-            } else if (selectedAlgorithm == algorithms.APRIORIBORGELT.ordinal()) {
+            } else if (selectedAlgorithm == algorithms.ASSOCIATION_APRIORI_BORGELT.ordinal()) {
                 Association association = new AssociationAprioriBorgelt();
                 tOutput.setText(association.getAssociations(Shared.getInstance().getDatabase(), this.parameters));
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
                 lastExecutedAlgorithm = selectedAlgorithm;
-            } else if (selectedAlgorithm == algorithms.J48.ordinal()) {
+            } else if (selectedAlgorithm == algorithms.CLASSIFIER_J48.ordinal()) {
                 Classification classification = new ClassificationJ48();
                 tOutput.setText(classification.getClassification(Shared.getInstance().getDatabase(), this.parameters));
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
                 lastExecutedAlgorithm = selectedAlgorithm;
-            } else if (selectedAlgorithm == algorithms.C45.ordinal()) {
+            } else if (selectedAlgorithm == algorithms.CLASSIFIER_C45.ordinal()) {
                 Classification classification = new ClassificationC45();
                 tOutput.setText(classification.getClassification(Shared.getInstance().getDatabase(), this.parameters));
                 bSave.setEnabled(true);
@@ -307,10 +325,9 @@ public class Miner extends javax.swing.JPanel {
                 lastExecutedAlgorithm = selectedAlgorithm;
             }
         } catch (Exception ex) {
-            Shared.getInstance().changeStatus("Error: " + ex.getLocalizedMessage());
+            Shared.getInstance().changeStatus(messages.getString("ERROR") + ": " + ex.getLocalizedMessage());
             SystemInfo.getLog().log(Level.SEVERE, ex.getLocalizedMessage());
         }
-
     }//GEN-LAST:event_bStartActionPerformed
 
     private void bSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSaveActionPerformed
@@ -320,6 +337,7 @@ public class Miner extends javax.swing.JPanel {
             try {
                 fileSaver.save();
             } catch (IOException ex) {
+                Shared.getInstance().changeStatus(messages.getString("ERROR") + ": " + ex.getLocalizedMessage());
                 SystemInfo.getLog().log(Level.SEVERE, ex.getLocalizedMessage());
             }
         }
@@ -329,23 +347,25 @@ public class Miner extends javax.swing.JPanel {
         int option = chSave.showSaveDialog(null);
         if (option == JFileChooser.APPROVE_OPTION) {
             FileSaver fileSaver = null;
-            if (tAlgorithms.getSelectionPath().toString().contains("Apriori (Weka)")) {
+            if (lastExecutedAlgorithm == algorithms.ASSOCIATION_APRIORI_WEKA.ordinal()) {
                 ParserAssociationAprioriWeka parser = new ParserAssociationAprioriWeka(tOutput.getText(), Shared.getInstance().getDatabase().numInstances());
                 parser.buildAssociationRules();
                 fileSaver = new FileSaver(chSave.getSelectedFile().getName(), chSave.getSelectedFile().getPath(), parser.toString());
-            } else if (tAlgorithms.getSelectionPath().toString().contains("Apriori (Borgelt)")) {
+            } else if (lastExecutedAlgorithm == algorithms.ASSOCIATION_APRIORI_BORGELT.ordinal()) {
                 ParserAssociationAprioriBorgelt parser = new ParserAssociationAprioriBorgelt(tOutput.getText());
                 parser.buildAssociationRules();
                 fileSaver = new FileSaver(chSave.getSelectedFile().getName(), chSave.getSelectedFile().getPath(), parser.toString());
-            } else if (tAlgorithms.getSelectionPath().toString().contains("J48")) {
+            } else if (lastExecutedAlgorithm == algorithms.CLASSIFIER_J48.ordinal()) {
                 ParserClassifierJ48 parser = new ParserClassifierJ48(tOutput.getText());
                 parser.buidProductionRules();
                 fileSaver = new FileSaver(chSave.getSelectedFile().getName(), chSave.getSelectedFile().getPath(), parser.toString());
+            } else if (lastExecutedAlgorithm == algorithms.CLASSIFIER_C45.ordinal()) {
             }
 
             try {
                 fileSaver.save();
             } catch (IOException ex) {
+                Shared.getInstance().changeStatus(messages.getString("ERROR") + ": " + ex.getLocalizedMessage());
                 SystemInfo.getLog().log(Level.SEVERE, ex.getLocalizedMessage());
             }
         }
@@ -353,16 +373,16 @@ public class Miner extends javax.swing.JPanel {
     }//GEN-LAST:event_bSaveRulesActionPerformed
 
     private void bParametersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bParametersActionPerformed
-        if (selectedAlgorithm == algorithms.APRIORIWEKA.ordinal()) {
+        if (selectedAlgorithm == algorithms.ASSOCIATION_APRIORI_WEKA.ordinal()) {
             ParametersAprioriWeka pAprioriWeka = new ParametersAprioriWeka(this);
             pAprioriWeka.setVisible(true);
-        } else if (selectedAlgorithm == algorithms.APRIORIBORGELT.ordinal()) {
+        } else if (selectedAlgorithm == algorithms.ASSOCIATION_APRIORI_BORGELT.ordinal()) {
             ParametersAprioriBorgelt pBorgelt = new ParametersAprioriBorgelt(this);
             pBorgelt.setVisible(true);
-        } else if (selectedAlgorithm == algorithms.J48.ordinal()) {
+        } else if (selectedAlgorithm == algorithms.CLASSIFIER_J48.ordinal()) {
             ParametersJ48 pJ48 = new ParametersJ48(Shared.getInstance().getDatabase());
             pJ48.setVisible(true);
-        } else if (selectedAlgorithm == algorithms.C45.ordinal()) {
+        } else if (selectedAlgorithm == algorithms.CLASSIFIER_C45.ordinal()) {
         }
     }//GEN-LAST:event_bParametersActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables

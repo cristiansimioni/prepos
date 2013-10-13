@@ -199,6 +199,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Parameters"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bParametersActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

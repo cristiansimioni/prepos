@@ -3,6 +3,15 @@ package prepos.classification;
 import prepos.database.Database;
 import weka.classifiers.trees.J48;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 10/15/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
+ */
 public class ClassificationJ48 implements Classification {
     
     @Override
