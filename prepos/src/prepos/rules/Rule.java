@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /*
  * Author: Cristian Simioni
- * Last update: 09/03/2013
+ * Last update: 10/15/2013
  * 
  * Changes:
  * Date         Author              Function            Description
@@ -90,21 +90,21 @@ public abstract class Rule {
     public int getNumConsequents() {
         return this.consequents.size();
     }
-    
+
     // Premise to string
     public String strPremise() {
         String msg = "";
-        for(AttributeValue attribute : this.getPremises()) {
+        for (AttributeValue attribute : this.getPremises()) {
             msg += attribute.toString() + " ";
         }
         msg = msg.trim();
         return msg;
     }
-    
+
     // Consequent to string
     public String strConsequent() {
         String msg = "";
-        for(AttributeValue attribute : this.getConsequents()) {
+        for (AttributeValue attribute : this.getConsequents()) {
             msg += attribute.toString() + " ";
         }
         msg = msg.trim();

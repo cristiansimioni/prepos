@@ -78,7 +78,7 @@ public class ExceptionRuleSearcher {
 
         float mean = 0.0f;
         if (numOfExceptionRules != 0) {
-            mean = (float)numOfExceptionRules / (float)numOfRulesWithException;
+            mean = (float) numOfExceptionRules / (float) numOfRulesWithException;
         }
         msg += "Mean of exceptions per rule: " + mean + "\n";
         return msg;

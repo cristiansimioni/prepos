@@ -13,7 +13,7 @@ public class GUIClassificationRuleViewer extends javax.swing.JFrame {
 
     private ResourceBundle messages;
     private ArrayList<ProductionRule> rules;
-    
+
     public GUIClassificationRuleViewer(ArrayList<ProductionRule> rules) {
         this.rules = rules;
         try {
@@ -119,10 +119,10 @@ public class GUIClassificationRuleViewer extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) tRules.getModel();
         int i = 1;
         for (ProductionRule rule : this.rules) {
-            model.addRow(new Object[]{i, rule.strPremise(),rule.strConsequent(),rule.getHit(),rule.getMiss(),false});
+            model.addRow(new Object[]{i, rule.strPremise(), rule.strConsequent(), rule.getHit(), rule.getMiss(), false});
             i++;
         }
-    
+
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;

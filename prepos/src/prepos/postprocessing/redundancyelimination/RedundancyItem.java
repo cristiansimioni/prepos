@@ -45,9 +45,9 @@ public class RedundancyItem {
     public void incrementItemRedundancy() {
         this.numberOfRedundancy += 1;
     }
-    
+
     // Increment the counter for rules with
-     public void incrementItemRulesWith() {
+    public void incrementItemRulesWith() {
         this.numberOfRulesWith += 1;
     }
 

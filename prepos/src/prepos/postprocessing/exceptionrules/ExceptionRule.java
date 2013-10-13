@@ -36,13 +36,13 @@ public class ExceptionRule {
     public void setExceptionRules(ArrayList<AssociationRule> exceptionRules) {
         this.exceptionRules = exceptionRules;
     }
-    
+
     @Override
     public String toString() {
         StringBuilder msg = new StringBuilder();
         msg.append("Original:\n" + this.originalRule.toString());
         msg.append("\nException(s):\n");
-        for(AssociationRule exception : this.exceptionRules) {
+        for (AssociationRule exception : this.exceptionRules) {
             msg.append(exception.toString());
             msg.append("\n");
         }

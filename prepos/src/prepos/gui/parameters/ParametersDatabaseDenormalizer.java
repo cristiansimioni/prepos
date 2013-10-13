@@ -10,7 +10,7 @@ public class ParametersDatabaseDenormalizer extends javax.swing.JDialog {
     private Database database;
     private int indexOfId;
     private int indexOfItem;
-    
+
     public ParametersDatabaseDenormalizer(Database database, String parameters) {
         this.database = database;
         this.parameters = parameters;
@@ -23,11 +23,9 @@ public class ParametersDatabaseDenormalizer extends javax.swing.JDialog {
         return parameters;
     }
 
-    
-    
     private void initResources() {
         if (!parameters.isEmpty()) {
-            String [] allParamenters = parameters.split(" ");
+            String[] allParamenters = parameters.split(" ");
             for (String parameter : allParamenters) {
                 if (parameter.contains("-d")) {
                     indexOfId = Integer.parseInt(parameter.split("-d")[1]);
@@ -36,16 +34,16 @@ public class ParametersDatabaseDenormalizer extends javax.swing.JDialog {
                 }
             }
         }
-        
+
         for (int i = 0; i < database.numAttributes(); i++) {
             lsIdAttribute.addItem(database.getAttribute(i).name());
             lsItemAttribute.addItem(database.getAttribute(i).name());
         }
-        
+
         lsIdAttribute.setSelectedIndex(indexOfId);
         lsItemAttribute.setSelectedIndex(indexOfItem);
     }
-    
+
     private void initLayout() {
         // Location
         pack();
@@ -155,7 +153,6 @@ public class ParametersDatabaseDenormalizer extends javax.swing.JDialog {
         parameters = "-d" + lsIdAttribute.getSelectedIndex() + " -i" + lsItemAttribute.getSelectedIndex();
         this.dispose();
     }//GEN-LAST:event_bSaveActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCancel;
     private javax.swing.JButton bSave;

@@ -54,7 +54,7 @@ public class ParserAssociationPrepos {
             attributeValue.setValue(premise.split("=", 2)[1]);
             allPremises.add(attributeValue);
         }
-        
+
         return allPremises;
     }
 
@@ -74,7 +74,7 @@ public class ParserAssociationPrepos {
             attributeValue.setValue(consequent.split("=", 2)[1]);
             allConsequents.add(attributeValue);
         }
-        
+
         return allConsequents;
     }
 

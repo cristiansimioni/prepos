@@ -54,6 +54,7 @@ public class TreeCondition {
             return false;
         }
     }
+
     public int getSubTree() {
         int index = condition.indexOf("[");
         String sub = condition.substring(index);
@@ -144,19 +145,17 @@ public class TreeCondition {
             if (precision.contains("/")) {
                 String amount = precision.split("/")[0];
                 String hits = precision.split("/")[1];
-                return (Float.parseFloat(hits) * 100)/(Float.parseFloat(amount));
-            }
-            else if (Float.parseFloat(precision) > 0.0) {
+                return (Float.parseFloat(hits) * 100) / (Float.parseFloat(amount));
+            } else if (Float.parseFloat(precision) > 0.0) {
                 return 100f;
+            } else {
+                return 0;
             }
-            else {
-               return 0; 
-            }    
         }
         return 0f;
     }
-    
-    public String getInfoPrecision () {
+
+    public String getInfoPrecision() {
         return condition.substring(condition.indexOf("(", condition.indexOf(":")));
     }
 }

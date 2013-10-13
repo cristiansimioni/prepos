@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 public class GUIUtilities extends javax.swing.JFrame {
 
     private ResourceBundle messages;
-    
+
     public GUIUtilities() {
         try {
             messages = ResourceBundle.getBundle("prepos.core.languages.language", Locale.getDefault());

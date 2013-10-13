@@ -27,13 +27,13 @@ public class ParametersAprioriWeka extends javax.swing.JDialog {
         String parameters[] = miner.getParameters().split(" ");
         for (int i = 0; i < parameters.length; i++) {
             if (parameters[i].contains("-C")) {
-                tMinConfidence.setText(parameters[i+1]);
+                tMinConfidence.setText(parameters[i + 1]);
             } else if (parameters[i].contains("-M")) {
-                tMinSupport.setText(parameters[i+1]);
+                tMinSupport.setText(parameters[i + 1]);
             } else if (parameters[i].contains("-U")) {
-                tMaxSupport.setText(parameters[i+1]);
+                tMaxSupport.setText(parameters[i + 1]);
             } else if (parameters[i].contains("-N")) {
-                tNumRules.setText(parameters[i+1]);
+                tNumRules.setText(parameters[i + 1]);
             }
         }
 

@@ -23,10 +23,10 @@ import weka.datagenerators.classifiers.classification.RDG1;
  * @author z00380tv
  */
 public class GUIRulesFilter extends javax.swing.JDialog {
-    
+
     private RulesFilter filter;
     private Postprocessing postProcessing;
-    
+
     public GUIRulesFilter(RulesFilter filter, Postprocessing postProcessing) {
         this.filter = filter;
         this.postProcessing = postProcessing;
@@ -36,7 +36,7 @@ public class GUIRulesFilter extends javax.swing.JDialog {
         insertConsequents();
         initResources();
     }
-    
+
     private void initResources() {
         ButtonGroup group = new ButtonGroup();
         group.add(rbAnd);
@@ -49,7 +49,7 @@ public class GUIRulesFilter extends javax.swing.JDialog {
         tMaxConfidence.setText("100");
         rbAnd.setSelected(true);
     }
-    
+
     private void initLayout() {
         // Location
         pack();
@@ -66,7 +66,7 @@ public class GUIRulesFilter extends javax.swing.JDialog {
             SystemInfo.getLog().log(Level.WARNING, ex.getLocalizedMessage());
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -382,7 +382,7 @@ public class GUIRulesFilter extends javax.swing.JDialog {
     private void insertPremises() {
         ArrayList<AssociationRule> rules = filter.getRules();
         ArrayList<String> premises = new ArrayList<>();
-        
+
         for (AssociationRule rule : rules) {
             for (AttributeValue attribute : rule.getPremises()) {
                 if (!premises.contains(attribute.getAttribute())) {
@@ -390,20 +390,20 @@ public class GUIRulesFilter extends javax.swing.JDialog {
                 }
             }
         }
-        
+
         DefaultTableModel model = (DefaultTableModel) tSelectedPremises.getModel();
-        
+
         Collections.sort(premises, Collator.getInstance());
-        
+
         for (String premise : premises) {
             model.addRow(new Object[]{premise, false});
         }
     }
-    
+
     private void insertConsequents() {
         ArrayList<AssociationRule> rules = filter.getRules();
         ArrayList<String> consequents = new ArrayList<>();
-        
+
         for (AssociationRule rule : rules) {
             for (AttributeValue attribute : rule.getConsequents()) {
                 if (!consequents.contains(attribute.getAttribute())) {
@@ -411,79 +411,79 @@ public class GUIRulesFilter extends javax.swing.JDialog {
                 }
             }
         }
-        
+
         DefaultTableModel model = (DefaultTableModel) tSelectedConsequents.getModel();
-        
-        Collections.sort(consequents, Collator.getInstance());        
-        
+
+        Collections.sort(consequents, Collator.getInstance());
+
         for (String consequent : consequents) {
             model.addRow(new Object[]{consequent, false});
         }
     }
-    
+
     private void bCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelActionPerformed
         this.dispose();
     }//GEN-LAST:event_bCancelActionPerformed
-    
+
     private void bStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStartActionPerformed
         if (rbAnd.isSelected()) {
             filter.setAnd(true);
         } else {
             filter.setOr(true);
         }
-        
+
         filter.setMinSupport(Float.parseFloat(tMinSupport.getText()));
         filter.setMaxSupport(Float.parseFloat(tMaxSupport.getText()));
         filter.setMinConfidence(Float.parseFloat(tMinConfidence.getText()));
         filter.setMaxConfidence(Float.parseFloat(tMaxConfidence.getText()));
-        
+
         DefaultTableModel mPremises = (DefaultTableModel) tSelectedPremises.getModel();
         for (int i = 0; i < mPremises.getRowCount(); i++) {
             if ((boolean) mPremises.getValueAt(i, 1)) {
                 filter.addSelectedPremise((String) mPremises.getValueAt(i, 0));
             }
         }
-        
+
         DefaultTableModel mConsequents = (DefaultTableModel) tSelectedConsequents.getModel();
         for (int i = 0; i < mConsequents.getRowCount(); i++) {
             if ((boolean) mConsequents.getValueAt(i, 1)) {
                 filter.addSelectedConsequent((String) mConsequents.getValueAt(i, 0));
             }
         }
-        
+
         ArrayList<AssociationRule> rules = filter.filter();
         StringBuilder msg = new StringBuilder();
         for (AssociationRule rule : rules) {
-             msg.append(rule.toString());
-             msg.append("\n");
+            msg.append(rule.toString());
+            msg.append("\n");
         }
-        
+
         postProcessing.gettResult().gettResult().setText(msg.toString());
-        
+
         this.dispose();
     }//GEN-LAST:event_bStartActionPerformed
-    
+
     private void bRemovePremisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRemovePremisesActionPerformed
         DefaultTableModel model = (DefaultTableModel) tSelectedPremises.getModel();
         for (int i = 0; i < model.getRowCount(); i++) {
             model.setValueAt(false, i, 1);
         }
     }//GEN-LAST:event_bRemovePremisesActionPerformed
-    
+
     private void bAddPremisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddPremisesActionPerformed
         DefaultTableModel model = (DefaultTableModel) tSelectedPremises.getModel();
         for (int i = 0; i < model.getRowCount(); i++) {
             model.setValueAt(true, i, 1);
         }
     }//GEN-LAST:event_bAddPremisesActionPerformed
-    
+
     private void bRemoveConsequentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRemoveConsequentsActionPerformed
         DefaultTableModel model = (DefaultTableModel) tSelectedConsequents.getModel();
         for (int i = 0; i < model.getRowCount(); i++) {
             model.setValueAt(false, i, 1);
         }
     }//GEN-LAST:event_bRemoveConsequentsActionPerformed
-    
+
     private void bAddConsequentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddConsequentsActionPerformed
         DefaultTableModel model = (DefaultTableModel) tSelectedConsequents.getModel();
         for (int i = 0; i < model.getRowCount(); i++) {

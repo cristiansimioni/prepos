@@ -88,11 +88,11 @@ public class SelectDatabase extends javax.swing.JPanel {
                 if (selected >= 0) {
                     Attribute attr = Shared.getInstance().getDatabase().getAttribute(selected);
                     for (int i = 0; i < attr.numValues(); i++) {
-                        model.addRow(new Object[]{i+1, attr.value(i), Shared.getInstance().getDatabase().getInstances().attributeStats(selected).nominalCounts[i]});
+                        model.addRow(new Object[]{i + 1, attr.value(i), Shared.getInstance().getDatabase().getInstances().attributeStats(selected).nominalCounts[i]});
                     }
 
                     lName.setText(messages.getString("NAME") + ": " + attr.name());
-                    lMissing.setText(messages.getString("MISSING") + ": " + Shared.getInstance().getDatabase().getInstances().attributeStats(selected).missingCount + " (" + Math.round((((float)Shared.getInstance().getDatabase().getInstances().attributeStats(selected).missingCount/(float)Shared.getInstance().getDatabase().getInstances().numInstances())*100)) + "%)");
+                    lMissing.setText(messages.getString("MISSING") + ": " + Shared.getInstance().getDatabase().getInstances().attributeStats(selected).missingCount + " (" + Math.round((((float) Shared.getInstance().getDatabase().getInstances().attributeStats(selected).missingCount / (float) Shared.getInstance().getDatabase().getInstances().numInstances()) * 100)) + "%)");
                     lDistinct.setText(messages.getString("DISTINCT") + ": " + Shared.getInstance().getDatabase().getInstances().numDistinctValues(selected));
                     lType.setText(messages.getString("TYPE") + ": " + Attribute.typeToString(Shared.getInstance().getDatabase().getInstances().attribute(selected).type()));
                 } else {
@@ -424,7 +424,7 @@ public class SelectDatabase extends javax.swing.JPanel {
                 DefaultTableModel model = (DefaultTableModel) tAttributes.getModel();
                 model.setNumRows(0);
                 for (int i = 0; i < Shared.getInstance().getDatabase().numAttributes(); i++) {
-                    model.addRow(new Object[]{i+1, Shared.getInstance().getDatabase().getInstances().attribute(i).name()});
+                    model.addRow(new Object[]{i + 1, Shared.getInstance().getDatabase().getInstances().attribute(i).name()});
                 }
 
                 Shared.getInstance().changeStatus(messages.getString("MSG_LOAD_SUCCESSFUL"));
@@ -457,10 +457,10 @@ public class SelectDatabase extends javax.swing.JPanel {
             DefaultTableModel model = (DefaultTableModel) tAttributes.getModel();
             model.setNumRows(0);
             for (int i = 0; i < Shared.getInstance().getDatabase().numAttributes(); i++) {
-                model.addRow(new Object[]{i+1, Shared.getInstance().getDatabase().getInstances().attribute(i).name()});
+                model.addRow(new Object[]{i + 1, Shared.getInstance().getDatabase().getInstances().attribute(i).name()});
             }
-            
-            
+
+
         }
     }//GEN-LAST:event_bRemoveActionPerformed
 
@@ -469,11 +469,11 @@ public class SelectDatabase extends javax.swing.JPanel {
         if (option == JFileChooser.APPROVE_OPTION) {
             String pathFile = chSelectDatabase.getSelectedFile().getAbsolutePath();
             String type = chSelectDatabase.getFileFilter().getDescription();
-            
+
             if (pathFile.contains(".")) {
                 pathFile = pathFile.substring(0, pathFile.lastIndexOf("."));
             }
-            
+
             if (type.equals("ARFF data files (*.arff)") || type.equals("Todos os Arquivos")) {
                 ArffSaver saver = new ArffSaver();
                 try {

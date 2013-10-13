@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import prepos.database.Database;
 import weka.core.Instance;
+
 public class DatabaseDenormalizer {
 
     // Attributes
@@ -28,7 +29,7 @@ public class DatabaseDenormalizer {
     public void setDatabase(Database database) {
         this.database = database;
     }
-        
+
     public int getIndexOfId() {
         return indexOfId;
     }
@@ -49,7 +50,7 @@ public class DatabaseDenormalizer {
     // Parametes parser
     public void setParameters() {
         if (!parameters.isEmpty()) {
-            String [] allParamenters = parameters.split(" ");
+            String[] allParamenters = parameters.split(" ");
             for (String parameter : allParamenters) {
                 if (parameter.contains("-d")) {
                     setIndexOfId(Integer.parseInt(parameter.split("-d")[1]));
@@ -59,13 +60,13 @@ public class DatabaseDenormalizer {
             }
         }
     }
-    
+
     // Denormalize database
     public String denormalize() {
         StringBuilder msg = new StringBuilder();
 
         setParameters();
-        
+
         boolean idIsNominal = database.getInstances().attribute(indexOfId).isNominal();
         boolean itemIsNominal = database.getInstances().attribute(indexOfItem).isNominal();
 
@@ -76,7 +77,7 @@ public class DatabaseDenormalizer {
             String value = "";
             if (!idIsNominal) {
                 value = Double.toString(database.getInstances().instance(i).value(indexOfId));
-                
+
             } else {
                 value = database.getInstances().instance(i).stringValue(indexOfId);
             }

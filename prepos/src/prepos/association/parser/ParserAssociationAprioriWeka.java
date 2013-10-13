@@ -60,7 +60,7 @@ public class ParserAssociationAprioriWeka {
             attributeValue.setValue(premise.split("=")[1]);
             allPremises.add(attributeValue);
         }
-        
+
         return allPremises;
     }
 
@@ -73,7 +73,7 @@ public class ParserAssociationAprioriWeka {
 
         String[] consequents = strConsequents.split(" ");
         ArrayList<AttributeValue> allConsequents = new ArrayList<>();
-        
+
         for (String consequent : consequents) {
             AttributeValue attributeValue = new AttributeValue();
             attributeValue.setAttribute(consequent.split("=")[0]);
@@ -81,7 +81,7 @@ public class ParserAssociationAprioriWeka {
             attributeValue.setValue(consequent.split("=")[1]);
             allConsequents.add(attributeValue);
         }
-        
+
         return allConsequents;
     }
 
@@ -106,7 +106,7 @@ public class ParserAssociationAprioriWeka {
         support *= 100;
         // Round the value of support
         support = Math.round(support);
-        
+
         return support;
     }
 

@@ -15,7 +15,7 @@ public class GUIAssociationRuleViewer extends javax.swing.JFrame {
 
     private ResourceBundle messages;
     private ArrayList<AssociationRule> rules;
-    
+
     public GUIAssociationRuleViewer(ArrayList<AssociationRule> rules) {
         this.rules = rules;
         try {
@@ -121,10 +121,10 @@ public class GUIAssociationRuleViewer extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) tRules.getModel();
         int i = 1;
         for (AssociationRule rule : this.rules) {
-            model.addRow(new Object[]{i, rule.strPremise(),rule.strConsequent(),rule.getSupport(),rule.getConfidence(),false});
+            model.addRow(new Object[]{i, rule.strPremise(), rule.strConsequent(), rule.getSupport(), rule.getConfidence(), false});
             i++;
         }
-    
+
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;

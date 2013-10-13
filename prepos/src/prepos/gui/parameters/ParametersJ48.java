@@ -7,7 +7,7 @@ import prepos.database.Database;
 public class ParametersJ48 extends javax.swing.JDialog {
 
     private Database database;
-    
+
     public ParametersJ48(Database database) {
         this.database = database;
         initLayout();
@@ -19,14 +19,13 @@ public class ParametersJ48 extends javax.swing.JDialog {
         for (int i = 0; i < database.numAttributes(); i++) {
             if (database.getAttribute(i).isNominal()) {
                 lAttributes.addItem("(Nom) " + database.getAttribute(i).name());
-            }
-            else {
+            } else {
                 lAttributes.addItem(database.getAttribute(i).name());
             }
         }
         lAttributes.setSelectedIndex(database.getInstances().classIndex());
     }
-    
+
     private void initLayout() {
         // Location
         pack();
@@ -121,7 +120,6 @@ public class ParametersJ48 extends javax.swing.JDialog {
         database.getInstances().setClassIndex(lAttributes.getSelectedIndex());
         this.dispose();
     }//GEN-LAST:event_bSaveActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCancel;
     private javax.swing.JButton bSave;

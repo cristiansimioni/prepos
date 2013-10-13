@@ -14,7 +14,7 @@ import weka.core.converters.ArffLoader;
  * @author Cristian
  */
 public class DatabaseArffLoader implements DatabaseLoader {
-    
+
     @Override
     public Instances loadDatabase(String path) throws IOException {
         ArffLoader arff = new ArffLoader();

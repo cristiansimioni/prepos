@@ -289,14 +289,14 @@ public class GUIChooser extends javax.swing.JFrame {
                 btUtilities.setEnabled(true);
             }
         });
-        
+
     }//GEN-LAST:event_btUtilitiesActionPerformed
 
     // Tools > Weka
     // Erro: Quando fecha, a aplicação toda é fechada.
     private void mWekaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mWekaActionPerformed
         mWeka.setEnabled(false);
-        final  weka.gui.GUIChooser weka = new weka.gui.GUIChooser();
+        final weka.gui.GUIChooser weka = new weka.gui.GUIChooser();
         weka.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         weka.setVisible(true);
         weka.addWindowListener(new WindowAdapter() {
@@ -311,7 +311,6 @@ public class GUIChooser extends javax.swing.JFrame {
     // Program > Configuration
     // to do
     private void mConfigurationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mConfigurationActionPerformed
-        
     }//GEN-LAST:event_mConfigurationActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btDataMining;

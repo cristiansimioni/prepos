@@ -5,5 +5,5 @@ import weka.core.Instances;
 
 public interface DatabaseLoader {
 
-    public Instances loadDatabase(String path) throws IOException; 
+    public Instances loadDatabase(String path) throws IOException;
 }

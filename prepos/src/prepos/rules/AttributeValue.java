@@ -2,7 +2,7 @@ package prepos.rules;
 
 /*
  * Author: Cristian Simioni
- * Last update: 09/03/2013
+ * Last update: 10/15/2013
  * 
  * Changes:
  * Date         Author              Function            Description
@@ -53,11 +53,11 @@ public class AttributeValue {
     public String toString() {
         return attribute + operator + value;
     }
-    
+
     @Override
     public boolean equals(Object other) {
         if (other instanceof AttributeValue) {
-            if (this.toString().equals(((AttributeValue)other).toString())) {
+            if (this.toString().equals(((AttributeValue) other).toString())) {
                 return true;
             }
         }

@@ -54,7 +54,7 @@ public class ParserClassifierPrepos {
             attributeValue.setValue(premise.split(attributeValue.getOperator(), 2)[1]);
             allPremises.add(attributeValue);
         }
-        
+
         return allPremises;
     }
 
@@ -74,7 +74,7 @@ public class ParserClassifierPrepos {
             attributeValue.setValue(consequent.split("=", 2)[1]);
             allConsequents.add(attributeValue);
         }
-        
+
         return allConsequents;
     }
 

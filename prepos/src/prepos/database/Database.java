@@ -40,7 +40,7 @@ public class Database {
     public void setPath(String path) {
         this.path = path;
     }
-    
+
     public String relationName() {
         return instances.relationName();
     }
@@ -48,12 +48,12 @@ public class Database {
     public int numInstances() {
         return instances.numInstances();
     }
-    
+
     public int numAttributes() {
         return instances.numAttributes();
     }
-    
-    public Attribute getAttribute (int index) {
+
+    public Attribute getAttribute(int index) {
         return instances.attribute(index);
     }
 

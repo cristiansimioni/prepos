@@ -82,7 +82,7 @@ public class GUIDataMining extends javax.swing.JFrame {
         this.tbOptions.setEnabledAt(1, false);
         this.tbOptions.setEnabledAt(2, false);
         this.tbOptions.setEnabledAt(3, false);
-        
+
         this.pbProgressStatus.setVisible(false);
 
         this.pack();

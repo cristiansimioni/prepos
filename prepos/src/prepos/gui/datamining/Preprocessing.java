@@ -48,7 +48,7 @@ public class Preprocessing extends javax.swing.JPanel {
         } catch (Exception e) {
             messages = ResourceBundle.getBundle("prepos.core.languages.language", new Locale("en", "US"));
             SystemInfo.getLog().log(Level.WARNING, e.getLocalizedMessage());
-        }      
+        }
         initComponents();
         initResources();
         createTree();
@@ -268,7 +268,6 @@ public class Preprocessing extends javax.swing.JPanel {
             parameters = databaseDenormalizer.getParameters();
         }
     }//GEN-LAST:event_bParametersActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bParameters;
     private javax.swing.JButton bSaveResult;

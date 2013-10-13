@@ -125,15 +125,15 @@ public class RedundancyElimination {
             this.withoutRedundancy.get(i).addConsequent(originalRules.get(i).getConsequents().get(0));
         }
     }
-    
+
     @Override
     public String toString() {
         StringBuilder msg = new StringBuilder();
-            for (ProductionRule rule : this.withoutRedundancy) {
-                msg.append(rule.toString());
-                msg.append("\n");
-            }
-        
+        for (ProductionRule rule : this.withoutRedundancy) {
+            msg.append(rule.toString());
+            msg.append("\n");
+        }
+
         return msg.toString();
     }
 
@@ -144,13 +144,13 @@ public class RedundancyElimination {
         msg.append("Number of rules with redundancy: " + numberOfRulesWithRedundancy + "\n");
         msg.append("Number of redundancies: " + numberOfRedundancies + "\n");
         msg.append("Number of items: " + getRedundancyItems().size() + "\n\n");
-        
+
         msg.append("Statistics of Items:\n\n");
-        msg.append(String.format("%-30s","Item") + "\t" + String.format("%-15s","Rules With") + "\t" + String.format("%-15s","Redundancy Counter") + "\n");
-        for(RedundancyItem item : getRedundancyItems()) {
-            msg.append(String.format("%-30s", item.getAttribute().toString()) + "\t" + String.format("%-15s",item.getNumberOfRulesWith()) + "\t" + String.format("%-15s",item.getNumberOfRedundancy()) + "\n");
+        msg.append(String.format("%-30s", "Item") + "\t" + String.format("%-15s", "Rules With") + "\t" + String.format("%-15s", "Redundancy Counter") + "\n");
+        for (RedundancyItem item : getRedundancyItems()) {
+            msg.append(String.format("%-30s", item.getAttribute().toString()) + "\t" + String.format("%-15s", item.getNumberOfRulesWith()) + "\t" + String.format("%-15s", item.getNumberOfRedundancy()) + "\n");
         }
-        
+
         return msg.toString();
     }
 }
