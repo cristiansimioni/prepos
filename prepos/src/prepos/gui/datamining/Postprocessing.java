@@ -17,10 +17,10 @@ import prepos.classification.parser.ParserClassifierPrepos;
 import prepos.core.Util;
 import prepos.gui.GUIAssociationRuleViewer;
 import prepos.gui.GUIClassificationRuleViewer;
-import prepos.postprocessing.exceptionrules.ExceptionRuleSearcher;
-import prepos.postprocessing.filter.GUIRulesFilter;
-import prepos.postprocessing.filter.RulesFilter;
-import prepos.postprocessing.redundancyelimination.RedundancyElimination;
+import prepos.postprocessing.ExceptionRuleSearcher;
+import prepos.gui.postprocessing.GUIRulesFilter;
+import prepos.postprocessing.RulesFilter;
+import prepos.postprocessing.RedundancyElimination;
 import prepos.rules.AssociationRule;
 import prepos.rules.ProductionRule;
 
@@ -38,7 +38,7 @@ public class Postprocessing extends javax.swing.JPanel {
     private JTree tAlgorithms;
     private boolean isAssociationRules;
     private boolean isProductionRules;
-    private PostprocessingResult tResult;
+    private PostprocessingOutput tResult;
     private PostprocessingStatistics tStatistics;
     int selectedAlgorithm;
     private ArrayList<AssociationRule> associationRules;
@@ -50,7 +50,7 @@ public class Postprocessing extends javax.swing.JPanel {
         CLASSIFIER_FILTER, CLASSIFIER_REDUNDANCY, CLASSIFIER_MEASURES;
     }
 
-    public PostprocessingResult gettResult() {
+    public PostprocessingOutput gettResult() {
         return tResult;
     }
 
@@ -91,26 +91,26 @@ public class Postprocessing extends javax.swing.JPanel {
 
         tAlgorithms.addTreeSelectionListener(
                 new TreeSelectionListener() {
-            @Override
-            public void valueChanged(TreeSelectionEvent e) {
-                TreePath treePath = tAlgorithms.getSelectionPath();
-                if (treePath.getPathCount() == 3) {
-                    // Filter Association
-                    if (treePath.toString().contains("Filter") && treePath.toString().contains("Association")) {
-                        selectedAlgorithm = algorithms.ASSOCIATION_FILTER.ordinal();
-                        bStart.setEnabled(true);
-                    } // Apriori (Weka)
-                    else if (treePath.toString().contains("Exception")) {
-                        selectedAlgorithm = algorithms.ASSOCIATION_EXCEPTIONRULES.ordinal();
-                        bStart.setEnabled(true);
-                    } else if (treePath.toString().contains("Measures")) {
-                        selectedAlgorithm = algorithms.ASSOCIATION_MEASURES.ordinal();
-                        bStart.setEnabled(true);
+                    @Override
+                    public void valueChanged(TreeSelectionEvent e) {
+                        TreePath treePath = tAlgorithms.getSelectionPath();
+                        if (treePath.getPathCount() == 3) {
+                            // Filter Association
+                            if (treePath.toString().contains("Filter") && treePath.toString().contains("Association")) {
+                                selectedAlgorithm = algorithms.ASSOCIATION_FILTER.ordinal();
+                                bStart.setEnabled(true);
+                            } // Apriori (Weka)
+                            else if (treePath.toString().contains("Exception")) {
+                                selectedAlgorithm = algorithms.ASSOCIATION_EXCEPTIONRULES.ordinal();
+                                bStart.setEnabled(true);
+                            } else if (treePath.toString().contains("Measures")) {
+                                selectedAlgorithm = algorithms.ASSOCIATION_MEASURES.ordinal();
+                                bStart.setEnabled(true);
+                            }
+                            tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
+                        }
                     }
-                    tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
-                }
-            }
-        });
+                });
 
         pAlgorithms.setViewportView(tAlgorithms);
 
@@ -119,7 +119,7 @@ public class Postprocessing extends javax.swing.JPanel {
 
     private void initResources() {
         // 
-        tResult = new PostprocessingResult();
+        tResult = new PostprocessingOutput();
         this.tbResults.add(tResult);
         this.tbResults.setTitleAt(0, "Result");
 

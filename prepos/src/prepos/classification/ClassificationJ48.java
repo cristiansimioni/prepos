@@ -24,7 +24,7 @@ public class ClassificationJ48 implements Classification {
 
         // Build classifier
         j48.buildClassifier(database.getInstances());
-        
+
         return j48.toString();
     }
 }

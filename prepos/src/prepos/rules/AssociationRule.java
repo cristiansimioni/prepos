@@ -100,19 +100,11 @@ public class AssociationRule extends Rule {
     public String toString() {
         StringBuilder msg = new StringBuilder();
 
-        for (AttributeValue premise : getPremises()) {
-            msg.append(premise.toString());
-            msg.append(" ");
-        }
+        msg.append(strPremise());
+        msg.append(" -> ");
+        msg.append(strConsequent());
 
-        msg.append("-> ");
-
-        for (AttributeValue consequent : getConsequents()) {
-            msg.append(consequent.toString());
-            msg.append(" ");
-        }
-
-        msg.append("sup:");
+        msg.append(" sup:");
         msg.append(support);
         msg.append(" conf:");
         msg.append(confidence);

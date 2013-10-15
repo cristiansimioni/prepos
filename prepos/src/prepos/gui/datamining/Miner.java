@@ -105,40 +105,40 @@ public class Miner extends javax.swing.JPanel {
         // Value changed event
         tAlgorithms.addTreeSelectionListener(
                 new TreeSelectionListener() {
-            @Override
-            public void valueChanged(TreeSelectionEvent e) {
-                TreePath treePath = tAlgorithms.getSelectionPath();
-                if (treePath.getPathCount() == 3) {
-                    // Set default parameters
-                    // Apriori (Borgelt)
-                    if (treePath.toString().contains("Apriori (Borgelt)")) {
-                        selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_BORGELT.ordinal();
-                        parameters = "-tr -c80 -s10 -S100 -m2 -n3";
-                        bStart.setEnabled(true);
-                        bParameters.setEnabled(true);
-                    } // Apriori (Weka)
-                    else if (treePath.toString().contains("Apriori (Weka)")) {
-                        selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_WEKA.ordinal();
-                        parameters = "-N 5000 -T 0 -C 0.1 -D 0.05 -U 1.0 -M 0.01 -S -1.0 -c -1";
-                        bStart.setEnabled(true);
-                        bParameters.setEnabled(true);
-                    } // J48 
-                    else if (treePath.toString().contains("J48")) {
-                        selectedAlgorithm = algorithms.CLASSIFIER_J48.ordinal();
-                        parameters = "";
-                        bStart.setEnabled(true);
-                        bParameters.setEnabled(true);
-                    } // C45 
-                    else if (treePath.toString().contains("C4.5")) {
-                        selectedAlgorithm = algorithms.CLASSIFIER_C45.ordinal();
-                        parameters = "-f";
-                        bStart.setEnabled(true);
-                        bParameters.setEnabled(false);
+                    @Override
+                    public void valueChanged(TreeSelectionEvent e) {
+                        TreePath treePath = tAlgorithms.getSelectionPath();
+                        if (treePath.getPathCount() == 3) {
+                            // Set default parameters
+                            // Apriori (Borgelt)
+                            if (treePath.toString().contains("Apriori (Borgelt)")) {
+                                selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_BORGELT.ordinal();
+                                parameters = "-tr -c80 -s10 -S100 -m2 -n3";
+                                bStart.setEnabled(true);
+                                bParameters.setEnabled(true);
+                            } // Apriori (Weka)
+                            else if (treePath.toString().contains("Apriori (Weka)")) {
+                                selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_WEKA.ordinal();
+                                parameters = "-N 5000 -T 0 -C 0.1 -D 0.05 -U 1.0 -M 0.01 -S -1.0 -c -1";
+                                bStart.setEnabled(true);
+                                bParameters.setEnabled(true);
+                            } // J48 
+                            else if (treePath.toString().contains("J48")) {
+                                selectedAlgorithm = algorithms.CLASSIFIER_J48.ordinal();
+                                parameters = "";
+                                bStart.setEnabled(true);
+                                bParameters.setEnabled(true);
+                            } // C45 
+                            else if (treePath.toString().contains("C4.5")) {
+                                selectedAlgorithm = algorithms.CLASSIFIER_C45.ordinal();
+                                parameters = "-f";
+                                bStart.setEnabled(true);
+                                bParameters.setEnabled(false);
+                            }
+                            tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString() + " | " + parameters);
+                        }
                     }
-                    tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString() + " | " + parameters);
-                }
-            }
-        });
+                });
 
 
         pAlgorithms.setViewportView(tAlgorithms);

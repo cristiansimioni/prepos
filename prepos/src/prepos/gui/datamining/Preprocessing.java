@@ -63,6 +63,8 @@ public class Preprocessing extends javax.swing.JPanel {
     // Initialize resources
     private void initResources() {
         bSaveResult.setEnabled(false);
+        bStart.setEnabled(false);
+        bParameters.setEnabled(false);
     }
 
     // Create a tree
@@ -84,26 +86,26 @@ public class Preprocessing extends javax.swing.JPanel {
         // Value changed event
         tAlgorithms.addTreeSelectionListener(
                 new TreeSelectionListener() {
-            @Override
-            public void valueChanged(TreeSelectionEvent e) {
-                TreePath treePath = tAlgorithms.getSelectionPath();
-                if (treePath.getPathCount() == 3) {
-                    // Apriori Preparator
-                    if (treePath.toString().contains("Apriori Preparator")) {
-                        selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_PREPARATOR.ordinal();
-                        bStart.setEnabled(true);
-                        bParameters.setEnabled(false);
-                    } // Denormalize Database
-                    else if (treePath.toString().contains("Denormalize Database")) {
-                        selectedAlgorithm = algorithms.ASSOCIATION_DATABASE_DENORMALIZER.ordinal();
-                        bStart.setEnabled(true);
-                        bParameters.setEnabled(true);
-                        parameters = "-d0 -i0";
+                    @Override
+                    public void valueChanged(TreeSelectionEvent e) {
+                        TreePath treePath = tAlgorithms.getSelectionPath();
+                        if (treePath.getPathCount() == 3) {
+                            // Apriori Preparator
+                            if (treePath.toString().contains("Apriori Preparator")) {
+                                selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_PREPARATOR.ordinal();
+                                bStart.setEnabled(true);
+                                bParameters.setEnabled(false);
+                            } // Denormalize Database
+                            else if (treePath.toString().contains("Denormalize Database")) {
+                                selectedAlgorithm = algorithms.ASSOCIATION_DATABASE_DENORMALIZER.ordinal();
+                                bStart.setEnabled(true);
+                                bParameters.setEnabled(true);
+                                parameters = "-d0 -i0";
+                            }
+                            tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
+                        }
                     }
-                    tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
-                }
-            }
-        });
+                });
 
         pAlgorithms.setViewportView(tAlgorithms);
         repaint();

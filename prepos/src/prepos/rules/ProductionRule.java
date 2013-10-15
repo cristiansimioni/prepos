@@ -50,19 +50,11 @@ public class ProductionRule extends Rule {
     public String toString() {
         StringBuilder msg = new StringBuilder();
 
-        for (AttributeValue premise : getPremises()) {
-            msg.append(premise.toString());
-            msg.append(" ");
-        }
+        msg.append(strPremise());
+        msg.append(" -> ");
+        msg.append(strConsequent());
 
-        msg.append("-> ");
-
-        for (AttributeValue consequent : getConsequents()) {
-            msg.append(consequent.toString());
-            msg.append(" ");
-        }
-
-        msg.append("miss:");
+        msg.append(" miss:");
         msg.append(miss);
         msg.append(" hit:");
         msg.append(hit);

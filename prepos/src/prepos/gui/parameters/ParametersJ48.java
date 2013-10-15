@@ -53,7 +53,7 @@ public class ParametersJ48 extends javax.swing.JDialog {
         lAttributes = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Parameters - Apriori (Borgelt)");
+        setTitle("Parameters - J48");
         setModal(true);
         setResizable(false);
 

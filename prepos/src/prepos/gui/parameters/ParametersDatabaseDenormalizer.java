@@ -73,7 +73,7 @@ public class ParametersDatabaseDenormalizer extends javax.swing.JDialog {
         lsItemAttribute = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Parameters - Apriori (Borgelt)");
+        setTitle("Parameters - Denormalize Database");
         setModal(true);
         setResizable(false);
 
