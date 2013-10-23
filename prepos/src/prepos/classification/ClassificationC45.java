@@ -9,7 +9,7 @@ import weka.core.converters.C45Saver;
 
 /*
  * Author: Cristian Simioni
- * Last update: 10/15/2013
+ * Last updated: 10/15/2013
  * 
  * Changes:
  * Date         Author              Function            Description

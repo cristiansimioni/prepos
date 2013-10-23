@@ -1,13 +1,14 @@
 package prepos.gui.datamining;
 
-import prepos.gui.parameters.ParametersJ48;
-import prepos.gui.parameters.ParametersAprioriWeka;
-import prepos.gui.parameters.ParametersAprioriBorgelt;
+import prepos.gui.parameters.GUIParametersJ48;
+import prepos.gui.parameters.GUIParametersAprioriWeka;
+import prepos.gui.parameters.GUIParametersAprioriBorgelt;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTree;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
@@ -105,40 +106,40 @@ public class Miner extends javax.swing.JPanel {
         // Value changed event
         tAlgorithms.addTreeSelectionListener(
                 new TreeSelectionListener() {
-                    @Override
-                    public void valueChanged(TreeSelectionEvent e) {
-                        TreePath treePath = tAlgorithms.getSelectionPath();
-                        if (treePath.getPathCount() == 3) {
-                            // Set default parameters
-                            // Apriori (Borgelt)
-                            if (treePath.toString().contains("Apriori (Borgelt)")) {
-                                selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_BORGELT.ordinal();
-                                parameters = "-tr -c80 -s10 -S100 -m2 -n3";
-                                bStart.setEnabled(true);
-                                bParameters.setEnabled(true);
-                            } // Apriori (Weka)
-                            else if (treePath.toString().contains("Apriori (Weka)")) {
-                                selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_WEKA.ordinal();
-                                parameters = "-N 5000 -T 0 -C 0.1 -D 0.05 -U 1.0 -M 0.01 -S -1.0 -c -1";
-                                bStart.setEnabled(true);
-                                bParameters.setEnabled(true);
-                            } // J48 
-                            else if (treePath.toString().contains("J48")) {
-                                selectedAlgorithm = algorithms.CLASSIFIER_J48.ordinal();
-                                parameters = "";
-                                bStart.setEnabled(true);
-                                bParameters.setEnabled(true);
-                            } // C45 
-                            else if (treePath.toString().contains("C4.5")) {
-                                selectedAlgorithm = algorithms.CLASSIFIER_C45.ordinal();
-                                parameters = "-f";
-                                bStart.setEnabled(true);
-                                bParameters.setEnabled(false);
-                            }
-                            tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString() + " | " + parameters);
-                        }
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                TreePath treePath = tAlgorithms.getSelectionPath();
+                if (treePath.getPathCount() == 3) {
+                    // Set default parameters
+                    // Apriori (Borgelt)
+                    if (treePath.toString().contains("Apriori (Borgelt)")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_BORGELT.ordinal();
+                        parameters = "-tr -c80 -s10 -S100 -m2 -n3";
+                        bStart.setEnabled(true);
+                        bParameters.setEnabled(true);
+                    } // Apriori (Weka)
+                    else if (treePath.toString().contains("Apriori (Weka)")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_WEKA.ordinal();
+                        parameters = "-N 5000 -T 0 -C 0.1 -D 0.05 -U 1.0 -M 0.01 -S -1.0 -c -1";
+                        bStart.setEnabled(true);
+                        bParameters.setEnabled(true);
+                    } // J48 
+                    else if (treePath.toString().contains("J48")) {
+                        selectedAlgorithm = algorithms.CLASSIFIER_J48.ordinal();
+                        parameters = "";
+                        bStart.setEnabled(true);
+                        bParameters.setEnabled(true);
+                    } // C45 
+                    else if (treePath.toString().contains("C4.5")) {
+                        selectedAlgorithm = algorithms.CLASSIFIER_C45.ordinal();
+                        parameters = "-f";
+                        bStart.setEnabled(true);
+                        bParameters.setEnabled(false);
                     }
-                });
+                    tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString() + " | " + parameters);
+                }
+            }
+        });
 
 
         pAlgorithms.setViewportView(tAlgorithms);
@@ -300,24 +301,28 @@ public class Miner extends javax.swing.JPanel {
     private void bStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStartActionPerformed
         try {
             if (selectedAlgorithm == algorithms.ASSOCIATION_APRIORI_WEKA.ordinal()) {
+                Shared.getInstance().changeStatus(messages.getString("MSG_STARTING_APRIORI"));
                 Association association = new AssociationAprioriWeka();
                 tOutput.setText(association.getAssociations(Shared.getInstance().getDatabase(), this.parameters));
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
                 lastExecutedAlgorithm = selectedAlgorithm;
             } else if (selectedAlgorithm == algorithms.ASSOCIATION_APRIORI_BORGELT.ordinal()) {
+                Shared.getInstance().changeStatus(messages.getString("MSG_STARTING_APRIORI"));
                 Association association = new AssociationAprioriBorgelt();
                 tOutput.setText(association.getAssociations(Shared.getInstance().getDatabase(), this.parameters));
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
                 lastExecutedAlgorithm = selectedAlgorithm;
             } else if (selectedAlgorithm == algorithms.CLASSIFIER_J48.ordinal()) {
+                Shared.getInstance().changeStatus(messages.getString("MSG_STARTING_J48"));
                 Classification classification = new ClassificationJ48();
                 tOutput.setText(classification.getClassification(Shared.getInstance().getDatabase(), this.parameters));
                 bSave.setEnabled(true);
                 bSaveRules.setEnabled(true);
                 lastExecutedAlgorithm = selectedAlgorithm;
             } else if (selectedAlgorithm == algorithms.CLASSIFIER_C45.ordinal()) {
+                Shared.getInstance().changeStatus(messages.getString("MSG_STARTING_C45"));
                 Classification classification = new ClassificationC45();
                 tOutput.setText(classification.getClassification(Shared.getInstance().getDatabase(), this.parameters));
                 bSave.setEnabled(true);
@@ -360,6 +365,11 @@ public class Miner extends javax.swing.JPanel {
                 parser.buidProductionRules();
                 fileSaver = new FileSaver(chSave.getSelectedFile().getName(), chSave.getSelectedFile().getPath(), parser.toString());
             } else if (lastExecutedAlgorithm == algorithms.CLASSIFIER_C45.ordinal()) {
+                // Contains simplified decision tree
+                if (tOutput.getText().contains("Simplified Decision Tree:")) {
+                    Object[] options = {"Decision Tree", "Simplified Decision Tree", "Cancel"};
+                    int choose = JOptionPane.showOptionDialog(null, "Which tree you need to transform in rules?", "", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+                }
             }
 
             try {
@@ -374,13 +384,13 @@ public class Miner extends javax.swing.JPanel {
 
     private void bParametersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bParametersActionPerformed
         if (selectedAlgorithm == algorithms.ASSOCIATION_APRIORI_WEKA.ordinal()) {
-            ParametersAprioriWeka pAprioriWeka = new ParametersAprioriWeka(this);
+            GUIParametersAprioriWeka pAprioriWeka = new GUIParametersAprioriWeka(this);
             pAprioriWeka.setVisible(true);
         } else if (selectedAlgorithm == algorithms.ASSOCIATION_APRIORI_BORGELT.ordinal()) {
-            ParametersAprioriBorgelt pBorgelt = new ParametersAprioriBorgelt(this);
+            GUIParametersAprioriBorgelt pBorgelt = new GUIParametersAprioriBorgelt(this);
             pBorgelt.setVisible(true);
         } else if (selectedAlgorithm == algorithms.CLASSIFIER_J48.ordinal()) {
-            ParametersJ48 pJ48 = new ParametersJ48(Shared.getInstance().getDatabase());
+            GUIParametersJ48 pJ48 = new GUIParametersJ48(Shared.getInstance().getDatabase());
             pJ48.setVisible(true);
         } else if (selectedAlgorithm == algorithms.CLASSIFIER_C45.ordinal()) {
         }

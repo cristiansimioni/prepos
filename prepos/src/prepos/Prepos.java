@@ -5,7 +5,7 @@ import prepos.gui.GUIChooser;
 
 /*
  * Author: Cristian Simioni
- * Last update: 10/15/2013
+ * Last updated: 10/15/2013
  * 
  * Changes:
  * Date         Author              Function            Description

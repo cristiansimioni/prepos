@@ -14,7 +14,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 import prepos.core.FileSaver;
 import prepos.core.SystemInfo;
-import prepos.gui.parameters.ParametersDatabaseDenormalizer;
+import prepos.gui.parameters.GUIParametersDatabaseDenormalizer;
 import prepos.preprocessing.AprioriPreparator;
 import prepos.preprocessing.DatabaseDenormalizer;
 
@@ -86,26 +86,26 @@ public class Preprocessing extends javax.swing.JPanel {
         // Value changed event
         tAlgorithms.addTreeSelectionListener(
                 new TreeSelectionListener() {
-                    @Override
-                    public void valueChanged(TreeSelectionEvent e) {
-                        TreePath treePath = tAlgorithms.getSelectionPath();
-                        if (treePath.getPathCount() == 3) {
-                            // Apriori Preparator
-                            if (treePath.toString().contains("Apriori Preparator")) {
-                                selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_PREPARATOR.ordinal();
-                                bStart.setEnabled(true);
-                                bParameters.setEnabled(false);
-                            } // Denormalize Database
-                            else if (treePath.toString().contains("Denormalize Database")) {
-                                selectedAlgorithm = algorithms.ASSOCIATION_DATABASE_DENORMALIZER.ordinal();
-                                bStart.setEnabled(true);
-                                bParameters.setEnabled(true);
-                                parameters = "-d0 -i0";
-                            }
-                            tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
-                        }
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                TreePath treePath = tAlgorithms.getSelectionPath();
+                if (treePath.getPathCount() == 3) {
+                    // Apriori Preparator
+                    if (treePath.toString().contains("Apriori Preparator")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_APRIORI_PREPARATOR.ordinal();
+                        bStart.setEnabled(true);
+                        bParameters.setEnabled(false);
+                    } // Denormalize Database
+                    else if (treePath.toString().contains("Denormalize Database")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_DATABASE_DENORMALIZER.ordinal();
+                        bStart.setEnabled(true);
+                        bParameters.setEnabled(true);
+                        parameters = "-d0 -i0";
                     }
-                });
+                    tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
+                }
+            }
+        });
 
         pAlgorithms.setViewportView(tAlgorithms);
         repaint();
@@ -265,7 +265,7 @@ public class Preprocessing extends javax.swing.JPanel {
 
     private void bParametersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bParametersActionPerformed
         if (selectedAlgorithm == algorithms.ASSOCIATION_DATABASE_DENORMALIZER.ordinal()) {
-            ParametersDatabaseDenormalizer databaseDenormalizer = new ParametersDatabaseDenormalizer(Shared.getInstance().getDatabase(), parameters);
+            GUIParametersDatabaseDenormalizer databaseDenormalizer = new GUIParametersDatabaseDenormalizer(Shared.getInstance().getDatabase(), parameters);
             databaseDenormalizer.setVisible(true);
             parameters = databaseDenormalizer.getParameters();
         }

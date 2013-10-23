@@ -4,11 +4,11 @@ import java.util.logging.Level;
 import prepos.core.SystemInfo;
 import prepos.database.Database;
 
-public class ParametersJ48 extends javax.swing.JDialog {
+public class GUIParametersJ48 extends javax.swing.JDialog {
 
     private Database database;
 
-    public ParametersJ48(Database database) {
+    public GUIParametersJ48(Database database) {
         this.database = database;
         initLayout();
         initComponents();

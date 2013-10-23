@@ -12,11 +12,11 @@ import prepos.gui.datamining.Miner;
  *
  * @author z00380tv
  */
-public class ParametersAprioriBorgelt extends javax.swing.JDialog {
+public class GUIParametersAprioriWeka extends javax.swing.JDialog {
 
     private Miner miner;
 
-    public ParametersAprioriBorgelt(Miner miner) {
+    public GUIParametersAprioriWeka(Miner miner) {
         this.miner = miner;
         initLayout();
         initComponents();
@@ -25,17 +25,15 @@ public class ParametersAprioriBorgelt extends javax.swing.JDialog {
 
     private void parserParameters() {
         String parameters[] = miner.getParameters().split(" ");
-        for (String parameter : parameters) {
-            if (parameter.contains("-c")) {
-                tMinConfidence.setText(parameter.split("c")[1]);
-            } else if (parameter.contains("-s")) {
-                tMinSupport.setText(parameter.split("s")[1]);
-            } else if (parameter.contains("-S")) {
-                tMaxSupport.setText(parameter.split("S")[1]);
-            } else if (parameter.contains("-m")) {
-                tMinItem.setText(parameter.split("m")[1]);
-            } else if (parameter.contains("-n")) {
-                tMaxItem.setText(parameter.split("n")[1]);
+        for (int i = 0; i < parameters.length; i++) {
+            if (parameters[i].contains("-C")) {
+                tMinConfidence.setText(parameters[i + 1]);
+            } else if (parameters[i].contains("-M")) {
+                tMinSupport.setText(parameters[i + 1]);
+            } else if (parameters[i].contains("-U")) {
+                tMaxSupport.setText(parameters[i + 1]);
+            } else if (parameters[i].contains("-N")) {
+                tNumRules.setText(parameters[i + 1]);
             }
         }
 
@@ -68,18 +66,13 @@ public class ParametersAprioriBorgelt extends javax.swing.JDialog {
         tMinSupport = new javax.swing.JTextField();
         lMaxSupport = new javax.swing.JLabel();
         tMaxSupport = new javax.swing.JTextField();
-        lMinItems = new javax.swing.JLabel();
-        tMinItem = new javax.swing.JTextField();
-        lMaxItems = new javax.swing.JLabel();
-        tMaxItem = new javax.swing.JTextField();
+        lNumRules = new javax.swing.JLabel();
+        tNumRules = new javax.swing.JTextField();
         bCancel = new javax.swing.JButton();
         bSave = new javax.swing.JButton();
-        lUnstructured = new javax.swing.JLabel();
-        bUnstructured = new javax.swing.JButton();
-        tUnstructured = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Parameters - Apriori (Borgelt)");
+        setTitle("Parameters - Apriori (WEKA)");
         setModal(true);
         setResizable(false);
 
@@ -94,13 +87,9 @@ public class ParametersAprioriBorgelt extends javax.swing.JDialog {
         lMaxSupport.setText("Maximum support of a rule:");
         lMaxSupport.setToolTipText("");
 
-        lMinItems.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lMinItems.setText("Minimum number of items per rule:");
-        lMinItems.setToolTipText("");
-
-        lMaxItems.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lMaxItems.setText("Maximum number of items per rule:");
-        lMaxItems.setToolTipText("");
+        lNumRules.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lNumRules.setText("Number of Rules to Find");
+        lNumRules.setToolTipText("");
 
         bCancel.setText("Cancel");
         bCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -116,12 +105,6 @@ public class ParametersAprioriBorgelt extends javax.swing.JDialog {
             }
         });
 
-        lUnstructured.setText("Unstructured database:");
-
-        bUnstructured.setText("Choose unstructured database");
-
-        tUnstructured.setEditable(false);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -134,30 +117,22 @@ public class ParametersAprioriBorgelt extends javax.swing.JDialog {
                         .addComponent(tMinSupport, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lMinItems, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lMaxSupport, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lMaxItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lNumRules, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lMaxSupport, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tMaxItem, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                            .addComponent(tMinItem)
-                            .addComponent(tMaxSupport)))
+                            .addComponent(tNumRules, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                            .addComponent(tMaxSupport))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lMinConfidence, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tMinConfidence))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bUnstructured, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(bCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lUnstructured, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tUnstructured)
-                                    .addComponent(bSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(bCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bSave, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -177,23 +152,13 @@ public class ParametersAprioriBorgelt extends javax.swing.JDialog {
                     .addComponent(tMaxSupport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lMinItems)
-                    .addComponent(tMinItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tMaxItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lMaxItems))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bUnstructured)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lUnstructured)
-                    .addComponent(tUnstructured, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lNumRules)
+                    .addComponent(tNumRules, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bSave)
                     .addComponent(bCancel))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -204,21 +169,18 @@ public class ParametersAprioriBorgelt extends javax.swing.JDialog {
     }//GEN-LAST:event_bCancelActionPerformed
 
     private void bSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSaveActionPerformed
-        String parameters = "-tr ";
+        String parameters = "";
         if (!tMinSupport.getText().equals("")) {
-            parameters += "-s" + tMinSupport.getText() + " ";
+            parameters += "-M " + tMinSupport.getText() + " ";
         }
         if (!tMaxSupport.getText().equals("")) {
-            parameters += "-S" + tMaxSupport.getText() + " ";
+            parameters += "-U " + tMaxSupport.getText() + " ";
         }
         if (!tMinConfidence.getText().equals("")) {
-            parameters += "-c" + tMinConfidence.getText() + " ";
+            parameters += "-C " + tMinConfidence.getText() + " ";
         }
-        if (!tMinItem.getText().equals("")) {
-            parameters += "-m" + tMinItem.getText() + " ";
-        }
-        if (!tMaxItem.getText().equals("")) {
-            parameters += "-n" + tMaxItem.getText() + " ";
+        if (!tNumRules.getText().equals("")) {
+            parameters += "-N " + tNumRules.getText() + " ";
         }
         parameters = parameters.trim();
         miner.setParameters(parameters);
@@ -227,18 +189,13 @@ public class ParametersAprioriBorgelt extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCancel;
     private javax.swing.JButton bSave;
-    private javax.swing.JButton bUnstructured;
-    private javax.swing.JLabel lMaxItems;
     private javax.swing.JLabel lMaxSupport;
     private javax.swing.JLabel lMinConfidence;
-    private javax.swing.JLabel lMinItems;
     private javax.swing.JLabel lMinSupport;
-    private javax.swing.JLabel lUnstructured;
-    private javax.swing.JTextField tMaxItem;
+    private javax.swing.JLabel lNumRules;
     private javax.swing.JTextField tMaxSupport;
     private javax.swing.JTextField tMinConfidence;
-    private javax.swing.JTextField tMinItem;
     private javax.swing.JTextField tMinSupport;
-    private javax.swing.JTextField tUnstructured;
+    private javax.swing.JTextField tNumRules;
     // End of variables declaration//GEN-END:variables
 }

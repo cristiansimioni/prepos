@@ -91,26 +91,26 @@ public class Postprocessing extends javax.swing.JPanel {
 
         tAlgorithms.addTreeSelectionListener(
                 new TreeSelectionListener() {
-                    @Override
-                    public void valueChanged(TreeSelectionEvent e) {
-                        TreePath treePath = tAlgorithms.getSelectionPath();
-                        if (treePath.getPathCount() == 3) {
-                            // Filter Association
-                            if (treePath.toString().contains("Filter") && treePath.toString().contains("Association")) {
-                                selectedAlgorithm = algorithms.ASSOCIATION_FILTER.ordinal();
-                                bStart.setEnabled(true);
-                            } // Apriori (Weka)
-                            else if (treePath.toString().contains("Exception")) {
-                                selectedAlgorithm = algorithms.ASSOCIATION_EXCEPTIONRULES.ordinal();
-                                bStart.setEnabled(true);
-                            } else if (treePath.toString().contains("Measures")) {
-                                selectedAlgorithm = algorithms.ASSOCIATION_MEASURES.ordinal();
-                                bStart.setEnabled(true);
-                            }
-                            tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
-                        }
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                TreePath treePath = tAlgorithms.getSelectionPath();
+                if (treePath.getPathCount() == 3) {
+                    // Filter Association
+                    if (treePath.toString().contains("Filter") && treePath.toString().contains("Association")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_FILTER.ordinal();
+                        bStart.setEnabled(true);
+                    } // Apriori (Weka)
+                    else if (treePath.toString().contains("Exception")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_EXCEPTIONRULES.ordinal();
+                        bStart.setEnabled(true);
+                    } else if (treePath.toString().contains("Measures")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_MEASURES.ordinal();
+                        bStart.setEnabled(true);
                     }
-                });
+                    tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
+                }
+            }
+        });
 
         pAlgorithms.setViewportView(tAlgorithms);
 

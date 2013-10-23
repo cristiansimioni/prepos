@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import javax.swing.JProgressBar;
 import prepos.core.Shared;
 import prepos.core.SystemInfo;
-import prepos.gui.utilities.MySQLPreparator;
+import prepos.gui.utilities.GUIMySQLPreparator;
 
 public class GUIUtilities extends javax.swing.JFrame {
 
@@ -55,7 +55,7 @@ public class GUIUtilities extends javax.swing.JFrame {
 
         // Insert panels on Tabbed Pan
         // MySQL Preparator
-        MySQLPreparator sqlPreparator = new MySQLPreparator();
+        GUIMySQLPreparator sqlPreparator = new GUIMySQLPreparator();
         this.tbOptions.add(sqlPreparator);
         this.tbOptions.setTitleAt(0, messages.getString("MYSQL_PREPARATOR"));
 

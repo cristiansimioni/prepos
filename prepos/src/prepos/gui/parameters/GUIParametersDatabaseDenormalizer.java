@@ -4,14 +4,14 @@ import java.util.logging.Level;
 import prepos.core.SystemInfo;
 import prepos.database.Database;
 
-public class ParametersDatabaseDenormalizer extends javax.swing.JDialog {
+public class GUIParametersDatabaseDenormalizer extends javax.swing.JDialog {
 
     private String parameters;
     private Database database;
     private int indexOfId;
     private int indexOfItem;
 
-    public ParametersDatabaseDenormalizer(Database database, String parameters) {
+    public GUIParametersDatabaseDenormalizer(Database database, String parameters) {
         this.database = database;
         this.parameters = parameters;
         initLayout();

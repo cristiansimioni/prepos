@@ -812,3 +812,19 @@ Out 14, 2013 1:57:36 PM prepos.core.SystemInfo initialize
 WARNING: Configuration file had a problem.
 Out 14, 2013 2:00:44 PM prepos.core.SystemInfo initialize
 WARNING: Configuration file had a problem.
+Out 15, 2013 10:55:36 AM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 15, 2013 10:57:19 AM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 15, 2013 10:57:21 AM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 15, 2013 11:25:19 AM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 15, 2013 11:25:49 AM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 15, 2013 11:32:02 AM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 15, 2013 11:56:22 AM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 23, 2013 5:58:29 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!

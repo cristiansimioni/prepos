@@ -44,7 +44,7 @@ public class AssociationRule extends Rule {
     // Methods
     // Verify if a rule is an exception rule
     public boolean isExceptionRule(ArrayList<AttributeValue> others) {
-        if (getPremises().size() < others.size()) {
+        if (getPremises().size() <= others.size()) {
             return false;
         }
 

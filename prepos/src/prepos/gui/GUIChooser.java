@@ -12,10 +12,11 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import prepos.core.Util;
 
 /*
  * Author: Cristian Simioni
- * Last update: 09/03/2013
+ * Last update: 10/15/2013
  * 
  * Changes:
  * Date         Author              Function            Description
@@ -231,6 +232,7 @@ public class GUIChooser extends javax.swing.JFrame {
 
     // Program > Exit
     private void mExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mExitActionPerformed
+        Util.cleanTemporaryFolder();
         System.exit(0);
     }//GEN-LAST:event_mExitActionPerformed
 
