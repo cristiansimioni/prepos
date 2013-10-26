@@ -42,9 +42,7 @@ public class ExceptionRuleSearcher {
             }
         }
 
-        int i = 1;
         for (AssociationRule rule : rules) {
-            System.out.println(i + "/" + rules.size());
             ArrayList<AssociationRule> rulesSearch = (ArrayList<AssociationRule>) hash.get(rule.getConsequents().get(0).getAttribute());
             ExceptionRule exceptionRule = new ExceptionRule(rule);
             for (AssociationRule search : rulesSearch) {
@@ -57,7 +55,6 @@ public class ExceptionRuleSearcher {
                 numOfRulesWithException++;
                 numOfExceptionRules += exceptionRule.numOfExcpetionRule();
             }
-            i++;
         }
     }
 

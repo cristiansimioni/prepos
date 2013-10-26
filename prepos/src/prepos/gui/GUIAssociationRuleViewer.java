@@ -39,6 +39,7 @@ public class GUIAssociationRuleViewer extends javax.swing.JFrame {
         tRules = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Assocition Rules Viewer");
 
         tRules.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

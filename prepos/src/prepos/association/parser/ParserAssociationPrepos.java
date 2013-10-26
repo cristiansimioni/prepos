@@ -30,12 +30,14 @@ public class ParserAssociationPrepos {
     public void buildAssociationRules() {
         String[] lines = this.text.split("\n");
         for (String line : lines) {
-            AssociationRule newRule = new AssociationRule();
-            newRule.setPremises(getPremises(line));
-            newRule.setConsequents(getConsequents(line));
-            newRule.setSupport(getSupport(line));
-            newRule.setConfidence(getConfidence(line));
-            rules.add(newRule);
+            if (line.contains("->")) {
+                AssociationRule newRule = new AssociationRule();
+                newRule.setPremises(getPremises(line));
+                newRule.setConsequents(getConsequents(line));
+                newRule.setSupport(getSupport(line));
+                newRule.setConfidence(getConfidence(line));
+                rules.add(newRule);
+            }
         }
     }
 
@@ -62,7 +64,7 @@ public class ParserAssociationPrepos {
     private ArrayList<AttributeValue> getConsequents(String line) {
         String strConsequents;
         strConsequents = line.split("->")[1].trim();
-        strConsequents = strConsequents.split("sup:")[0].trim();
+        strConsequents = strConsequents.split("\\(")[0].trim();
 
         String[] consequents = strConsequents.split(" ");
         ArrayList<AttributeValue> allConsequents = new ArrayList<>();
@@ -81,16 +83,17 @@ public class ParserAssociationPrepos {
     // Get the confidence of rule
     private float getConfidence(String line) {
         String strConfidence;
-        strConfidence = line.split("conf:")[1];
-        strConfidence = strConfidence.split("\n")[0];
+        strConfidence = line.split("\\(")[1];
+        strConfidence = strConfidence.split(", ")[1];
+        strConfidence = strConfidence.replace(")", "");
         return Float.parseFloat(strConfidence);
     }
 
     // Get the support of rule
     private float getSupport(String line) {
         String strSupport;
-        strSupport = line.split("sup:")[1];
-        strSupport = strSupport.split(" ")[0];
+        strSupport = line.split("\\(")[1];
+        strSupport = strSupport.split(",")[0];
         return Float.parseFloat(strSupport);
     }
 

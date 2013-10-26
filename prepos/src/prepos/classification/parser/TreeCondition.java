@@ -11,7 +11,7 @@ import prepos.rules.AttributeValue;
  * -----------+-------------------+-------------------+------------------------
  * 10/15/2013 | Cristian Simioni  | -                 | - 
  */
-public class TreeCondition {
+public abstract class TreeCondition {
 
     // Attributes
     private String condition;
@@ -47,22 +47,7 @@ public class TreeCondition {
         }
     }
 
-    public boolean isSubTree() {
-        if (condition.contains("[S")) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public int getSubTree() {
-        int index = condition.indexOf("[");
-        String sub = condition.substring(index);
-        sub = sub.replace("[S", "");
-        sub = sub.replace("]", "");
-        return Integer.parseInt(sub);
-    }
-
+    // Get the item from a non-leaf node
     public AttributeValue getItem() {
         AttributeValue atrributeValue = new AttributeValue();
         String item = "";
@@ -123,7 +108,8 @@ public class TreeCondition {
         return atrributeValue;
     }
 
-    public AttributeValue getLeave() {
+    // Get the item from a leaf node
+    public AttributeValue getLeaf() {
         AttributeValue atrributeValue = new AttributeValue();
         String item = condition.split(":")[1].trim();
 
@@ -134,28 +120,35 @@ public class TreeCondition {
         return atrributeValue;
     }
 
-    public float getPrecision() {
+    // Get the success of leaf node
+    public float getSuccess() {
+        String success = "0.0";
         if (isLeaf()) {
-            String precision = condition.substring(condition.indexOf("(", condition.indexOf(":")));
-            precision = precision.replace("(", "");
-            precision = precision.replace(")", "");
-            if (precision.contains("|")) {
-                precision = precision.split("\\|")[1];
-            }
-            if (precision.contains("/")) {
-                String amount = precision.split("/")[0];
-                String hits = precision.split("/")[1];
-                return (Float.parseFloat(hits) * 100) / (Float.parseFloat(amount));
-            } else if (Float.parseFloat(precision) > 0.0) {
-                return 100f;
-            } else {
-                return 0;
+            success = condition.substring(condition.indexOf("(", condition.indexOf(":")));
+            success = success.replace("(", "");
+            success = success.replace(")", "");
+
+            if (success.contains("/")) {
+                success = success.split("/")[0];
             }
         }
-        return 0f;
+        return Float.parseFloat(success);
     }
 
-    public String getInfoPrecision() {
-        return condition.substring(condition.indexOf("(", condition.indexOf(":")));
+    // Get the error of leaf node
+    public float getError() {
+        String error = "0.0";
+        if (isLeaf()) {
+            error = condition.substring(condition.indexOf("(", condition.indexOf(":")));
+            error = error.replace("(", "");
+            error = error.replace(")", "");
+
+            if (error.contains("/")) {
+                error = error.split("/")[1];
+            } else {
+                error = "0.0";
+            }
+        }
+        return Float.parseFloat(error);
     }
 }

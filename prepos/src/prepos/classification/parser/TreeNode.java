@@ -17,16 +17,16 @@ public class TreeNode {
     private AttributeValue attributeValue;
     private int previousLevel;
     private boolean leaf;
-    private float hit;
-    private float miss;
+    private float success;
+    private float error;
 
     // Constructor
     public TreeNode(AttributeValue attributeValue) {
         this.leaf = false;
         this.attributeValue = attributeValue;
         this.previousLevel = -1;
-        this.hit = 0.0f;
-        this.miss = 0.0f;
+        this.success = 0.0f;
+        this.error = 0.0f;
     }
 
     // Getter & setter
@@ -54,19 +54,19 @@ public class TreeNode {
         this.leaf = leaf;
     }
 
-    public float getHit() {
-        return hit;
+    public float getSuccess() {
+        return success;
     }
 
-    public void setHit(float hit) {
-        this.hit = hit;
+    public void setSuccess(float success) {
+        this.success = success;
     }
 
-    public float getMiss() {
-        return miss;
+    public float getError() {
+        return error;
     }
 
-    public void setMiss(float miss) {
-        this.miss = miss;
+    public void setError(float error) {
+        this.error = error;
     }
 }

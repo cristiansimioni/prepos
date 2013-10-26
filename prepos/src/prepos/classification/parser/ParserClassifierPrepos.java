@@ -30,12 +30,14 @@ public class ParserClassifierPrepos {
     public void buildProductionRules() {
         String[] lines = this.text.split("\n");
         for (String line : lines) {
-            ProductionRule newRule = new ProductionRule();
-            newRule.setPremises(getPremises(line));
-            newRule.setConsequents(getConsequents(line));
-            newRule.setHit(getHit(line));
-            newRule.setMiss(getMiss(line));
-            rules.add(newRule);
+            if (line.contains("->")) {
+                ProductionRule newRule = new ProductionRule();
+                newRule.setPremises(getPremises(line));
+                newRule.setConsequents(getConsequents(line));
+                newRule.setSuccess(getSuccess(line));
+                newRule.setError(getError(line));
+                rules.add(newRule);
+            }
         }
     }
 
@@ -62,7 +64,7 @@ public class ParserClassifierPrepos {
     private ArrayList<AttributeValue> getConsequents(String line) {
         String strConsequents;
         strConsequents = line.split("->")[1].trim();
-        strConsequents = strConsequents.split("miss:")[0].trim();
+        strConsequents = strConsequents.split("\\(")[0].trim();
 
         String[] consequents = strConsequents.split(" ");
         ArrayList<AttributeValue> allConsequents = new ArrayList<>();
@@ -78,20 +80,21 @@ public class ParserClassifierPrepos {
         return allConsequents;
     }
 
-    // Get the hit of rule
-    private float getHit(String line) {
-        String strHit;
-        strHit = line.split("hit:")[1];
-        strHit = strHit.split("\n")[0];
-        return Float.parseFloat(strHit);
+    // Get the success of rule
+    private float getSuccess(String line) {
+        String strSuccess;
+        strSuccess = line.split("\\(")[1];
+        strSuccess = strSuccess.split(",")[0];
+        return Float.parseFloat(strSuccess);
     }
 
-    // Get the miss of rule
-    private float getMiss(String line) {
-        String strMiss;
-        strMiss = line.split("miss:")[1];
-        strMiss = strMiss.split(" ")[0];
-        return Float.parseFloat(strMiss);
+    // Get the error of rule
+    private float getError(String line) {
+        String strError;
+        strError = line.split("\\(")[1];
+        strError = strError.split(", ")[1];
+        strError = strError.replace(")", "");
+        return Float.parseFloat(strError);
     }
 
     // Get the operator from attribute-value

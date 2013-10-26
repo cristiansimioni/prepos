@@ -37,20 +37,21 @@ public class GUIClassificationRuleViewer extends javax.swing.JFrame {
         tRules = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Production Rules Viewer");
 
         tRules.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "No.", "Premise", "Consequent", "Miss", "Hit", ""
+                "No.", "Premise", "Consequent", "Success", "Error", "Precision"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.Boolean.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -63,20 +64,14 @@ public class GUIClassificationRuleViewer extends javax.swing.JFrame {
         });
         tRules.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tRules);
-        tRules.getColumnModel().getColumn(0).setMinWidth(70);
-        tRules.getColumnModel().getColumn(0).setPreferredWidth(70);
-        tRules.getColumnModel().getColumn(0).setMaxWidth(70);
-        tRules.getColumnModel().getColumn(1).setResizable(false);
-        tRules.getColumnModel().getColumn(2).setResizable(false);
-        tRules.getColumnModel().getColumn(3).setMinWidth(75);
+        tRules.getColumnModel().getColumn(0).setResizable(false);
+        tRules.getColumnModel().getColumn(0).setPreferredWidth(20);
+        tRules.getColumnModel().getColumn(3).setResizable(false);
         tRules.getColumnModel().getColumn(3).setPreferredWidth(30);
-        tRules.getColumnModel().getColumn(3).setMaxWidth(75);
-        tRules.getColumnModel().getColumn(4).setMinWidth(75);
-        tRules.getColumnModel().getColumn(4).setPreferredWidth(20);
-        tRules.getColumnModel().getColumn(4).setMaxWidth(75);
-        tRules.getColumnModel().getColumn(5).setMinWidth(15);
-        tRules.getColumnModel().getColumn(5).setPreferredWidth(5);
-        tRules.getColumnModel().getColumn(5).setMaxWidth(15);
+        tRules.getColumnModel().getColumn(4).setResizable(false);
+        tRules.getColumnModel().getColumn(4).setPreferredWidth(30);
+        tRules.getColumnModel().getColumn(5).setResizable(false);
+        tRules.getColumnModel().getColumn(5).setPreferredWidth(30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,7 +114,7 @@ public class GUIClassificationRuleViewer extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) tRules.getModel();
         int i = 1;
         for (ProductionRule rule : this.rules) {
-            model.addRow(new Object[]{i, rule.strPremise(), rule.strConsequent(), rule.getHit(), rule.getMiss(), false});
+            model.addRow(new Object[]{i, rule.strPremise(), rule.strConsequent(), rule.getSuccess(), rule.getError(), rule.precision()});
             i++;
         }
 

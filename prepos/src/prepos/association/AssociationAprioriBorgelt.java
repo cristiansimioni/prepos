@@ -19,7 +19,7 @@ public class AssociationAprioriBorgelt implements Association {
 
     @Override
     public String getAssociations(Database database, String parameters) throws Exception {
-        String assoctiations = "No rules found.";
+        String assoctiations;
 
         // Prepare database
         AprioriPreparator preparator = new AprioriPreparator(database);
@@ -41,6 +41,8 @@ public class AssociationAprioriBorgelt implements Association {
         // Get the associations from file
         if (new File(output).length() != 0) {
             assoctiations = new Scanner(new File(output)).useDelimiter("\\Z").next();
+        } else {
+            assoctiations = "No rules found.";
         }
 
         return assoctiations;

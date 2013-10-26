@@ -41,6 +41,14 @@ public class MySQLTable {
         this.name = name;
     }
 
+    public ArrayList<MySQLAttribute> getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(ArrayList<MySQLAttribute> attributes) {
+        this.attributes = attributes;
+    }
+
     // Methods
     // Add attribute
     public void addAttribute(MySQLAttribute attribute) {

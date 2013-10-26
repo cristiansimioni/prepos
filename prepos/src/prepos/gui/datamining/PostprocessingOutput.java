@@ -39,12 +39,12 @@ public class PostprocessingOutput extends javax.swing.JPanel {
 
     private void initLabels() {
         bSave.setText(messages.getString("SAVE_RESULT"));
-        bSaveRules.setText(messages.getString("SAVE_RULES"));
+        //bSaveRules.setText(messages.getString("SAVE_RULES"));
     }
 
     private void initResources() {
         bSave.setEnabled(true);
-        bSaveRules.setEnabled(false);
+        //bSaveRules.setEnabled(false);
     }
 
     public JTextArea gettResult() {
@@ -59,7 +59,6 @@ public class PostprocessingOutput extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tOutput = new javax.swing.JTextArea();
         bSave = new javax.swing.JButton();
-        bSaveRules = new javax.swing.JButton();
 
         tOutput.setColumns(20);
         tOutput.setRows(5);
@@ -72,8 +71,6 @@ public class PostprocessingOutput extends javax.swing.JPanel {
             }
         });
 
-        bSaveRules.setText("Save Rules");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -81,8 +78,6 @@ public class PostprocessingOutput extends javax.swing.JPanel {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(bSaveRules, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bSave, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6))
         );
@@ -91,9 +86,7 @@ public class PostprocessingOutput extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bSave)
-                    .addComponent(bSaveRules, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(bSave)
                 .addGap(3, 3, 3))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -112,7 +105,6 @@ public class PostprocessingOutput extends javax.swing.JPanel {
     }//GEN-LAST:event_bSaveActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bSave;
-    private javax.swing.JButton bSaveRules;
     private javax.swing.JFileChooser chSaveResult;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea tOutput;

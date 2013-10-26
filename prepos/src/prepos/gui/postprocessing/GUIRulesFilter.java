@@ -453,6 +453,7 @@ public class GUIRulesFilter extends javax.swing.JDialog {
 
         ArrayList<AssociationRule> rules = filter.filter();
         StringBuilder msg = new StringBuilder();
+        msg.append("Association Rules:\n");
         for (AssociationRule rule : rules) {
             msg.append(rule.toString());
             msg.append("\n");

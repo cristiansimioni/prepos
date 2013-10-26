@@ -28,21 +28,21 @@ public class Util {
     public static boolean isAssociationFile(String pathFile) throws FileNotFoundException {
         String[] lines = new Scanner(new File(pathFile)).useDelimiter("\\Z").next().split("\n");
         for (String line : lines) {
-            if (!line.contains("sup:") && !line.contains("conf:")) {
-                return false;
+            if (line.contains("Association Rules:")) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     // Verify if the file contains production rules
     public static boolean isClassificationFile(String pathFile) throws FileNotFoundException {
         String[] lines = new Scanner(new File(pathFile)).useDelimiter("\\Z").next().split("\n");
         for (String line : lines) {
-            if (!line.contains("miss:") && !line.contains("hit:")) {
-                return false;
+            if (!line.contains("Production Rules:")) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 }

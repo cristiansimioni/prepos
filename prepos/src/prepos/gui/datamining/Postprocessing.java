@@ -14,11 +14,13 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 import prepos.association.parser.ParserAssociationPrepos;
 import prepos.classification.parser.ParserClassifierPrepos;
+import prepos.core.Shared;
 import prepos.core.Util;
 import prepos.gui.GUIAssociationRuleViewer;
 import prepos.gui.GUIClassificationRuleViewer;
 import prepos.postprocessing.ExceptionRuleSearcher;
 import prepos.gui.postprocessing.GUIRulesFilter;
+import prepos.postprocessing.FasterGeneralizationMeasure;
 import prepos.postprocessing.RulesFilter;
 import prepos.postprocessing.RedundancyElimination;
 import prepos.rules.AssociationRule;
@@ -40,7 +42,7 @@ public class Postprocessing extends javax.swing.JPanel {
     private boolean isProductionRules;
     private PostprocessingOutput tResult;
     private PostprocessingStatistics tStatistics;
-    int selectedAlgorithm;
+    private int selectedAlgorithm;
     private ArrayList<AssociationRule> associationRules;
     private ArrayList<ProductionRule> productionRules;
 
@@ -103,8 +105,14 @@ public class Postprocessing extends javax.swing.JPanel {
                     else if (treePath.toString().contains("Exception")) {
                         selectedAlgorithm = algorithms.ASSOCIATION_EXCEPTIONRULES.ordinal();
                         bStart.setEnabled(true);
-                    } else if (treePath.toString().contains("Measures")) {
+                    } else if (treePath.toString().contains("Measures") && treePath.toString().contains("Association")) {
                         selectedAlgorithm = algorithms.ASSOCIATION_MEASURES.ordinal();
+                        bStart.setEnabled(true);
+                    } else if (treePath.toString().contains("Measures") && treePath.toString().contains("Classification")) {
+                        selectedAlgorithm = algorithms.CLASSIFIER_MEASURES.ordinal();
+                        bStart.setEnabled(true);
+                    } else if (treePath.toString().contains("Redundancy")) {
+                        selectedAlgorithm = algorithms.CLASSIFIER_REDUNDANCY.ordinal();
                         bStart.setEnabled(true);
                     }
                     tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
@@ -271,25 +279,28 @@ public class Postprocessing extends javax.swing.JPanel {
                 Logger.getLogger(Postprocessing.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        bStart.setEnabled(true);
     }//GEN-LAST:event_bSelectRulesFileActionPerformed
 
     private void bStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStartActionPerformed
-        if (tAlgorithms.getSelectionPath().toString().contains("Exception Rules")) {
+        if (selectedAlgorithm == algorithms.ASSOCIATION_EXCEPTIONRULES.ordinal()) {
             ExceptionRuleSearcher exceptions = new ExceptionRuleSearcher(associationRules);
             exceptions.find();
             tResult.gettResult().setText(exceptions.toString());
             tStatistics.gettStatistic().setText(exceptions.statistics());
-        } else if (tAlgorithms.getSelectionPath().toString().contains("Filter")) {
+        } else if (selectedAlgorithm == algorithms.ASSOCIATION_FILTER.ordinal()) {
             RulesFilter filter = new RulesFilter(associationRules);
             GUIRulesFilter GUIFilter = new GUIRulesFilter(filter, this);
 
             GUIFilter.setVisible(true);
-        } else if (tAlgorithms.getSelectionPath().toString().contains("Redundancy")) {
+        } else if (selectedAlgorithm == algorithms.CLASSIFIER_REDUNDANCY.ordinal()) {
             RedundancyElimination redundancyElimination = new RedundancyElimination(productionRules);
             redundancyElimination.eliminate();
             tResult.gettResult().setText(redundancyElimination.toString());
             tStatistics.gettStatistic().setText(redundancyElimination.statistics());
+        } else if (selectedAlgorithm == algorithms.CLASSIFIER_MEASURES.ordinal()) {
+            FasterGeneralizationMeasure measure = new FasterGeneralizationMeasure(Shared.getInstance().getDatabase().getInstances(), productionRules);
+            measure.calculate();
+            tResult.gettResult().setText(measure.toString());
         }
     }//GEN-LAST:event_bStartActionPerformed
 

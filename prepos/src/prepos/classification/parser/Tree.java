@@ -45,11 +45,11 @@ public class Tree {
             }
             this.levels[level].add(item);
             if (tree.get(i).isLeaf()) {
-                TreeNode leaf = new TreeNode(tree.get(i).getLeave());
+                TreeNode leaf = new TreeNode(tree.get(i).getLeaf());
                 leaf.setPreviousLevel(controlLevels[level] - 1);
                 leaf.setLeaf(true);
-                leaf.setMiss(0.0f);
-                leaf.setHit(0.0f);
+                leaf.setError(tree.get(i).getError());
+                leaf.setSuccess(tree.get(i).getSuccess());
                 controlLevels[level + 1]++;
                 this.levels[level + 1].add(leaf);
             }
@@ -67,8 +67,8 @@ public class Tree {
                 if (((TreeNode) levels[i].get(j)).isLeaf()) {
                     ProductionRule newRule = new ProductionRule();
                     newRule.addConsequent(((TreeNode) levels[i].get(j)).getAttributeValue());
-                    newRule.setHit(((TreeNode) levels[i].get(j)).getHit());
-                    newRule.setMiss(((TreeNode) levels[i].get(j)).getMiss());
+                    newRule.setSuccess(((TreeNode) levels[i].get(j)).getSuccess());
+                    newRule.setError(((TreeNode) levels[i].get(j)).getError());
                     while (previousLevel != -1) {
                         level--;
                         newRule.addPremiseFirst(((TreeNode) levels[level].get(previousLevel)).getAttributeValue());

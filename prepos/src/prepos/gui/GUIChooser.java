@@ -128,7 +128,7 @@ public class GUIChooser extends javax.swing.JFrame {
         mProgram.setText("Program");
 
         mConfiguration.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        mConfiguration.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prepos/resources/icons/tool.png"))); // NOI18N
+        mConfiguration.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prepos/resources/icons/configuration.png"))); // NOI18N
         mConfiguration.setText("Configuration");
         mConfiguration.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,6 +162,7 @@ public class GUIChooser extends javax.swing.JFrame {
         mTools.setText("Tools");
 
         mWeka.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
+        mWeka.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prepos/resources/icons/weka.png"))); // NOI18N
         mWeka.setText("Weka");
         mWeka.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

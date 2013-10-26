@@ -1,5 +1,7 @@
 package prepos.rules;
 
+import prepos.rules.measures.ClassificationMeasures;
+
 /*
  * Author: Cristian Simioni
  * Last update: 10/15/2013
@@ -12,37 +14,47 @@ package prepos.rules;
 public class ProductionRule extends Rule {
 
     // Attributes
-    private float hit;
-    private float miss;
+    private float success;
+    private float error;
+    private ClassificationMeasures measures;
 
     // Constructor
     public ProductionRule() {
         super();
-        this.hit = 0.0f;
-        this.miss = 0.0f;
+        this.success = 0.0f;
+        this.error = 0.0f;
+        this.measures = new ClassificationMeasures();
     }
 
     // Getter & setter
-    public float getHit() {
-        return hit;
+    public float getSuccess() {
+        return success;
     }
 
-    public void setHit(float hit) {
-        this.hit = hit;
+    public void setSuccess(float hit) {
+        this.success = hit;
     }
 
-    public float getMiss() {
-        return miss;
+    public float getError() {
+        return error;
     }
 
-    public void setMiss(float miss) {
-        this.miss = miss;
+    public void setError(float miss) {
+        this.error = miss;
+    }
+
+    public ClassificationMeasures getMeasures() {
+        return measures;
     }
 
     // Methods
     // Return the precision of production rule
     public float precision() {
-        return this.miss / this.hit;
+        if (this.error == 0.0f) {
+            return 100f;
+        } else {
+            return (1 - (this.error / this.success)) * 100;
+        }
     }
 
     // Override
@@ -54,10 +66,11 @@ public class ProductionRule extends Rule {
         msg.append(" -> ");
         msg.append(strConsequent());
 
-        msg.append(" miss:");
-        msg.append(miss);
-        msg.append(" hit:");
-        msg.append(hit);
+        msg.append(" (");
+        msg.append(success);
+        msg.append(", ");
+        msg.append(error);
+        msg.append(")");
 
         return msg.toString();
     }

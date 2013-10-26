@@ -1,5 +1,6 @@
 package prepos.rules;
 
+import prepos.rules.measures.AssociationMeasures;
 import java.util.ArrayList;
 
 /*
@@ -16,12 +17,14 @@ public class AssociationRule extends Rule {
     // Attributes
     private float confidence;
     private float support;
+    private AssociationMeasures measures;
 
     // Constructor
     public AssociationRule() {
         super();
         this.confidence = 0.0f;
         this.support = 0.0f;
+        this.measures = new AssociationMeasures();
     }
 
     // Getter & setter
@@ -39,6 +42,10 @@ public class AssociationRule extends Rule {
 
     public void setSupport(float support) {
         this.support = support;
+    }
+
+    public AssociationMeasures getMeasures() {
+        return measures;
     }
 
     // Methods
@@ -104,10 +111,11 @@ public class AssociationRule extends Rule {
         msg.append(" -> ");
         msg.append(strConsequent());
 
-        msg.append(" sup:");
+        msg.append(" (");
         msg.append(support);
-        msg.append(" conf:");
+        msg.append(", ");
         msg.append(confidence);
+        msg.append(")");
 
         return msg.toString();
     }

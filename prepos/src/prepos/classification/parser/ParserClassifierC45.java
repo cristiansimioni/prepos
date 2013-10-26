@@ -17,10 +17,12 @@ public class ParserClassifierC45 {
     // Attributes
     private ArrayList<ProductionRule> rules;
     private String text;
+    private int tree; // 0: decision tree | 1: simplified decision tree
 
     // Constructor
-    public ParserClassifierC45(String text) {
+    public ParserClassifierC45(String text, int tree) {
         this.text = text;
+        this.tree = tree;
     }
 
     // Methods
@@ -31,9 +33,10 @@ public class ParserClassifierC45 {
         ArrayList<TreeCondition> conditions = new ArrayList<>();
 
         // Preprocess the lines with conditions
+
         for (String line : lines) {
             if (!line.contains("J48 pruned tree") && !line.isEmpty() && !line.contains("------------------") && !line.contains("Number of Leaves") && !line.contains("Size of the tree")) {
-                conditions.add(new TreeCondition(line));
+                conditions.add(new TreeConditionC45(line));
             }
         }
 
@@ -58,6 +61,7 @@ public class ParserClassifierC45 {
     public String toString() {
         StringBuilder msg = new StringBuilder();
 
+        msg.append("Production Rules:\n");
         for (ProductionRule rule : this.rules) {
             msg.append(rule.toString());
             msg.append("\n");

@@ -1,11 +1,9 @@
 package prepos.core;
 
-import java.awt.EventQueue;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import javax.swing.JTabbedPane;
 import prepos.database.Database;
-import sun.awt.windows.ThemeReader;
 
 /*
  * Author: Cristian Simioni
@@ -38,33 +36,32 @@ public class Shared {
     public Database getDatabase() {
         return database;
     }
-    
+
     public void setDatabase(Database database) {
         this.database = database;
     }
-    
+
     public JTabbedPane getOptions() {
         return options;
     }
-    
+
     public void setStatus(JLabel status) {
         this.status = status;
     }
-    
+
     public void setOptions(JTabbedPane options) {
         this.options = options;
     }
-    
+
     public JProgressBar getProgressBar() {
         return progressBar;
     }
-    
+
     public void setProgressBar(JProgressBar progressBar) {
         this.progressBar = progressBar;
     }
-    
+
     private synchronized void verifyTextChanges() throws InterruptedException {
-        
         while (!textChanged) {
             wait();
         }
@@ -73,11 +70,9 @@ public class Shared {
     public void setTextChanged(boolean textChanged) {
         this.textChanged = textChanged;
     }
-    
-    
-    
+
     private class StatusRunnable implements Runnable {
-        
+
         @Override
         public void run() {
             try {

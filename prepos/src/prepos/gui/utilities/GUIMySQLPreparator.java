@@ -7,6 +7,7 @@ import javax.swing.JFileChooser;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import prepos.utilities.MySQLAttribute;
 import prepos.utilities.MySQLPreparator;
 import prepos.utilities.MySQLTable;
 
@@ -34,6 +35,8 @@ public class GUIMySQLPreparator extends javax.swing.JPanel {
 
     private void initResources() {
         model = new DefaultListModel();
+
+        // Event when the user changes the file
         lFiles.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent evt) {
@@ -41,6 +44,14 @@ public class GUIMySQLPreparator extends javax.swing.JPanel {
                     return;
                 }
                 tTableName.setText((String) lFiles.getSelectedValue());
+                MySQLTable current = (MySQLTable) files.get(lFiles.getSelectedValue());
+                DefaultTableModel model = (DefaultTableModel) tbAttributes.getModel();
+
+                model.setNumRows(0);
+                for (MySQLAttribute attribute : current.getAttributes()) {
+                    model.addRow(new Object[]{attribute.getName(), attribute.getType(), attribute.getStart(), attribute.getEnd()});
+                }
+
             }
         });
 
@@ -59,8 +70,11 @@ public class GUIMySQLPreparator extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         lFiles = new javax.swing.JList();
         pRelation = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         pDictionary = new javax.swing.JPanel();
         pPreview = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         lTableName = new javax.swing.JLabel();
         tTableName = new javax.swing.JTextField();
         pAttributes = new javax.swing.JPanel();
@@ -116,30 +130,40 @@ public class GUIMySQLPreparator extends javax.swing.JPanel {
 
         pRelation.setBorder(javax.swing.BorderFactory.createTitledBorder("Relation"));
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout pRelationLayout = new javax.swing.GroupLayout(pRelation);
         pRelation.setLayout(pRelationLayout);
         pRelationLayout.setHorizontalGroup(
             pRelationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pRelationLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1))
         );
         pRelationLayout.setVerticalGroup(
             pRelationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 101, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pRelationLayout.createSequentialGroup()
+                .addGap(0, 78, Short.MAX_VALUE)
+                .addComponent(jButton1))
         );
 
         pDictionary.setBorder(javax.swing.BorderFactory.createTitledBorder("Dictionary of Variables"));
 
         pPreview.setBorder(javax.swing.BorderFactory.createTitledBorder("Preview"));
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane3.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout pPreviewLayout = new javax.swing.GroupLayout(pPreview);
         pPreview.setLayout(pPreviewLayout);
         pPreviewLayout.setHorizontalGroup(
             pPreviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jScrollPane3)
         );
         pPreviewLayout.setVerticalGroup(
             pPreviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 99, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
         );
 
         lTableName.setText("Table Name:");
@@ -275,6 +299,9 @@ public class GUIMySQLPreparator extends javax.swing.JPanel {
     private void bAddAttributesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddAttributesActionPerformed
         DefaultTableModel model = (DefaultTableModel) tbAttributes.getModel();
         model.addRow(new Object[]{"", "", 0, 0});
+        MySQLTable current = (MySQLTable) files.get(lFiles.getSelectedValue());
+        current.addAttribute(new MySQLAttribute("", "", 0, 0));
+        files.put(lFiles.getSelectedValue(), current);
     }//GEN-LAST:event_bAddAttributesActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAddAttributes;
@@ -282,8 +309,11 @@ public class GUIMySQLPreparator extends javax.swing.JPanel {
     private javax.swing.JButton bRemoveAttributes;
     private javax.swing.JButton bRemoveFile;
     private javax.swing.JFileChooser chFile;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JList lFiles;
     private javax.swing.JLabel lTableName;
     private javax.swing.JPanel pAttributes;
