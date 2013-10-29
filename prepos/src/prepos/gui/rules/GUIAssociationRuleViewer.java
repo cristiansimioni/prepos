@@ -1,4 +1,4 @@
-package prepos.gui;
+package prepos.gui.rules;
 
 import prepos.core.SystemInfo;
 import java.awt.Image;
@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
+import prepos.gui.GUIChooser;
 import prepos.rules.AssociationRule;
 
 public class GUIAssociationRuleViewer extends javax.swing.JFrame {
@@ -46,14 +47,14 @@ public class GUIAssociationRuleViewer extends javax.swing.JFrame {
 
             },
             new String [] {
-                "No.", "Premise", "Consequent", "Support", "Confidence", ""
+                "No.", "Premise", "Consequent", "Support", "Confidence"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.Boolean.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -66,20 +67,11 @@ public class GUIAssociationRuleViewer extends javax.swing.JFrame {
         });
         tRules.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tRules);
-        tRules.getColumnModel().getColumn(0).setMinWidth(70);
-        tRules.getColumnModel().getColumn(0).setPreferredWidth(70);
-        tRules.getColumnModel().getColumn(0).setMaxWidth(70);
-        tRules.getColumnModel().getColumn(1).setResizable(false);
-        tRules.getColumnModel().getColumn(2).setResizable(false);
-        tRules.getColumnModel().getColumn(3).setMinWidth(75);
-        tRules.getColumnModel().getColumn(3).setPreferredWidth(30);
-        tRules.getColumnModel().getColumn(3).setMaxWidth(75);
-        tRules.getColumnModel().getColumn(4).setMinWidth(75);
+        tRules.getColumnModel().getColumn(0).setResizable(false);
+        tRules.getColumnModel().getColumn(0).setPreferredWidth(20);
+        tRules.getColumnModel().getColumn(3).setResizable(false);
+        tRules.getColumnModel().getColumn(3).setPreferredWidth(20);
         tRules.getColumnModel().getColumn(4).setPreferredWidth(20);
-        tRules.getColumnModel().getColumn(4).setMaxWidth(75);
-        tRules.getColumnModel().getColumn(5).setMinWidth(15);
-        tRules.getColumnModel().getColumn(5).setPreferredWidth(5);
-        tRules.getColumnModel().getColumn(5).setMaxWidth(15);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

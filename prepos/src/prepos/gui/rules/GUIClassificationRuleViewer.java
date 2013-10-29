@@ -1,4 +1,4 @@
-package prepos.gui;
+package prepos.gui.rules;
 
 import prepos.core.SystemInfo;
 import java.awt.Toolkit;
@@ -7,6 +7,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javax.swing.table.DefaultTableModel;
+import prepos.gui.GUIChooser;
 import prepos.rules.ProductionRule;
 
 public class GUIClassificationRuleViewer extends javax.swing.JFrame {

@@ -47,6 +47,7 @@ public class SelectDatabase extends javax.swing.JPanel {
         lName.setText(messages.getString("NAME") + ":");
         lRelation.setText(messages.getString("NAME") + ":");
         lType.setText(messages.getString("TYPE") + ":");
+        pDatabaseOptions.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("DATABASE_OPTIONS")));
         pCurrentRelation.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("CURRENT_RELATION")));
         pAttributes.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("ATTRIBUTES")));
         pSelectedAttribute.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("SELECTED_ATTRIBUTE")));
@@ -125,7 +126,7 @@ public class SelectDatabase extends javax.swing.JPanel {
         lName = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tSelectedAtrribute = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
+        pDatabaseOptions = new javax.swing.JPanel();
         bSelectDatabase = new javax.swing.JToggleButton();
         bSaveDatabase = new javax.swing.JButton();
 
@@ -320,10 +321,10 @@ public class SelectDatabase extends javax.swing.JPanel {
                 .addContainerGap(2, Short.MAX_VALUE))
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Database options"));
-        jPanel1.setMaximumSize(new java.awt.Dimension(780, 46));
-        jPanel1.setMinimumSize(new java.awt.Dimension(780, 46));
-        jPanel1.setPreferredSize(new java.awt.Dimension(780, 46));
+        pDatabaseOptions.setBorder(javax.swing.BorderFactory.createTitledBorder("Database options"));
+        pDatabaseOptions.setMaximumSize(new java.awt.Dimension(780, 46));
+        pDatabaseOptions.setMinimumSize(new java.awt.Dimension(780, 46));
+        pDatabaseOptions.setPreferredSize(new java.awt.Dimension(780, 46));
 
         bSelectDatabase.setText("Choose Database");
         bSelectDatabase.setMaximumSize(new java.awt.Dimension(180, 23));
@@ -345,19 +346,19 @@ public class SelectDatabase extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pDatabaseOptionsLayout = new javax.swing.GroupLayout(pDatabaseOptions);
+        pDatabaseOptions.setLayout(pDatabaseOptionsLayout);
+        pDatabaseOptionsLayout.setHorizontalGroup(
+            pDatabaseOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pDatabaseOptionsLayout.createSequentialGroup()
                 .addComponent(bSelectDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bSaveDatabase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(394, 394, 394))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        pDatabaseOptionsLayout.setVerticalGroup(
+            pDatabaseOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pDatabaseOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(bSelectDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(bSaveDatabase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -369,30 +370,28 @@ public class SelectDatabase extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pDatabaseOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pAttributes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pCurrentRelation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pSelectedAttribute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(pSelectedAttribute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pDatabaseOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(pCurrentRelation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pAttributes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(pAttributes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(pSelectedAttribute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pAttributes.getAccessibleContext().setAccessibleDescription("");
@@ -515,7 +514,6 @@ public class SelectDatabase extends javax.swing.JPanel {
     private javax.swing.JButton bSaveDatabase;
     private javax.swing.JToggleButton bSelectDatabase;
     private javax.swing.JFileChooser chSelectDatabase;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lAttributes;
@@ -527,6 +525,7 @@ public class SelectDatabase extends javax.swing.JPanel {
     private javax.swing.JLabel lType;
     private javax.swing.JPanel pAttributes;
     private javax.swing.JPanel pCurrentRelation;
+    private javax.swing.JPanel pDatabaseOptions;
     private javax.swing.JPanel pSelectedAttribute;
     private javax.swing.JTable tAttributes;
     private javax.swing.JTable tSelectedAtrribute;

@@ -26,6 +26,10 @@ public class ExceptionRuleSearcher {
         return numOfRulesWithException;
     }
 
+    public ArrayList<ExceptionRule> getExceptionRules() {
+        return exceptionRules;
+    }
+
     public void find() {
         // Make a hash for a fast search
         Hashtable hash = new Hashtable();

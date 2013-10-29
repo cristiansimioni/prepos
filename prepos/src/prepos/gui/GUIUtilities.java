@@ -1,22 +1,27 @@
 package prepos.gui;
 
-import prepos.gui.datamining.SelectDatabase;
-import prepos.gui.datamining.Postprocessing;
-import prepos.gui.datamining.Miner;
-import prepos.gui.datamining.Preprocessing;
 import java.awt.Toolkit;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
-import javax.swing.JProgressBar;
-import prepos.core.Shared;
 import prepos.core.SystemInfo;
 import prepos.gui.utilities.GUIMySQLPreparator;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 10/15/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
+ */
 public class GUIUtilities extends javax.swing.JFrame {
 
+    // Attributes
     private ResourceBundle messages;
 
+    // Constructor
     public GUIUtilities() {
         try {
             messages = ResourceBundle.getBundle("prepos.core.languages.language", Locale.getDefault());
@@ -24,11 +29,12 @@ public class GUIUtilities extends javax.swing.JFrame {
             messages = ResourceBundle.getBundle("prepos.core.languages.language", new Locale("en", "US"));
             SystemInfo.getLog().log(Level.WARNING, e.getLocalizedMessage());
         }
+        initLayout();
         initComponents();
         initResources();
-        initLayout();
     }
 
+    // Initialize the layout
     private void initLayout() {
         // Location
         pack();
@@ -46,6 +52,7 @@ public class GUIUtilities extends javax.swing.JFrame {
         }
     }
 
+    // Initialize all resources
     private void initResources() {
         // Set icon
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/prepos/resources/icons/icon.png")));

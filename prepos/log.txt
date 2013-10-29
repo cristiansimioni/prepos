@@ -828,3 +828,19 @@ Out 15, 2013 11:56:22 AM prepos.gui.datamining.Miner bStartActionPerformed
 SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
 Out 23, 2013 5:58:29 PM prepos.gui.datamining.Miner bStartActionPerformed
 SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Oct 26, 2013 1:54:17 AM prepos.gui.GUIDataMining <init>
+WARNING: Can't find bundle for base name prepos.core.languages.language, locale pr_BR
+Oct 26, 2013 1:54:17 AM prepos.gui.datamining.SelectDatabase <init>
+WARNING: Can't find bundle for base name prepos.core.languages.language, locale pr_BR
+Oct 26, 2013 1:54:18 AM prepos.gui.datamining.Preprocessing <init>
+WARNING: Can't find bundle for base name prepos.core.languages.language, locale pr_BR
+Oct 26, 2013 1:54:18 AM prepos.gui.datamining.Miner <init>
+WARNING: Can't find bundle for base name prepos.core.languages.language, locale pr_BR
+Oct 26, 2013 1:54:18 AM prepos.gui.datamining.PostprocessingOutput <init>
+WARNING: Can't find bundle for base name prepos.core.languages.language, locale pr_BR
+Oct 26, 2013 1:54:18 AM prepos.gui.datamining.PostprocessingStatistics <init>
+WARNING: Can't find bundle for base name prepos.core.languages.language, locale pr_BR
+Out 28, 2013 7:03:44 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 28, 2013 7:03:51 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.classifiers.trees.j48.C45PruneableClassifierTree: Cannot handle numeric class!

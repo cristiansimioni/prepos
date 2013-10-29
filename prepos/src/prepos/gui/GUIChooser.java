@@ -25,8 +25,10 @@ import prepos.core.Util;
  */
 public class GUIChooser extends javax.swing.JFrame {
 
+    // Attributes
     private ResourceBundle messages;
 
+    // Constructor
     public GUIChooser() {
         try {
             messages = ResourceBundle.getBundle("prepos.core.languages.language", Locale.getDefault());
@@ -40,6 +42,7 @@ public class GUIChooser extends javax.swing.JFrame {
         initLabels();
     }
 
+    // Initialize all labels
     private void initLabels() {
         setTitle(SystemInfo.getName());
         btDataMining.setText(messages.getString("DATA_MINING"));
@@ -50,6 +53,7 @@ public class GUIChooser extends javax.swing.JFrame {
         mTools.setText(messages.getString("TOOLS"));
         mHelp.setText(messages.getString("HELP"));
         mProgram.setText(messages.getString("PROGRAM"));
+        mConfiguration.setText(messages.getString("CONFIGURATION"));
         mUserManual.setText(messages.getString("USER_MANUAL"));
         lbInfo.setText(messages.getString("AUTHOR") + ": " + SystemInfo.getAuthor() + " | "
                 + messages.getString("VERSION") + ": " + SystemInfo.getVersion() + " | "
@@ -57,6 +61,7 @@ public class GUIChooser extends javax.swing.JFrame {
                 + "© " + SystemInfo.getYear());
     }
 
+    // Initialize the layout
     private void initLayout() {
         // Location
         pack();
@@ -74,6 +79,7 @@ public class GUIChooser extends javax.swing.JFrame {
         }
     }
 
+    // Initialize all resources
     private void initResources() {
         lbLogo.setFocusable(true);
         // Set logo
@@ -312,8 +318,11 @@ public class GUIChooser extends javax.swing.JFrame {
     }//GEN-LAST:event_mWekaActionPerformed
 
     // Program > Configuration
-    // to do
     private void mConfigurationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mConfigurationActionPerformed
+        GUIConfiguration configuration = new GUIConfiguration();
+        configuration.setVisible(true);
+        messages = ResourceBundle.getBundle("prepos.core.languages.language", Locale.getDefault());
+        initLabels();
     }//GEN-LAST:event_mConfigurationActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btDataMining;

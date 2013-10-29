@@ -16,11 +16,12 @@ import prepos.association.parser.ParserAssociationPrepos;
 import prepos.classification.parser.ParserClassifierPrepos;
 import prepos.core.Shared;
 import prepos.core.Util;
-import prepos.gui.GUIAssociationRuleViewer;
-import prepos.gui.GUIClassificationRuleViewer;
+import prepos.gui.rules.GUIAssociationRuleViewer;
+import prepos.gui.rules.GUIClassificationRuleViewer;
 import prepos.postprocessing.ExceptionRuleSearcher;
 import prepos.gui.postprocessing.GUIRulesFilter;
 import prepos.postprocessing.FasterGeneralizationMeasure;
+import prepos.postprocessing.FasterSuzukiMeasure;
 import prepos.postprocessing.RulesFilter;
 import prepos.postprocessing.RedundancyElimination;
 import prepos.rules.AssociationRule;
@@ -37,6 +38,7 @@ import prepos.rules.ProductionRule;
  */
 public class Postprocessing extends javax.swing.JPanel {
 
+    // Attributes
     private JTree tAlgorithms;
     private boolean isAssociationRules;
     private boolean isProductionRules;
@@ -52,20 +54,22 @@ public class Postprocessing extends javax.swing.JPanel {
         CLASSIFIER_FILTER, CLASSIFIER_REDUNDANCY, CLASSIFIER_MEASURES;
     }
 
-    public PostprocessingOutput gettResult() {
-        return tResult;
-    }
-
-    public PostprocessingStatistics gettStatistics() {
-        return tStatistics;
-    }
-
+    // Constructor
     public Postprocessing() {
         this.isAssociationRules = false;
         this.isProductionRules = false;
         initComponents();
         initResources();
         createTree();
+    }
+
+    // Getter & Setter
+    public PostprocessingOutput gettResult() {
+        return tResult;
+    }
+
+    public PostprocessingStatistics gettStatistics() {
+        return tStatistics;
     }
 
     private void createTree() {
@@ -100,22 +104,20 @@ public class Postprocessing extends javax.swing.JPanel {
                     // Filter Association
                     if (treePath.toString().contains("Filter") && treePath.toString().contains("Association")) {
                         selectedAlgorithm = algorithms.ASSOCIATION_FILTER.ordinal();
-                        bStart.setEnabled(true);
                     } // Apriori (Weka)
                     else if (treePath.toString().contains("Exception")) {
                         selectedAlgorithm = algorithms.ASSOCIATION_EXCEPTIONRULES.ordinal();
-                        bStart.setEnabled(true);
                     } else if (treePath.toString().contains("Measures") && treePath.toString().contains("Association")) {
                         selectedAlgorithm = algorithms.ASSOCIATION_MEASURES.ordinal();
-                        bStart.setEnabled(true);
                     } else if (treePath.toString().contains("Measures") && treePath.toString().contains("Classification")) {
                         selectedAlgorithm = algorithms.CLASSIFIER_MEASURES.ordinal();
-                        bStart.setEnabled(true);
                     } else if (treePath.toString().contains("Redundancy")) {
                         selectedAlgorithm = algorithms.CLASSIFIER_REDUNDANCY.ordinal();
-                        bStart.setEnabled(true);
                     }
-                    tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
+                    if (!associationRules.isEmpty() || !productionRules.isEmpty()) {
+                        bStart.setEnabled(true);
+                        tSelectedAlgorithm.setText(tAlgorithms.getSelectionPath().getLastPathComponent().toString());
+                    }
                 }
             }
         });
@@ -137,6 +139,9 @@ public class Postprocessing extends javax.swing.JPanel {
 
         bStart.setEnabled(false);
         bRulesViewer.setEnabled(false);
+
+        associationRules = new ArrayList<>();
+        productionRules = new ArrayList<>();
 
         this.repaint();
     }
@@ -285,7 +290,10 @@ public class Postprocessing extends javax.swing.JPanel {
         if (selectedAlgorithm == algorithms.ASSOCIATION_EXCEPTIONRULES.ordinal()) {
             ExceptionRuleSearcher exceptions = new ExceptionRuleSearcher(associationRules);
             exceptions.find();
-            tResult.gettResult().setText(exceptions.toString());
+            // Calculate a mesuare of interest
+            FasterSuzukiMeasure suzuki = new FasterSuzukiMeasure(Shared.getInstance().getDatabase(), exceptions.getExceptionRules());
+            suzuki.calculate();
+            tResult.gettResult().setText(suzuki.toString());
             tStatistics.gettStatistic().setText(exceptions.statistics());
         } else if (selectedAlgorithm == algorithms.ASSOCIATION_FILTER.ordinal()) {
             RulesFilter filter = new RulesFilter(associationRules);

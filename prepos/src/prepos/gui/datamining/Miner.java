@@ -27,6 +27,15 @@ import prepos.core.FileSaver;
 import prepos.core.Shared;
 import prepos.core.SystemInfo;
 
+/*
+ * Author: Cristian Simioni
+ * Last update: 10/15/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
+ */
 public class Miner extends javax.swing.JPanel {
 
     // Attributes
@@ -54,8 +63,8 @@ public class Miner extends javax.swing.JPanel {
 
         initComponents();
         initResources();
-        createTree();
         initLabels();
+        createTree();
     }
 
     // Getter & setter
@@ -70,9 +79,16 @@ public class Miner extends javax.swing.JPanel {
     // Methods
     // Initialize labels
     private void initLabels() {
+        bSave.setText(messages.getString("SAVE_RESULT"));
+        bSaveRules.setText(messages.getString("SAVE_RULES"));
+        bStart.setText(messages.getString("START"));
+        bParameters.setText(messages.getString("PARAMETERS"));
+        pOutput.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("ALGORITHM_OUTPUT")));
+        pSelectedAlgorithm.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("SELECTED_ALGORITHM")));
+        pAlgorithms.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("ALGORITHMS")));
     }
 
-    // Initialize resources
+    // Initialize all resources
     private void initResources() {
         bStart.setEnabled(false);
         bParameters.setEnabled(false);
@@ -159,7 +175,7 @@ public class Miner extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tOutput = new javax.swing.JTextArea();
         pAlgorithms = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
+        pSelectedAlgorithm = new javax.swing.JPanel();
         bStart = new javax.swing.JButton();
         bParameters = new javax.swing.JButton();
         tSelectedAlgorithm = new javax.swing.JTextField();
@@ -229,7 +245,7 @@ public class Miner extends javax.swing.JPanel {
         pAlgorithms.setMinimumSize(new java.awt.Dimension(192, 426));
         pAlgorithms.setPreferredSize(new java.awt.Dimension(192, 426));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Selected Algorithm"));
+        pSelectedAlgorithm.setBorder(javax.swing.BorderFactory.createTitledBorder("Selected Algorithm"));
 
         bStart.setText("Start");
         bStart.setMaximumSize(new java.awt.Dimension(192, 23));
@@ -250,22 +266,22 @@ public class Miner extends javax.swing.JPanel {
 
         tSelectedAlgorithm.setEditable(false);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pSelectedAlgorithmLayout = new javax.swing.GroupLayout(pSelectedAlgorithm);
+        pSelectedAlgorithm.setLayout(pSelectedAlgorithmLayout);
+        pSelectedAlgorithmLayout.setHorizontalGroup(
+            pSelectedAlgorithmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pSelectedAlgorithmLayout.createSequentialGroup()
                 .addComponent(tSelectedAlgorithm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bParameters, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bStart, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        pSelectedAlgorithmLayout.setVerticalGroup(
+            pSelectedAlgorithmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pSelectedAlgorithmLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pSelectedAlgorithmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bParameters)
                     .addComponent(tSelectedAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -278,7 +294,7 @@ public class Miner extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pSelectedAlgorithm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(pAlgorithms, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -289,7 +305,7 @@ public class Miner extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pSelectedAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pAlgorithms, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -402,11 +418,11 @@ public class Miner extends javax.swing.JPanel {
     private javax.swing.JButton bStart;
     private javax.swing.JFileChooser chSave;
     private javax.swing.JEditorPane jEditorPane1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane pAlgorithms;
     private javax.swing.JPanel pOutput;
+    private javax.swing.JPanel pSelectedAlgorithm;
     private javax.swing.JTextArea tOutput;
     private javax.swing.JTextField tSelectedAlgorithm;
     // End of variables declaration//GEN-END:variables

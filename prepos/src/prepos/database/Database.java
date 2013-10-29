@@ -1,6 +1,7 @@
 package prepos.database;
 
 import java.io.IOException;
+import prepos.rules.AttributeValue;
 import weka.core.Attribute;
 import weka.core.Instances;
 
@@ -80,5 +81,19 @@ public class Database {
     // Get attribute by index
     public Attribute getAttribute(int index) {
         return instances.attribute(index);
+    }
+
+    // Verify the value exists on instance
+    public boolean existsOnInstance(AttributeValue attribute, int index) {
+        String value;
+        if (instances.attribute(attribute.getAttribute()).isNominal()) {
+            value = instances.get(index).stringValue(instances.attribute(attribute.getAttribute()));
+        } else {
+            value = Double.toString(instances.get(index).value(instances.attribute(attribute.getAttribute())));
+        }
+        if (value.equals(attribute.getValue())) {
+            return true;
+        }
+        return false;
     }
 }
