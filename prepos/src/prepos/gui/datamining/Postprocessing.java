@@ -20,8 +20,9 @@ import prepos.gui.rules.GUIAssociationRuleViewer;
 import prepos.gui.rules.GUIClassificationRuleViewer;
 import prepos.postprocessing.ExceptionRuleSearcher;
 import prepos.gui.postprocessing.GUIRulesFilter;
-import prepos.postprocessing.FasterGeneralizationMeasure;
-import prepos.postprocessing.FasterSuzukiMeasure;
+import prepos.gui.postprocessing.GUIUserDriven;
+import prepos.rules.measures.FasterGeneralizationMeasure;
+import prepos.rules.measures.FasterSuzukiMeasure;
 import prepos.postprocessing.RulesFilter;
 import prepos.postprocessing.RedundancyElimination;
 import prepos.rules.AssociationRule;
@@ -50,7 +51,7 @@ public class Postprocessing extends javax.swing.JPanel {
 
     private enum algorithms {
 
-        ASSOCIATION_FILTER, ASSOCIATION_EXCEPTIONRULES, ASSOCIATION_MEASURES,
+        ASSOCIATION_FILTER, ASSOCIATION_EXCEPTIONRULES, ASSOCIATION_MEASURES, ASSOCIATION_USER_DRIVEN,
         CLASSIFIER_FILTER, CLASSIFIER_REDUNDANCY, CLASSIFIER_MEASURES;
     }
 
@@ -84,6 +85,7 @@ public class Postprocessing extends javax.swing.JPanel {
         association.add(new DefaultMutableTreeNode("Filter Rules"));
         association.add(new DefaultMutableTreeNode("Exception Rules"));
         association.add(new DefaultMutableTreeNode("Interesting Measures"));
+        association.add(new DefaultMutableTreeNode("User-Driven"));
 
         // Classification algorithms
         classification.add(new DefaultMutableTreeNode("Eliminate Redundancy"));
@@ -109,6 +111,8 @@ public class Postprocessing extends javax.swing.JPanel {
                         selectedAlgorithm = algorithms.ASSOCIATION_EXCEPTIONRULES.ordinal();
                     } else if (treePath.toString().contains("Measures") && treePath.toString().contains("Association")) {
                         selectedAlgorithm = algorithms.ASSOCIATION_MEASURES.ordinal();
+                    } else if (treePath.toString().contains("User-Driven")) {
+                        selectedAlgorithm = algorithms.ASSOCIATION_USER_DRIVEN.ordinal();
                     } else if (treePath.toString().contains("Measures") && treePath.toString().contains("Classification")) {
                         selectedAlgorithm = algorithms.CLASSIFIER_MEASURES.ordinal();
                     } else if (treePath.toString().contains("Redundancy")) {
@@ -298,8 +302,10 @@ public class Postprocessing extends javax.swing.JPanel {
         } else if (selectedAlgorithm == algorithms.ASSOCIATION_FILTER.ordinal()) {
             RulesFilter filter = new RulesFilter(associationRules);
             GUIRulesFilter GUIFilter = new GUIRulesFilter(filter, this);
-
             GUIFilter.setVisible(true);
+        } else if (selectedAlgorithm == algorithms.ASSOCIATION_USER_DRIVEN.ordinal()) {
+            GUIUserDriven driven = new GUIUserDriven(associationRules, this);
+            driven.setVisible(true);
         } else if (selectedAlgorithm == algorithms.CLASSIFIER_REDUNDANCY.ordinal()) {
             RedundancyElimination redundancyElimination = new RedundancyElimination(productionRules);
             redundancyElimination.eliminate();

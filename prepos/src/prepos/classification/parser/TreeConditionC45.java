@@ -16,6 +16,8 @@ public class TreeConditionC45 extends TreeCondition {
         super(condition);
     }
 
+    // Methods
+    // Verify if is a sub tree
     public boolean isSubTree() {
         if (super.getCondition().contains("[S")) {
             return true;
@@ -24,6 +26,7 @@ public class TreeConditionC45 extends TreeCondition {
         }
     }
 
+    // Get the value of sub tree
     public int getSubTree() {
         int index = super.getCondition().indexOf("[");
         String sub = super.getCondition().substring(index);

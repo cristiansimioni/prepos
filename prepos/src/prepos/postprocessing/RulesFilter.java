@@ -21,6 +21,10 @@ public class RulesFilter {
         this.rules = rules;
         this.selectedConsequents = new ArrayList<>();
         this.selectedPremises = new ArrayList<>();
+        this.minSupport = 0.0f;
+        this.maxSupport = 100f;
+        this.minConfidence = 0.0f;
+        this.maxConfidence = 100f;
     }
 
     // Getter & setter
@@ -124,12 +128,12 @@ public class RulesFilter {
             if (rule.getConfidence() >= minConfidence && rule.getConfidence() <= maxConfidence && rule.getSupport() >= minSupport && rule.getSupport() <= maxSupport) {
                 if (or) {
                     // Verify if rule contains the selected premise OR selected consequent
-                    if (rule.existsOnPremise(selectedPremises) || rule.existsOnConsequent(selectedConsequents)) {
+                    if (!rule.existsOnPremise(selectedPremises) || !rule.existsOnConsequent(selectedConsequents)) {
                         filteredRules.add(rule);
                     }
                 } else if (and) {
                     // Verify if rule contains the selected premise OR selected consequent 
-                    if (rule.existsOnPremise(selectedPremises) && rule.existsOnConsequent(selectedConsequents)) {
+                    if (!rule.existsOnPremise(selectedPremises) && !rule.existsOnConsequent(selectedConsequents)) {
                         filteredRules.add(rule);
                     }
                 }

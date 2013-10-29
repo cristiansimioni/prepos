@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package prepos.postprocessing;
+package prepos.rules.measures;
 
 import java.util.ArrayList;
 import prepos.rules.ProductionRule;

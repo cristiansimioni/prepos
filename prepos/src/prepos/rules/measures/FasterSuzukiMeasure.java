@@ -2,11 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package prepos.postprocessing;
+package prepos.rules.measures;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
 import prepos.database.Database;
+import prepos.postprocessing.ExceptionRule;
 import prepos.rules.AssociationRule;
 import prepos.rules.AttributeValue;
 import weka.core.Instance;

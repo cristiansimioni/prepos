@@ -83,7 +83,7 @@ public class Database {
         return instances.attribute(index);
     }
 
-    // Verify the value exists on instance
+    // Verify if the value exists on instance
     public boolean existsOnInstance(AttributeValue attribute, int index) {
         String value;
         if (instances.attribute(attribute.getAttribute()).isNominal()) {

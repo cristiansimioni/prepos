@@ -33,11 +33,13 @@ public class ParserClassifierC45 {
         ArrayList<TreeCondition> conditions = new ArrayList<>();
 
         // Preprocess the lines with conditions
-
-        for (String line : lines) {
-            if (!line.contains("J48 pruned tree") && !line.isEmpty() && !line.contains("------------------") && !line.contains("Number of Leaves") && !line.contains("Size of the tree")) {
-                conditions.add(new TreeConditionC45(line));
+        if (this.tree == 0) {
+            for (String line : lines) {
+                if (!line.contains("J48 pruned tree") && !line.isEmpty() && !line.contains("------------------") && !line.contains("Number of Leaves") && !line.contains("Size of the tree")) {
+                    conditions.add(new TreeConditionC45(line));
+                }
             }
+        } else if (this.tree == 1) {
         }
 
         // Get the max level of tree
