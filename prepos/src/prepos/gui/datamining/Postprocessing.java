@@ -3,6 +3,8 @@ package prepos.gui.datamining;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,6 +17,7 @@ import javax.swing.tree.TreePath;
 import prepos.association.parser.ParserAssociationPrepos;
 import prepos.classification.parser.ParserClassifierPrepos;
 import prepos.core.Shared;
+import prepos.core.SystemInfo;
 import prepos.core.Util;
 import prepos.gui.rules.GUIAssociationRuleViewer;
 import prepos.gui.rules.GUIClassificationRuleViewer;
@@ -40,6 +43,7 @@ import prepos.rules.ProductionRule;
 public class Postprocessing extends javax.swing.JPanel {
 
     // Attributes
+    private ResourceBundle messages;
     private JTree tAlgorithms;
     private boolean isAssociationRules;
     private boolean isProductionRules;
@@ -57,11 +61,28 @@ public class Postprocessing extends javax.swing.JPanel {
 
     // Constructor
     public Postprocessing() {
+        try {
+            messages = ResourceBundle.getBundle("prepos.core.languages.language", Locale.getDefault());
+        } catch (Exception e) {
+            messages = ResourceBundle.getBundle("prepos.core.languages.language", new Locale("en", "US"));
+            SystemInfo.getLog().log(Level.WARNING, e.getLocalizedMessage());
+        }
         this.isAssociationRules = false;
         this.isProductionRules = false;
         initComponents();
         initResources();
         createTree();
+        initLabels();
+    }
+
+    private void initLabels() {
+        bStart.setText(messages.getString("START"));
+        bSelectRulesFile.setText(messages.getString("SELECT_RULES_FILE"));
+        bRulesViewer.setText(messages.getString("VIEW_RULES"));
+        pSelectedAlgorithm.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("SELECTED_ALGORITHM")));
+        pAlgorithms.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("ALGORITHMS")));
+        pSelectedRules.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("SELECTED_RULES_FILE")));
+        tbResults.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("ALGORITHM_OUTPUT")));
     }
 
     // Getter & Setter
@@ -135,11 +156,11 @@ public class Postprocessing extends javax.swing.JPanel {
         // 
         tResult = new PostprocessingOutput();
         this.tbResults.add(tResult);
-        this.tbResults.setTitleAt(0, "Result");
+        this.tbResults.setTitleAt(0, messages.getString("RESULT"));
 
         tStatistics = new PostprocessingStatistics();
         this.tbResults.add(tStatistics);
-        this.tbResults.setTitleAt(1, "Statistics");
+        this.tbResults.setTitleAt(1, messages.getString("STATISTICS"));
 
         bStart.setEnabled(false);
         bRulesViewer.setEnabled(false);
@@ -161,7 +182,7 @@ public class Postprocessing extends javax.swing.JPanel {
         bSelectRulesFile = new javax.swing.JButton();
         bRulesViewer = new javax.swing.JButton();
         tSelectedRules = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
+        pSelectedAlgorithm = new javax.swing.JPanel();
         bStart = new javax.swing.JButton();
         tSelectedAlgorithm = new javax.swing.JTextField();
 
@@ -208,7 +229,7 @@ public class Postprocessing extends javax.swing.JPanel {
                 .addComponent(tSelectedRules, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Selected Algorithm"));
+        pSelectedAlgorithm.setBorder(javax.swing.BorderFactory.createTitledBorder("Selected Algorithm"));
 
         bStart.setText("Start");
         bStart.addActionListener(new java.awt.event.ActionListener() {
@@ -217,16 +238,16 @@ public class Postprocessing extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pSelectedAlgorithmLayout = new javax.swing.GroupLayout(pSelectedAlgorithm);
+        pSelectedAlgorithm.setLayout(pSelectedAlgorithmLayout);
+        pSelectedAlgorithmLayout.setHorizontalGroup(
+            pSelectedAlgorithmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(bStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tSelectedAlgorithm)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        pSelectedAlgorithmLayout.setVerticalGroup(
+            pSelectedAlgorithmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pSelectedAlgorithmLayout.createSequentialGroup()
                 .addComponent(tSelectedAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bStart))
@@ -242,7 +263,7 @@ public class Postprocessing extends javax.swing.JPanel {
                     .addComponent(pSelectedRules, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pSelectedAlgorithm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(pAlgorithms, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tbResults, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)))
@@ -256,11 +277,10 @@ public class Postprocessing extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pSelectedAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pAlgorithms, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE))
-                    .addComponent(tbResults))
-                .addContainerGap())
+                        .addComponent(pAlgorithms, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE))
+                    .addComponent(tbResults)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -332,8 +352,8 @@ public class Postprocessing extends javax.swing.JPanel {
     private javax.swing.JButton bSelectRulesFile;
     private javax.swing.JButton bStart;
     private javax.swing.JFileChooser chRulesFile;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane pAlgorithms;
+    private javax.swing.JPanel pSelectedAlgorithm;
     private javax.swing.JPanel pSelectedRules;
     private javax.swing.JTextField tSelectedAlgorithm;
     private javax.swing.JTextField tSelectedRules;

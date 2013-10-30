@@ -34,8 +34,8 @@ public class PostprocessingStatistics extends javax.swing.JPanel {
             SystemInfo.getLog().log(Level.WARNING, e.getLocalizedMessage());
         }
         initComponents();
-        initLabels();
         initResources();
+        initLabels();
     }
 
     // Methods
@@ -86,10 +86,10 @@ public class PostprocessingStatistics extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bSave)
-                .addContainerGap())
+                .addGap(6, 6, 6))
         );
     }// </editor-fold>//GEN-END:initComponents
 

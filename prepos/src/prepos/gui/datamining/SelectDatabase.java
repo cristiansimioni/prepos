@@ -52,6 +52,9 @@ public class SelectDatabase extends javax.swing.JPanel {
         pAttributes.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("ATTRIBUTES")));
         pSelectedAttribute.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("SELECTED_ATTRIBUTE")));
         pCurrentRelation.setName(messages.getString("CURRENT_RELATION"));
+        tAttributes.getColumnModel().getColumn(1).setHeaderValue(messages.getString("NAME"));
+        tSelectedAtrribute.getColumnModel().getColumn(1).setHeaderValue(messages.getString("LABEL"));
+        tSelectedAtrribute.getColumnModel().getColumn(2).setHeaderValue(messages.getString("COUNT"));
         // Welcome message
         Shared.getInstance().changeStatus(messages.getString("MSG_WELCOME") + " " + SystemInfo.getName());
     }

@@ -22,14 +22,9 @@ public class Shared {
     private JLabel status;
     private JTabbedPane options;
     private JProgressBar progressBar;
-    private String statusText;
-    private boolean textChanged;
 
     // Constructor
     private Shared() {
-        textChanged = false;
-        Thread statusThread = new Thread(new StatusRunnable(), "Status thread");
-        statusThread.start();
     }
 
     // Getter & setter
@@ -61,30 +56,6 @@ public class Shared {
         this.progressBar = progressBar;
     }
 
-    private synchronized void verifyTextChanges() throws InterruptedException {
-        while (!textChanged) {
-            wait();
-        }
-    }
-
-    public void setTextChanged(boolean textChanged) {
-        this.textChanged = textChanged;
-    }
-
-    private class StatusRunnable implements Runnable {
-
-        @Override
-        public void run() {
-            try {
-                while (true) {
-                    verifyTextChanges();
-                    status.setText(statusText);
-                }
-            } catch (Exception e) {
-            }
-        }
-    }
-
     // Methods
     // Get a instance for Shared items
     public static Shared getInstance() {
@@ -95,11 +66,7 @@ public class Shared {
     }
 
     // Change status text
-    public synchronized void changeStatus(String status) {
-        this.statusText = status;
-        this.textChanged = true;
-        if (this.textChanged) {
-            notifyAll();
-        }
+    public void changeStatus(String status) {
+        this.status.setText(status);
     }
 }

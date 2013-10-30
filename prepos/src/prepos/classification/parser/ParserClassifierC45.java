@@ -1,7 +1,6 @@
 package prepos.classification.parser;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import prepos.rules.ProductionRule;
 
 /*

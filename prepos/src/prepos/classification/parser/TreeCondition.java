@@ -69,12 +69,12 @@ public abstract class TreeCondition {
             }
         }
 
-        // Se for nó folha
+        // If if leaf node
         if (item.contains(":")) {
             item = item.split(":")[0];
         }
 
-        // Verifica operador
+        // Verify operator
         if (item.contains(">=")) {
             atrributeValue.setAttribute(item.split(">")[0].trim());
             atrributeValue.setOperator(">=");

@@ -57,6 +57,12 @@ public class Preprocessing extends javax.swing.JPanel {
     // Methods
     // Initialize labels
     private void initLabels() {
+        pSelectedAlgorithm.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("SELECTED_ALGORITHM")));
+        pAlgorithms.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("ALGORITHMS")));
+        pAlgorithmOutput.setBorder(javax.swing.BorderFactory.createTitledBorder(messages.getString("ALGORITHM_OUTPUT")));
+        bParameters.setText(messages.getString("PARAMETERS"));
+        bStart.setText(messages.getString("START"));
+        bSaveResult.setText(messages.getString("SAVE_RESULT"));
     }
 
     // Initialize resources

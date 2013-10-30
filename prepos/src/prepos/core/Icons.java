@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package prepos.core;
 
 import java.awt.Component;
@@ -25,9 +21,11 @@ import javax.swing.ListCellRenderer;
  */
 public class Icons extends JLabel implements ListCellRenderer {
 
+    // Attributes
     private ResourceBundle messages;
     private Hashtable<Object, ImageIcon> languages = null;
 
+    // Constructor
     public Icons() {
         try {
             messages = ResourceBundle.getBundle("prepos.core.languages.language", Locale.getDefault());
@@ -40,6 +38,7 @@ public class Icons extends JLabel implements ListCellRenderer {
         languages.put(messages.getString("PORTUGUESE"), new ImageIcon(getClass().getResource("/prepos/resources/icons/brazil.png")));
     }
 
+    // Override
     @Override
     public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
         if (languages.get(value) != null) {

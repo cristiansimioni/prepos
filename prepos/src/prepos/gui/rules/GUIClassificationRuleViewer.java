@@ -89,6 +89,12 @@ public class GUIClassificationRuleViewer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void initLabels() {
+        setTitle(messages.getString("PRODUCTION_RULES_VIEWER"));
+        tRules.getColumnModel().getColumn(1).setHeaderValue(messages.getString("PREMISE"));
+        tRules.getColumnModel().getColumn(2).setHeaderValue(messages.getString("CONSEQUENT"));
+        tRules.getColumnModel().getColumn(3).setHeaderValue(messages.getString("SUCCESS"));
+        tRules.getColumnModel().getColumn(4).setHeaderValue(messages.getString("ERROR"));
+        tRules.getColumnModel().getColumn(4).setHeaderValue(messages.getString("PRECISION"));
     }
 
     private void initLayout() {

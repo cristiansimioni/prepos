@@ -1,13 +1,11 @@
 package prepos.gui.rules;
 
 import prepos.core.SystemInfo;
-import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
-import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import prepos.gui.GUIChooser;
 import prepos.rules.AssociationRule;
@@ -88,6 +86,11 @@ public class GUIAssociationRuleViewer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void initLabels() {
+        setTitle(messages.getString("ASSOCIATION_RULES_VIEWER"));
+        tRules.getColumnModel().getColumn(1).setHeaderValue(messages.getString("PREMISE"));
+        tRules.getColumnModel().getColumn(2).setHeaderValue(messages.getString("CONSEQUENT"));
+        tRules.getColumnModel().getColumn(3).setHeaderValue(messages.getString("SUPPORT"));
+        tRules.getColumnModel().getColumn(4).setHeaderValue(messages.getString("CONFIDENCE"));
     }
 
     private void initLayout() {
