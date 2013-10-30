@@ -107,6 +107,7 @@ public class ParserAssociationPrepos {
     public String toString() {
         StringBuilder msg = new StringBuilder();
 
+        msg.append("Association Rules:\n");
         for (AssociationRule rule : this.rules) {
             msg.append(rule.toString());
             msg.append("\n");

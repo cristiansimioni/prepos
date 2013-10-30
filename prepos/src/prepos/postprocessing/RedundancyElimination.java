@@ -59,7 +59,7 @@ public class RedundancyElimination {
                                 }
                             }
                             // IN
-                            if (originalRules.get(i).getIndexPremise(j).getOperator().equals(" in ")) {
+                            if (originalRules.get(i).getIndexPremise(j).getOperator().equals(">>")) {
                                 // TÁ ERRADO! CONFERIR ATRIBUTOS!
                                 if (originalRules.get(i).getIndexPremise(j).getValue().length() > originalRules.get(i).getIndexPremise(k).getValue().length()) {
                                     redundantAttributes[i].set(j, true);
@@ -113,6 +113,8 @@ public class RedundancyElimination {
                 }
             }
             this.withoutRedundancy.get(i).addConsequent(originalRules.get(i).getConsequents().get(0));
+            this.withoutRedundancy.get(i).setError(originalRules.get(i).getError());
+            this.withoutRedundancy.get(i).setSuccess(originalRules.get(i).getSuccess());
 
             // If the rule contains redundancy increment the number of redundancies
             if (containsRedundancy) {

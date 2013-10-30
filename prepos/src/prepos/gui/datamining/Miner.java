@@ -23,6 +23,7 @@ import prepos.classification.Classification;
 import prepos.classification.ClassificationC45;
 import prepos.classification.ClassificationJ48;
 import prepos.classification.parser.ParserClassifierJ48;
+import prepos.classification.parser.ParserClassifierC45;
 import prepos.core.FileSaver;
 import prepos.core.Shared;
 import prepos.core.SystemInfo;
@@ -382,10 +383,16 @@ public class Miner extends javax.swing.JPanel {
                 fileSaver = new FileSaver(chSave.getSelectedFile().getName(), chSave.getSelectedFile().getPath(), parser.toString());
             } else if (lastExecutedAlgorithm == algorithms.CLASSIFIER_C45.ordinal()) {
                 // Contains simplified decision tree
+                ParserClassifierC45 parser;
                 if (tOutput.getText().contains("Simplified Decision Tree:")) {
                     Object[] options = {"Decision Tree", "Simplified Decision Tree", "Cancel"};
                     int choose = JOptionPane.showOptionDialog(null, "Which tree you need to transform in rules?", "", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+                    parser = new ParserClassifierC45(tOutput.getText(), choose);
+                } else {
+                    parser = new ParserClassifierC45(tOutput.getText(), 0);
                 }
+                parser.buidProductionRules();
+                fileSaver = new FileSaver(chSave.getSelectedFile().getName(), chSave.getSelectedFile().getPath(), parser.toString());
             }
 
             try {

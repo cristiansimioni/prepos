@@ -170,11 +170,10 @@ public class GUIUserDriven extends javax.swing.JFrame {
         for (AssociationRule rule : this.rules) {
             msg.append(rule.toString() + "\n");
         }
-        
+
         this.postProcessing.gettResult().gettResult().setText(msg.toString());
         this.dispose();
     }//GEN-LAST:event_bSaveActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCancel;
     private javax.swing.JButton bSave;

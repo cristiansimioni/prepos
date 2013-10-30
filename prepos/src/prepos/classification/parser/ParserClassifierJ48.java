@@ -60,8 +60,10 @@ public class ParserClassifierJ48 {
 
         msg.append("Production Rules:\n");
         for (ProductionRule rule : this.rules) {
-            msg.append(rule.toString());
-            msg.append("\n");
+            if (rule.precision() > 0.0f) {
+                msg.append(rule.toString());
+                msg.append("\n");
+            }
         }
 
         return msg.toString();

@@ -1,6 +1,7 @@
 package prepos.classification.parser;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import prepos.rules.ProductionRule;
 
 /*
@@ -26,21 +27,79 @@ public class ParserClassifierC45 {
     }
 
     // Methods
+    // Preprocess the text
+    private ArrayList<String> preprocess() {
+        int i = 0;
+        String[] arrayLines = text.split("\n");
+        ArrayList<String> lines = new ArrayList<>();
+        boolean flagDecisionTree = false;
+        boolean flagTreeSaved = false;
+        boolean flagSpecial = false;
+        while (i < arrayLines.length) {
+            String line = arrayLines[i];
+            if (line.contains("Decision Tree")) {
+                flagDecisionTree = true;
+            } else if (line.contains("Tree saved")) {
+                flagTreeSaved = true;
+            }
+            if (!line.contains(":") && !line.equals("") && !line.contains("Subtree [S") && !flagTreeSaved && flagDecisionTree) {
+                String auxLine = line;
+                i++;
+                line = arrayLines[i];
+                while (!line.contains(":") && !line.equals("")) {
+                    auxLine += line.replace("|", "").trim();
+                    i++;
+                    line = arrayLines[i];
+                }
+                if (!line.equals("")) {
+                    auxLine += line.replace("|", "").trim();
+                }
+                flagSpecial = true;
+                String test = auxLine.split("}")[1];
+                if (!test.contains("(") && !test.contains(")") && !test.contains("[") && !test.contains("]")) {
+                    auxLine = auxLine.replace(":", "");
+                    auxLine = auxLine.replace(" :", "");
+                    auxLine = auxLine.replace("}:", "}");
+                }
+                lines.add(auxLine);
+            }
+            if (!line.contains("(") && !line.contains(")") && !line.contains("[") && !line.contains("]")) {
+                line = line.replace(":", "");
+                line = line.replace(" :", "");
+                line = line.replace("}:", "}");
+            }
+            if (flagDecisionTree && !flagTreeSaved && !flagSpecial) {
+                lines.add(line);
+            }
+            if (flagSpecial) {
+                flagSpecial = false;
+            }
+            i++;
+        }
+        return lines;
+    }
+
     // Build production rules
     public void buidProductionRules() {
 
-        String lines[] = text.split("\n");
-        ArrayList<TreeCondition> conditions = new ArrayList<>();
 
+        ArrayList<TreeCondition> conditions = new ArrayList<>();
+        ArrayList<String> lines = new ArrayList<>();
+        //lines.addAll(Arrays.asList(text.split("\n")));
+
+        lines = preprocess();
         // Preprocess the lines with conditions
+        int index = 0;
         if (this.tree == 0) {
-            for (String line : lines) {
-                if (!line.contains("J48 pruned tree") && !line.isEmpty() && !line.contains("------------------") && !line.contains("Number of Leaves") && !line.contains("Size of the tree")) {
-                    conditions.add(new TreeConditionC45(line));
-                }
-            }
+            index = lines.indexOf("Decision Tree") + 2;
         } else if (this.tree == 1) {
+            index = lines.indexOf("Simplified Decision Tree") + 2;
         }
+        while (!lines.get(index).isEmpty()) {
+            conditions.add(new TreeConditionC45(lines.get(index)));
+            index++;
+        }
+
 
         // Get the max level of tree
         int maxLevel = 0;
@@ -65,8 +124,10 @@ public class ParserClassifierC45 {
 
         msg.append("Production Rules:\n");
         for (ProductionRule rule : this.rules) {
-            msg.append(rule.toString());
-            msg.append("\n");
+            if (rule.precision() > 0.0f) {
+                msg.append(rule.toString());
+                msg.append("\n");
+            }
         }
 
         return msg.toString();

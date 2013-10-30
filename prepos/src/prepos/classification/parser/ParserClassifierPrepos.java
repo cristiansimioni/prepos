@@ -83,7 +83,8 @@ public class ParserClassifierPrepos {
     // Get the success of rule
     private float getSuccess(String line) {
         String strSuccess;
-        strSuccess = line.split("\\(")[1];
+        strSuccess = line.substring(line.lastIndexOf("("));
+        strSuccess = strSuccess.replace("(", "");
         strSuccess = strSuccess.split(",")[0];
         return Float.parseFloat(strSuccess);
     }
@@ -91,7 +92,7 @@ public class ParserClassifierPrepos {
     // Get the error of rule
     private float getError(String line) {
         String strError;
-        strError = line.split("\\(")[1];
+        strError = line.substring(line.lastIndexOf("("));
         strError = strError.split(", ")[1];
         strError = strError.replace(")", "");
         return Float.parseFloat(strError);
@@ -103,6 +104,8 @@ public class ParserClassifierPrepos {
             return ">=";
         } else if (item.contains("<=")) {
             return "<=";
+        } else if (item.contains(">>")) {
+            return ">>";
         } else if (item.contains(">")) {
             return ">";
         } else if (item.contains("<")) {
@@ -111,8 +114,6 @@ public class ParserClassifierPrepos {
             return "!=";
         } else if (item.contains("=")) {
             return "=";
-        } else if (item.contains(" in ")) {
-            return " in ";
         } else {
             return "Not Defined.";
         }

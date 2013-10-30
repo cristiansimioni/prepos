@@ -30,7 +30,7 @@ public class GUIUserDrivenQuestion extends javax.swing.JDialog {
         DefaultTableModel modelc = (DefaultTableModel) tSelectedConsequents.getModel();
 
         AssociationRule rule = rules.get(this.index);
-        
+
         for (AttributeValue attr : rule.getPremises()) {
             modelp.addRow(new Object[]{attr.getAttribute(), false});
         }
@@ -61,8 +61,6 @@ public class GUIUserDrivenQuestion extends javax.swing.JDialog {
         return rules;
     }
 
-    
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -211,7 +209,7 @@ public class GUIUserDrivenQuestion extends javax.swing.JDialog {
     private void bSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSaveActionPerformed
         ArrayList<String> selectedPremises = new ArrayList<>();
         ArrayList<String> selectedConsquents = new ArrayList<>();
-        
+
         DefaultTableModel mPremises = (DefaultTableModel) tSelectedPremises.getModel();
         for (int i = 0; i < mPremises.getRowCount(); i++) {
             if ((boolean) mPremises.getValueAt(i, 1)) {
@@ -225,7 +223,7 @@ public class GUIUserDrivenQuestion extends javax.swing.JDialog {
                 selectedConsquents.add((String) mConsequents.getValueAt(i, 0));
             }
         }
-        
+
         RulesFilter filter = new RulesFilter(rules);
         filter.setSelectedPremises(selectedPremises);
         filter.setSelectedConsequents(selectedConsquents);
@@ -233,7 +231,6 @@ public class GUIUserDrivenQuestion extends javax.swing.JDialog {
         rules = filter.filter();
         this.dispose();
     }//GEN-LAST:event_bSaveActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCancel;
     private javax.swing.JButton bSave;

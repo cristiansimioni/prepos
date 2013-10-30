@@ -844,3 +844,7 @@ Out 28, 2013 7:03:44 PM prepos.gui.datamining.Miner bStartActionPerformed
 SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
 Out 28, 2013 7:03:51 PM prepos.gui.datamining.Miner bStartActionPerformed
 SEVERE: weka.classifiers.trees.j48.C45PruneableClassifierTree: Cannot handle numeric class!
+Out 29, 2013 9:16:40 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!
+Out 29, 2013 9:17:25 PM prepos.gui.datamining.Miner bStartActionPerformed
+SEVERE: weka.associations.Apriori: Cannot handle numeric attributes!

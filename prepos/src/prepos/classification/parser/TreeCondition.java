@@ -101,7 +101,7 @@ public abstract class TreeCondition {
             atrributeValue.setValue(item.split("=")[1].trim());
         } else if (item.contains(" in ")) {
             atrributeValue.setAttribute(item.split(" in ")[0].trim());
-            atrributeValue.setOperator(" in ");
+            atrributeValue.setOperator(">>");
             atrributeValue.setValue(item.split(" in ")[1].trim());
         }
 
