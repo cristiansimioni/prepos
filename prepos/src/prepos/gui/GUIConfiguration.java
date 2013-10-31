@@ -20,9 +20,11 @@ public class GUIConfiguration extends javax.swing.JFrame {
 
     // Attributes
     private ResourceBundle messages;
+    private GUIChooser chooser;
 
     // Constructor
-    public GUIConfiguration() {
+    public GUIConfiguration(GUIChooser chooser) {
+        this.chooser = chooser;
         try {
             messages = ResourceBundle.getBundle("prepos.core.languages.language", Locale.getDefault());
         } catch (Exception e) {
@@ -131,7 +133,9 @@ public class GUIConfiguration extends javax.swing.JFrame {
         } else if (((String) lsLanguages.getSelectedItem()).contains(messages.getString("PORTUGUESE"))) {
             Locale.setDefault(new Locale("pt", "BR"));
         }
-        pack();
+        messages = ResourceBundle.getBundle("prepos.core.languages.language", Locale.getDefault());
+        chooser.setMessages(messages);
+        chooser.initLabels();
         this.dispose();
     }//GEN-LAST:event_bSaveActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables

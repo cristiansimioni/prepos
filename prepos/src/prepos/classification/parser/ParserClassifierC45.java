@@ -123,7 +123,8 @@ public class ParserClassifierC45 {
 
         msg.append("Production Rules:\n");
         for (ProductionRule rule : this.rules) {
-            if (rule.precision() > 0.0f) {
+            // Eliminate the rules with error/success 0
+            if (rule.getError() + rule.getSuccess() != 0.0f) {
                 msg.append(rule.toString());
                 msg.append("\n");
             }

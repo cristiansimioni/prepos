@@ -42,8 +42,14 @@ public class GUIChooser extends javax.swing.JFrame {
         initLabels();
     }
 
+    // Getter & setter
+    public void setMessages(ResourceBundle messages) {
+        this.messages = messages;
+    }
+
+    // Methods
     // Initialize all labels
-    private void initLabels() {
+    public void initLabels() {
         setTitle(SystemInfo.getName());
         btDataMining.setText(messages.getString("DATA_MINING"));
         btUtilities.setText(messages.getString("UTILITIES"));
@@ -319,10 +325,8 @@ public class GUIChooser extends javax.swing.JFrame {
 
     // Program > Configuration
     private void mConfigurationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mConfigurationActionPerformed
-        GUIConfiguration configuration = new GUIConfiguration();
+        GUIConfiguration configuration = new GUIConfiguration(this);
         configuration.setVisible(true);
-        messages = ResourceBundle.getBundle("prepos.core.languages.language", Locale.getDefault());
-        initLabels();
     }//GEN-LAST:event_mConfigurationActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btDataMining;

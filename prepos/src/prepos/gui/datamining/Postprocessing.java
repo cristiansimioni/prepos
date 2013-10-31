@@ -311,6 +311,8 @@ public class Postprocessing extends javax.swing.JPanel {
     }//GEN-LAST:event_bSelectRulesFileActionPerformed
 
     private void bStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStartActionPerformed
+        tResult.gettResult().setText("");
+        tStatistics.gettStatistic().setText("");
         if (selectedAlgorithm == algorithms.ASSOCIATION_EXCEPTIONRULES.ordinal()) {
             ExceptionRuleSearcher exceptions = new ExceptionRuleSearcher(associationRules);
             exceptions.find();

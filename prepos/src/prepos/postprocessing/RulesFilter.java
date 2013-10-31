@@ -132,7 +132,7 @@ public class RulesFilter {
                         filteredRules.add(rule);
                     }
                 } else if (and) {
-                    // Verify if rule contains the selected premise OR selected consequent 
+                    // Verify if rule contains the selected premise AND selected consequent 
                     if (!rule.existsOnPremise(selectedPremises) && !rule.existsOnConsequent(selectedConsequents)) {
                         filteredRules.add(rule);
                     }

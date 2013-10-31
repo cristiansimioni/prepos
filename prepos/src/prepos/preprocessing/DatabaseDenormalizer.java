@@ -110,14 +110,20 @@ public class DatabaseDenormalizer {
             ArrayList<Instance> instances = (ArrayList<Instance>) hash.get(keyValues.get(i));
             String line = "";
             for (Instance instance : instances) {
+                String value;
                 if (itemIsNominal) {
-                    line += instance.stringValue(indexOfItem) + " ";
+                    value = instance.stringValue(indexOfItem);
                 } else {
-                    line += Double.toString(instance.value(i)) + " ";
+                    value = Double.toString(instance.value(i));
+                }
+                if (!value.equals("?")) {
+                    line += value + " ";
                 }
             }
-            msg.append(line.trim());
-            msg.append("\n");
+            if (!line.isEmpty()) {
+                msg.append(line.trim());
+                msg.append("\n");
+            }
         }
         return msg.toString();
     }

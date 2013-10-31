@@ -1,16 +1,17 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package prepos.gui.parameters;
 
 import java.util.logging.Level;
 import prepos.core.SystemInfo;
 import prepos.gui.datamining.Miner;
 
-/**
- *
- * @author z00380tv
+/*
+ * Author: Cristian Simioni
+ * Last update: 10/15/2013
+ * 
+ * Changes:
+ * Date         Author              Function            Description
+ * -----------+-------------------+-------------------+------------------------
+ * 10/15/2013 | Cristian Simioni  | -                 | - 
  */
 public class GUIParametersAprioriBorgelt extends javax.swing.JDialog {
 

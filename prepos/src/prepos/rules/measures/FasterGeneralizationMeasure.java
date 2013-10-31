@@ -86,7 +86,7 @@ public class FasterGeneralizationMeasure {
         for (int i = 0; i < rules.size(); i++) {
             float measure = 0.0f;
             for (int j = 0; j < separateRules[i].size(); j++) {
-                if ((int) numValidValues[i].get(j) <= (instances.numInstances() / rangeClass)) {
+                if ((int) numValidValues[i].get(j) >= (instances.numInstances() / rangeClass)) {
                     measure++;
                 }
             }
