@@ -28,6 +28,11 @@ public class FileSaver {
         this.text = text;
     }
 
+    public FileSaver(String name, String path) {
+        this.name = name;
+        this.path = path;
+    }
+
     // Getter & Setter
     public String getName() {
         return name;
