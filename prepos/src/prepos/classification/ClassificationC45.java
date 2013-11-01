@@ -2,8 +2,11 @@ package prepos.classification;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import prepos.database.Database;
 import weka.core.converters.C45Saver;
 
@@ -26,13 +29,22 @@ public class ClassificationC45 implements Classification {
         String input = System.getProperty("user.dir") + "\\temp\\c45input.names";
 
         // Save base on temporary file if database is not C4.5
-        if (!database.getType().equals("c45")) {
-            C45Saver saver = new C45Saver();
+        C45Saver saver = new C45Saver();
 
-            saver.setInstances(database.getInstances());
-            saver.setFile(new File(input));
-            saver.writeBatch();
+        saver.setInstances(database.getInstances());
+        saver.setFile(new File(input));
+        saver.writeBatch();
+
+        InputStream in = new FileInputStream(new File(System.getProperty("user.dir") + "\\temp\\c45input.data"));
+        OutputStream out = new FileOutputStream(new File(System.getProperty("user.dir") + "\\temp\\c45input.test"));
+        // Transfer bytes to test from data
+        byte[] buffer = new byte[1024];
+        int lenght;
+        while ((lenght = in.read(buffer)) > 0) {
+            out.write(buffer, 0, lenght);
         }
+        in.close();
+        out.close();
 
         // Ajust database path
         input = input.substring(0, input.lastIndexOf("."));

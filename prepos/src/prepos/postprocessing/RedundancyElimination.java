@@ -60,7 +60,6 @@ public class RedundancyElimination {
                             }
                             // IN
                             if (originalRules.get(i).getIndexPremise(j).getOperator().equals(">>")) {
-                                // TÁ ERRADO! CONFERIR ATRIBUTOS!
                                 if (originalRules.get(i).getIndexPremise(j).getValue().length() > originalRules.get(i).getIndexPremise(k).getValue().length()) {
                                     redundantAttributes[i].set(j, true);
                                 }
@@ -110,6 +109,7 @@ public class RedundancyElimination {
                     // Increment the redundancies of item
                     int index = statistics.getRedundancyItems().indexOf(new RedundancyItem(originalRules.get(i).getIndexPremise(j)));
                     statistics.getRedundancyItems().get(index).incrementItemRedundancy();
+                    statistics.getRedundancyItems().get(index).incrementItemRulesWith();
                 }
             }
             this.withoutRedundancy.get(i).addConsequent(originalRules.get(i).getConsequents().get(0));
@@ -130,16 +130,20 @@ public class RedundancyElimination {
 
         msg.append("Number of rules: " + statistics.getNumberOfRules() + "\n");
         msg.append("Number of rules with redundancy: " + statistics.getNumberOfRulesWithRedundancy() + "\n");
-        msg.append("Number of redundancies: " + statistics.getNumberOfRedundancies() + "\n");
-        msg.append("Redundancy average: " + String.format("%.2f", statistics.redundancyAverage()) + "\n");
-        msg.append("Redundancy items per rule: " + String.format("%.2f", statistics.redundacnyItemsPerRule()) + "\n");
+        msg.append("Redundancy average: " + String.format("%.2f", statistics.redundancyAverage()) + "%\n");
+        msg.append("Number of premises redundant: " + statistics.getNumberOfRedundancies() + "\n");
+        msg.append("Redundancy premises per rule: " + String.format("%.2f", statistics.redundacnyItemsPerRule()) + "\n");
         msg.append("Number of distincts attribute-value: " + statistics.getRedundancyItems().size() + "\n\n");
 
         msg.append("Statistics of attribute-value:\n\n");
         msg.append(String.format("%-35s", "Item") + "\t" + String.format("%-15s", "Rules With") + "\t" + String.format("%-15s", "Redundancy Counter") + "\n");
 
         for (RedundancyItem item : statistics.getRedundancyItems()) {
-            msg.append(String.format("%-35s", item.getAttribute().toString()) + "\t" + String.format("%-15s", item.getNumberOfRulesWith()) + "\t" + String.format("%-15s", item.getNumberOfRedundancy()) + "\n");
+            if (item.getAttribute().toString().length() > 33) {
+                msg.append(String.format("%-35s", item.getAttribute().toString().substring(0, 33)) + "\t" + String.format("%-15s", item.getNumberOfRulesWith()) + "\t" + String.format("%-15s", item.getNumberOfRedundancy()) + "\n");
+            } else {
+                msg.append(String.format("%-35s", item.getAttribute().toString()) + "\t" + String.format("%-15s", item.getNumberOfRulesWith()) + "\t" + String.format("%-15s", item.getNumberOfRedundancy()) + "\n");
+            }
         }
 
         return msg.toString();
@@ -149,6 +153,7 @@ public class RedundancyElimination {
     @Override
     public String toString() {
         StringBuilder msg = new StringBuilder();
+        msg.append("Production Rules:\n");
         for (ProductionRule rule : this.withoutRedundancy) {
             msg.append(rule.toString());
             msg.append("\n");

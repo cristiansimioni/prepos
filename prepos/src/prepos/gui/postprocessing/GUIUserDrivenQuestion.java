@@ -93,7 +93,7 @@ public class GUIUserDrivenQuestion extends javax.swing.JDialog {
             }
         });
 
-        pPremise.setBorder(javax.swing.BorderFactory.createTitledBorder("What premise became the rule not uninteresting?"));
+        pPremise.setBorder(javax.swing.BorderFactory.createTitledBorder("What premise became the rule uninteresting?"));
 
         tSelectedPremises.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -124,14 +124,14 @@ public class GUIUserDrivenQuestion extends javax.swing.JDialog {
         pPremise.setLayout(pPremiseLayout);
         pPremiseLayout.setHorizontalGroup(
             pPremiseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
         );
         pPremiseLayout.setVerticalGroup(
             pPremiseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        pConsequent.setBorder(javax.swing.BorderFactory.createTitledBorder("What consequent became the rule not uninteresting?"));
+        pConsequent.setBorder(javax.swing.BorderFactory.createTitledBorder("What consequent became the rule uninteresting?"));
 
         tSelectedConsequents.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -1,7 +1,6 @@
 package prepos.core;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /*
@@ -25,7 +24,7 @@ public class Util {
     }
 
     // Verify if the file contains association rules
-    public static boolean isAssociationFile(String pathFile) throws FileNotFoundException {
+    public static boolean isAssociationFile(String pathFile) throws Exception {
         String[] lines = new Scanner(new File(pathFile)).useDelimiter("\\Z").next().split("\n");
         for (String line : lines) {
             if (line.contains("Association Rules:")) {
@@ -36,10 +35,10 @@ public class Util {
     }
 
     // Verify if the file contains production rules
-    public static boolean isClassificationFile(String pathFile) throws FileNotFoundException {
+    public static boolean isClassificationFile(String pathFile) throws Exception {
         String[] lines = new Scanner(new File(pathFile)).useDelimiter("\\Z").next().split("\n");
         for (String line : lines) {
-            if (!line.contains("Production Rules:")) {
+            if (line.contains("Production Rules:")) {
                 return true;
             }
         }

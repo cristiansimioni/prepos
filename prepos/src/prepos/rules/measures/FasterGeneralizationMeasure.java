@@ -102,4 +102,10 @@ public class FasterGeneralizationMeasure {
         }
         return msg.toString();
     }
+
+    public String statistics() {
+        StringBuilder msg = new StringBuilder();
+        msg.append("Number of rules: " + rules.size());
+        return msg.toString();
+    }
 }

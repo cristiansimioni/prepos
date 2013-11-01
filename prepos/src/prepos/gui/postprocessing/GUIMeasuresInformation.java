@@ -17,6 +17,9 @@ public class GUIMeasuresInformation extends javax.swing.JDialog {
 
     private void initLabels() {
         lConfidence.setText("Confidence: " + rule.getConfidence());
+        lSupport.setText("Support: " + rule.getSupport());
+        lCountPremisses.setText("Count of Premises: " + rule.getPremises().size());
+        lCountConsequents.setText("Count of Consequents: "+ rule.getConsequents().size());
     }
 
     private void initLayout() {
@@ -41,10 +44,9 @@ public class GUIMeasuresInformation extends javax.swing.JDialog {
     private void initComponents() {
 
         lConfidence = new javax.swing.JLabel();
-        lMinSupport = new javax.swing.JLabel();
-        lMaxSupport = new javax.swing.JLabel();
-        lMinItems = new javax.swing.JLabel();
-        lMaxItems = new javax.swing.JLabel();
+        lSupport = new javax.swing.JLabel();
+        lCountPremisses = new javax.swing.JLabel();
+        lCountConsequents = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Rule Information");
@@ -52,23 +54,19 @@ public class GUIMeasuresInformation extends javax.swing.JDialog {
         setResizable(false);
 
         lConfidence.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lConfidence.setText("Minimum confidence of a rule:");
+        lConfidence.setText("Confidence of rule:");
 
-        lMinSupport.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lMinSupport.setText("Minimum support of a rule:");
-        lMinSupport.setToolTipText("");
+        lSupport.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lSupport.setText("Support of rule:");
+        lSupport.setToolTipText("");
 
-        lMaxSupport.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lMaxSupport.setText("Maximum support of a rule:");
-        lMaxSupport.setToolTipText("");
+        lCountPremisses.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lCountPremisses.setText("Count of premises:");
+        lCountPremisses.setToolTipText("");
 
-        lMinItems.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lMinItems.setText("Minimum number of items per rule:");
-        lMinItems.setToolTipText("");
-
-        lMaxItems.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lMaxItems.setText("Maximum number of items per rule:");
-        lMaxItems.setToolTipText("");
+        lCountConsequents.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lCountConsequents.setText("Count of consequents:");
+        lCountConsequents.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,15 +75,11 @@ public class GUIMeasuresInformation extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lMaxItems, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lMinItems, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lMaxSupport, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(lMinSupport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lCountConsequents, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lCountPremisses, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lSupport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lConfidence, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -95,13 +89,11 @@ public class GUIMeasuresInformation extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(lConfidence)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lMinSupport)
+                .addComponent(lSupport)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lMaxSupport)
+                .addComponent(lCountPremisses)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lMinItems)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lMaxItems)
+                .addComponent(lCountConsequents)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -109,9 +101,8 @@ public class GUIMeasuresInformation extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lConfidence;
-    private javax.swing.JLabel lMaxItems;
-    private javax.swing.JLabel lMaxSupport;
-    private javax.swing.JLabel lMinItems;
-    private javax.swing.JLabel lMinSupport;
+    private javax.swing.JLabel lCountConsequents;
+    private javax.swing.JLabel lCountPremisses;
+    private javax.swing.JLabel lSupport;
     // End of variables declaration//GEN-END:variables
 }

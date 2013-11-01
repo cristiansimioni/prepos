@@ -308,7 +308,6 @@ public class GUIChooser extends javax.swing.JFrame {
     }//GEN-LAST:event_btUtilitiesActionPerformed
 
     // Tools > Weka
-    // Erro: Quando fecha, a aplicação toda é fechada.
     private void mWekaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mWekaActionPerformed
         mWeka.setEnabled(false);
         final weka.gui.GUIChooser weka = new weka.gui.GUIChooser();

@@ -459,6 +459,16 @@ public class GUIRulesFilter extends javax.swing.JDialog {
         }
 
         postProcessing.gettResult().gettResult().setText(msg.toString());
+        
+        // Statistitcs
+        StringBuilder statistics = new StringBuilder();
+        statistics.append("Number of original rules: " + filter.getRules().size() + "\n");
+        statistics.append("Number of filtered rules: " + (filter.getRules().size() - rules.size()) + "\n");
+        statistics.append("Number of rules after filter: " + rules.size() + "\n");
+        statistics.append("Number of premises selected to delete: " + filter.getSelectedPremises().size() + "\n");
+        statistics.append("Number of consequents selected to delete: " + filter.getSelectedConsequents().size() + "\n");
+        
+        postProcessing.gettStatistics().gettStatistic().setText(statistics.toString());
 
         this.dispose();
     }//GEN-LAST:event_bStartActionPerformed

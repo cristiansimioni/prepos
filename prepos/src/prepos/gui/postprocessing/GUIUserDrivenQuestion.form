@@ -80,7 +80,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="What premise became the rule not uninteresting?"/>
+            <TitledBorder title="What premise became the rule uninteresting?"/>
           </Border>
         </Property>
       </Properties>
@@ -88,7 +88,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jScrollPane1" alignment="1" pref="0" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" alignment="1" pref="323" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -126,7 +126,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="What consequent became the rule not uninteresting?"/>
+            <TitledBorder title="What consequent became the rule uninteresting?"/>
           </Border>
         </Property>
       </Properties>

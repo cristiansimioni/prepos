@@ -94,7 +94,7 @@ public class GUIClassificationRuleViewer extends javax.swing.JFrame {
         tRules.getColumnModel().getColumn(2).setHeaderValue(messages.getString("CONSEQUENT"));
         tRules.getColumnModel().getColumn(3).setHeaderValue(messages.getString("SUCCESS"));
         tRules.getColumnModel().getColumn(4).setHeaderValue(messages.getString("ERROR"));
-        tRules.getColumnModel().getColumn(4).setHeaderValue(messages.getString("PRECISION"));
+        tRules.getColumnModel().getColumn(5).setHeaderValue(messages.getString("PRECISION"));
     }
 
     private void initLayout() {

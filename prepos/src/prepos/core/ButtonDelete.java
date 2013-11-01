@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package prepos.core;
 
 import java.awt.Component;
@@ -15,7 +11,6 @@ import javax.swing.UIManager;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
-import prepos.gui.postprocessing.GUIMeasuresInformation;
 import prepos.gui.postprocessing.GUIUserDriven;
 import prepos.gui.postprocessing.GUIUserDrivenQuestion;
 import prepos.rules.AssociationRule;
@@ -31,18 +26,16 @@ import prepos.rules.AssociationRule;
  */
 public class ButtonDelete extends AbstractCellEditor implements TableCellRenderer, TableCellEditor, ActionListener {
 
-    JTable table;
-    JButton renderButton;
-    JButton editButton;
-    String text;
-    int line;
-    ArrayList<AssociationRule> rule;
-    GUIUserDriven driven;
+    private JTable table;
+    private JButton renderButton;
+    private JButton editButton;
+    private String text;
+    private int line;
+    private GUIUserDriven driven;
 
-    public ButtonDelete(JTable table, int line, int column, ArrayList<AssociationRule> rule, GUIUserDriven driven) {
+    public ButtonDelete(JTable table, int line, int column, GUIUserDriven driven) {
         super();
         this.table = table;
-        this.rule = rule;
         this.driven = driven;
         this.line = line;
         renderButton = new JButton();
@@ -92,12 +85,12 @@ public class ButtonDelete extends AbstractCellEditor implements TableCellRendere
         fireEditingStopped();
 
 
-        GUIUserDrivenQuestion question = new GUIUserDrivenQuestion(rule, table.getSelectedRow());
-        rule.remove(table.getSelectedRow());
+        GUIUserDrivenQuestion question = new GUIUserDrivenQuestion(driven.getRules(), table.getSelectedRow());
+        driven.getRules().remove(table.getSelectedRow());
         question.setVisible(true);
-        rule = question.getRules();
+        driven.setRules(question.getRules());
 
-        driven.updateTable(rule);
+        driven.updateTable(driven.getRules());
     }
 
     @Override

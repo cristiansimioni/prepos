@@ -29,19 +29,13 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lMaxItems" alignment="1" max="32767" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lMinItems" alignment="1" min="-2" pref="239" max="-2" attributes="0"/>
-                                  <Component id="lMaxSupport" alignment="1" min="-2" pref="239" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="lCountConsequents" alignment="1" min="-2" pref="239" max="-2" attributes="0"/>
+                          <Component id="lCountPremisses" alignment="1" min="-2" pref="239" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="lMinSupport" max="32767" attributes="0"/>
+                  <Component id="lSupport" max="32767" attributes="0"/>
                   <Component id="lConfidence" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -54,13 +48,11 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lConfidence" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="lMinSupport" min="-2" max="-2" attributes="0"/>
+              <Component id="lSupport" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="lMaxSupport" min="-2" max="-2" attributes="0"/>
+              <Component id="lCountPremisses" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="lMinItems" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="lMaxItems" min="-2" max="-2" attributes="0"/>
+              <Component id="lCountConsequents" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -70,34 +62,27 @@
     <Component class="javax.swing.JLabel" name="lConfidence">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Minimum confidence of a rule:"/>
+        <Property name="text" type="java.lang.String" value="Confidence of rule:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lMinSupport">
+    <Component class="javax.swing.JLabel" name="lSupport">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Minimum support of a rule:"/>
+        <Property name="text" type="java.lang.String" value="Support of rule:"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lMaxSupport">
+    <Component class="javax.swing.JLabel" name="lCountPremisses">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Maximum support of a rule:"/>
+        <Property name="text" type="java.lang.String" value="Count of premises:"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lMinItems">
+    <Component class="javax.swing.JLabel" name="lCountConsequents">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Minimum number of items per rule:"/>
-        <Property name="toolTipText" type="java.lang.String" value=""/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lMaxItems">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Maximum number of items per rule:"/>
+        <Property name="text" type="java.lang.String" value="Count of consequents:"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>

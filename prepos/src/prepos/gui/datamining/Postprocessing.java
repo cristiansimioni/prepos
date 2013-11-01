@@ -4,11 +4,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.NoSuchElementException;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTree;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
@@ -52,9 +54,9 @@ public class Postprocessing extends javax.swing.JPanel {
     private int selectedAlgorithm;
     private ArrayList<AssociationRule> associationRules;
     private ArrayList<ProductionRule> productionRules;
-
+    
     private enum algorithms {
-
+        
         ASSOCIATION_FILTER, ASSOCIATION_EXCEPTIONRULES, ASSOCIATION_MEASURES, ASSOCIATION_USER_DRIVEN,
         CLASSIFIER_FILTER, CLASSIFIER_REDUNDANCY, CLASSIFIER_MEASURES;
     }
@@ -74,7 +76,7 @@ public class Postprocessing extends javax.swing.JPanel {
         createTree();
         initLabels();
     }
-
+    
     private void initLabels() {
         bStart.setText(messages.getString("START"));
         bSelectRulesFile.setText(messages.getString("SELECT_RULES_FILE"));
@@ -89,11 +91,11 @@ public class Postprocessing extends javax.swing.JPanel {
     public PostprocessingOutput gettResult() {
         return tResult;
     }
-
+    
     public PostprocessingStatistics gettStatistics() {
         return tStatistics;
     }
-
+    
     private void createTree() {
         // Root node
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("prepos");
@@ -105,7 +107,7 @@ public class Postprocessing extends javax.swing.JPanel {
         // Association algorithms
         association.add(new DefaultMutableTreeNode("Filter Rules"));
         association.add(new DefaultMutableTreeNode("Exception Rules"));
-        association.add(new DefaultMutableTreeNode("Interesting Measures"));
+        //association.add(new DefaultMutableTreeNode("Interesting Measures"));
         association.add(new DefaultMutableTreeNode("User-Driven"));
 
         // Classification algorithms
@@ -115,9 +117,9 @@ public class Postprocessing extends javax.swing.JPanel {
         // Add all tasks on the tree
         root.add(association);
         root.add(classification);
-
+        
         tAlgorithms = new JTree(root);
-
+        
         tAlgorithms.addTreeSelectionListener(
                 new TreeSelectionListener() {
             @Override
@@ -146,31 +148,31 @@ public class Postprocessing extends javax.swing.JPanel {
                 }
             }
         });
-
+        
         pAlgorithms.setViewportView(tAlgorithms);
-
+        
         repaint();
     }
-
+    
     private void initResources() {
         // 
         tResult = new PostprocessingOutput();
         this.tbResults.add(tResult);
         this.tbResults.setTitleAt(0, messages.getString("RESULT"));
-
+        
         tStatistics = new PostprocessingStatistics();
         this.tbResults.add(tStatistics);
         this.tbResults.setTitleAt(1, messages.getString("STATISTICS"));
-
+        
         bStart.setEnabled(false);
         bRulesViewer.setEnabled(false);
-
+        
         associationRules = new ArrayList<>();
         productionRules = new ArrayList<>();
-
+        
         this.repaint();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -295,21 +297,27 @@ public class Postprocessing extends javax.swing.JPanel {
                     associationRules = parser.getRules();
                     isAssociationRules = true;
                     isProductionRules = false;
+                    tSelectedRules.setText(pathFile);
+                    bRulesViewer.setEnabled(true);
                 } else if (Util.isClassificationFile(pathFile)) {
                     ParserClassifierPrepos parser = new ParserClassifierPrepos(new Scanner(new File(pathFile)).useDelimiter("\\Z").next());
                     parser.buildProductionRules();
                     productionRules = parser.getRules();
                     isAssociationRules = false;
                     isProductionRules = true;
+                    tSelectedRules.setText(pathFile);
+                    bRulesViewer.setEnabled(true);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Incorrect file.", messages.getString("ERROR"), JOptionPane.ERROR_MESSAGE);
                 }
-                tSelectedRules.setText(pathFile);
-                bRulesViewer.setEnabled(true);
-            } catch (FileNotFoundException ex) {
+            } catch (NoSuchElementException ex) {
+                JOptionPane.showMessageDialog(null, "Incorrect file.", messages.getString("ERROR"), JOptionPane.ERROR_MESSAGE);
+            } catch (Exception ex) {
                 Logger.getLogger(Postprocessing.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_bSelectRulesFileActionPerformed
-
+    
     private void bStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStartActionPerformed
         tResult.gettResult().setText("");
         tStatistics.gettStatistic().setText("");
@@ -337,9 +345,10 @@ public class Postprocessing extends javax.swing.JPanel {
             FasterGeneralizationMeasure measure = new FasterGeneralizationMeasure(Shared.getInstance().getDatabase().getInstances(), productionRules);
             measure.calculate();
             tResult.gettResult().setText(measure.toString());
+            tStatistics.gettStatistic().setText(measure.statistics());
         }
     }//GEN-LAST:event_bStartActionPerformed
-
+    
     private void bRulesViewerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRulesViewerActionPerformed
         if (this.isAssociationRules) {
             GUIAssociationRuleViewer viewer = new GUIAssociationRuleViewer(associationRules);

@@ -1,11 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package prepos.gui.postprocessing;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import javax.swing.table.DefaultTableModel;
@@ -21,6 +15,8 @@ import prepos.gui.datamining.Postprocessing;
 public class GUIUserDriven extends javax.swing.JFrame {
 
     private ArrayList<AssociationRule> rules;
+    private int originalRules;
+    private int posRules;
     private Postprocessing postProcessing;
 
     public GUIUserDriven(ArrayList<AssociationRule> rules, Postprocessing postProcessing) {
@@ -31,9 +27,18 @@ public class GUIUserDriven extends javax.swing.JFrame {
         initResources();
     }
 
+    public ArrayList<AssociationRule> getRules() {
+        return rules;
+    }
+
+    public void setRules(ArrayList<AssociationRule> rules) {
+        this.rules = rules;
+    }
+
     private void initResources() {
         // Initialize the table
         updateTable(this.rules);
+        this.originalRules = rules.size();
     }
 
     public void updateTable(ArrayList<AssociationRule> rules) {
@@ -43,7 +48,7 @@ public class GUIUserDriven extends javax.swing.JFrame {
         int i = 0;
         for (AssociationRule rule : rules) {
             ButtonInfo info = new ButtonInfo(tRules, 5, rules);
-            ButtonDelete delete = new ButtonDelete(tRules, i, 6, rules, this);
+            ButtonDelete delete = new ButtonDelete(tRules, i, 6, this);
             model.addRow(new Object[]{i, rule.strPremise(), rule.strConsequent(), rule.getSupport(), rule.getConfidence(), info, delete});
             i++;
         }
@@ -172,6 +177,13 @@ public class GUIUserDriven extends javax.swing.JFrame {
         }
 
         this.postProcessing.gettResult().gettResult().setText(msg.toString());
+
+        this.posRules = rules.size();
+        String statistics = "";
+        statistics += "Number of initial rules: " + originalRules + "\n";
+        statistics += "Number of eliminated rules: " + (originalRules - posRules) + "\n";
+
+        this.postProcessing.gettStatistics().gettStatistic().setText(statistics);
         this.dispose();
     }//GEN-LAST:event_bSaveActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables

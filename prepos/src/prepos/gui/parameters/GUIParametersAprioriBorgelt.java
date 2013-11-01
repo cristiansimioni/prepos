@@ -75,9 +75,6 @@ public class GUIParametersAprioriBorgelt extends javax.swing.JDialog {
         tMaxItem = new javax.swing.JTextField();
         bCancel = new javax.swing.JButton();
         bSave = new javax.swing.JButton();
-        lUnstructured = new javax.swing.JLabel();
-        bUnstructured = new javax.swing.JButton();
-        tUnstructured = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Parameters - Apriori (Borgelt)");
@@ -117,12 +114,6 @@ public class GUIParametersAprioriBorgelt extends javax.swing.JDialog {
             }
         });
 
-        lUnstructured.setText("Unstructured database:");
-
-        bUnstructured.setText("Choose unstructured database");
-
-        tUnstructured.setEditable(false);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -149,16 +140,9 @@ public class GUIParametersAprioriBorgelt extends javax.swing.JDialog {
                         .addComponent(tMinConfidence))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bUnstructured, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(bCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lUnstructured, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tUnstructured)
-                                    .addComponent(bSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                        .addComponent(bCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -184,13 +168,7 @@ public class GUIParametersAprioriBorgelt extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tMaxItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lMaxItems))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bUnstructured)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lUnstructured)
-                    .addComponent(tUnstructured, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bSave)
                     .addComponent(bCancel))
@@ -228,18 +206,15 @@ public class GUIParametersAprioriBorgelt extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCancel;
     private javax.swing.JButton bSave;
-    private javax.swing.JButton bUnstructured;
     private javax.swing.JLabel lMaxItems;
     private javax.swing.JLabel lMaxSupport;
     private javax.swing.JLabel lMinConfidence;
     private javax.swing.JLabel lMinItems;
     private javax.swing.JLabel lMinSupport;
-    private javax.swing.JLabel lUnstructured;
     private javax.swing.JTextField tMaxItem;
     private javax.swing.JTextField tMaxSupport;
     private javax.swing.JTextField tMinConfidence;
     private javax.swing.JTextField tMinItem;
     private javax.swing.JTextField tMinSupport;
-    private javax.swing.JTextField tUnstructured;
     // End of variables declaration//GEN-END:variables
 }
